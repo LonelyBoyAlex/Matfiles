@@ -1,0 +1,10 @@
+background = #2e3440
+background-alt = #106090
+foreground = #d8dee9
+foreground-alt = #d8dee9
+secondary = #3b4252
+primary = #106090
+#primary = #88c0d0
+alert = #bf616a
+disabled = #20404d
+
