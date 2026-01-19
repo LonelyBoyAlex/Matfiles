@@ -10,7 +10,7 @@ return {
    lazy = false, -- loads immediately despite comment
    config = function()
       vim.keymap.set('n', '<leader>b', ':Neotree filesystem reveal left<CR>')
-      vim.keymap.set('n', '<leader>e', ':Neotree focus position=right<CR>')  
+      vim.keymap.set('n', '<leader>e', ':Neotree focus position=left<CR>')  
       vim.keymap.set('n', '<leader>q', ':Neotree close<CR>')  
       require("neo-tree").setup({
          close_if_last_wiindow = true,

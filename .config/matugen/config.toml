@@ -10,38 +10,38 @@ set = false ## true
 command = "swww img --transition-type grow {{ image }}"
 
 [templates.hyprland]
-input_path = './templates/hyprland-colors.conf'
+input_path = 'templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colorshypr.conf'
 #post_hook = 'hyprctl reload'
 
 [templates.alacritty]
-input_path = './templates/alacritty.toml'
+input_path = 'templates/alacritty.toml'
 output_path = '~/.config/alacritty/colors.toml'
 # post_hook = 'hyprctl reload'
 
 [templates.kitty]
-input_path = './templates/kitty-colors.conf'
+input_path = 'templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 
 [templates.rofi]
-input_path = './templates/rofi-colors.rasi'
+input_path = 'templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 
 [templates.Niri]
-input_path = './templates/niri-colors.kdl'
+input_path = 'templates/niri-colors.kdl'
 output_path = '~/.config/niri/colors.kdl'
 
 [templates.eww]
-input_path = './templates/colors.scss'
+input_path = 'templates/colors.scss'
 output_path = '~/.config/eww/colors.scss'
 #post_hook = 'notify-send "updated matugen colors"'
 
 [templates.xresources]
-input_path = "./templates/colors.xresources.tmpl"
+input_path = "templates/colors.xresources.tmpl"
 output_path = "~/.config/i3/colors.Xresources"
 
 [templates.fuzzel]
-input_path = './templates/fuzzel.ini'
+input_path = 'templates/fuzzel.ini'
 output_path = '~/.config/fuzzel/colors.ini'
 
 #[templates.vscode]
@@ -49,75 +49,27 @@ output_path = '~/.config/fuzzel/colors.ini'
 #output_path = '~/.config/Code - OSS/User/settings.json'
 
 [templates.swayncNiri]
-input_path = './templates/colors.css'
+input_path = 'templates/colors.css'
 output_path = '~/.config/swaync/colors.css'
 
 [templates.screenshotRofi]
-input_path = './templates/pywalfox-colors.json'
+input_path = 'templates/pywalfox-colors.json'
 output_path = '~/HyprlandScripts/rofistyles/colors.json'
 
 [templates.zed]
-input_path = "./templates/zed-colors.json"
+input_path = "templates/zed-colors.json"
 output_path = "~/.config/zed/themes/matugen.json"
 
-#[templates.nvim]
-#input_path = "./templates/template.lua"
-#output_path = "~/.config/nvim/generated.lua"
-
-#----------------------matugen nvchad------------------
-#[templates.nvim]
-#input_path = "~/.config/nvim/pywal/matugen.lua"
-#output_path = "~/.cache/wal/base46-dark.lua"
-#
-#[templates.nvimlight]
-#input_path = "~/.config/nvim/pywal/matugen.lua"
-#output_path = "~/.cache/wal/base46-light.lua"
-#
-#[templates.pywal]
-#input_path = "~/.config/nvim/pywal/waltemplate"
-#output_path = "~/.cache/wal/colors"
-#
-##[config.custom_colors.red]
-##color = "#FF0000"
-#blend = true
-#
-#[config.custom_colors.green]
-#color = "#00FF00"
-#blend = true
-#
-#[config.custom_colors.yellow]
-#color = "#FFFF00"
-#blend = true
-#
-#[config.custom_colors.blue]
-#color = "#0000FF"
-#blend = true
-#
-#[config.custom_colors.magenta]
-#color = "#FF00FF"
-#blend = true
-#
-#[config.custom_colors.cyan]
-#color = "#00FFFF"
-#blend = true
-#
-#[config.custom_colors.white]
-#color = "#FFFFFF"
-#blend = true
-#----------------------------------------------
-[templates.pywal16]
-input_path = "~/.config/matugen/templates/colors-wal.vim"
-output_path = "~/.cache/wal/colors-wal.vim"
+[templates.Nvim]
+input_path = "templates/neovim/template.lua"
+output_path = "~/.config/nvim/lua/matugen/base16.lua"
 
 [templates.wlogout]
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.config/wlogout/colors.css"
 
 [templates.waybar]
-input_path = './templates/colors.css'
+input_path = 'templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'notify-send "updated matugen colors"'
 
-[templates.nvim]
-input_path = "./templates/neovim/template.lua"
-output_path = "~/.config/nvim/lua/matugen/base16.lua"

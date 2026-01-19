@@ -3,23 +3,23 @@
 
 require("base16-colorscheme").setup({
   -- Base palette
-  base00 = "#12140e",
-  base01 = "#0d0f09",
-  base02 = "#1a1c15",
-  base03 = "#8f9285",
-  base04 = "#c5c8b9",
-  base05 = "#e3e3d8",
-  base06 = "#e3e3d8",
-  base07 = "#383a32",
+  base00 = "#141318",
+  base01 = "#0e0d13",
+  base02 = "#1c1b20",
+  base03 = "#928f99",
+  base04 = "#c9c5d0",
+  base05 = "#e5e1e9",
+  base06 = "#e5e1e9",
+  base07 = "#3a383e",
 
   -- Syntax
   base08 = "#ffb4ab",
-  base09 = "#a0d0c9",
-  base0A = "#c1caab",
-  base0B = "#b5d087",
-  base0C = "#1f4e4a",
-  base0D = "#384d13",
-  base0E = "#414a32",
+  base09 = "#ecb8ce",
+  base0A = "#c9c3dc",
+  base0B = "#c8bfff",
+  base0C = "#613b4d",
+  base0D = "#473f77",
+  base0E = "#474459",
   base0F = "#93000a",
 })
 
@@ -36,13 +36,13 @@ end
 -- Semantic UI tokens (THIS is what was missing)
 ---------------------------------------------------------------------
 local C = {
-  bg        = "#12140e",
-  surface   = "#1a1c15",
-  surface2  = "#0d0f09",
-  focus     = "#b5d087",
-  focus_fg  = "#233600",
-  subtle    = "#c5c8b9",
-  text      = "#e3e3d8",
+  bg        = "#141318",
+  surface   = "#1c1b20",
+  surface2  = "#0e0d13",
+  focus     = "#c8bfff",
+  focus_fg  = "#30285f",
+  subtle    = "#c9c5d0",
+  text      = "#e5e1e9",
 }
 
 ---------------------------------------------------------------------
@@ -50,8 +50,8 @@ local C = {
 ---------------------------------------------------------------------
 vim.api.nvim_set_hl(0, "Normal", { bg = C.bg, fg = C.text })
 vim.api.nvim_set_hl(0, "Visual", {
-  bg = "#384d13",
-  fg = "#d1eca0",
+  bg = "#473f77",
+  fg = "#e5deff",
 })
 
 vim.api.nvim_set_hl(0, "LineNr", { fg = C.subtle })
@@ -60,16 +60,16 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = C.focus, bold = true })
 ---------------------------------------------------------------------
 -- Treesitter (modern capture groups)
 ---------------------------------------------------------------------
-set_hl({ "@comment", "Comment" }, { fg = "#a0d0c9", italic = true })
-set_hl({ "@function", "Function" }, { fg = "#b5d087" })
-set_hl({ "@method" }, { fg = "#1f4e4a" })
+set_hl({ "@comment", "Comment" }, { fg = "#ecb8ce", italic = true })
+set_hl({ "@function", "Function" }, { fg = "#c8bfff" })
+set_hl({ "@method" }, { fg = "#613b4d" })
 vim.api.nvim_set_hl(0, "Keyword", { fg = C.focus, bold = true })
 
 ---------------------------------------------------------------------
 -- Floats
 ---------------------------------------------------------------------
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = C.bg, fg = C.text })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = C.bg, fg = "#8f9285" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = C.bg, fg = "#928f99" })
 
 ---------------------------------------------------------------------
 -- Telescope
@@ -79,8 +79,8 @@ vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = C.surface, fg = C.subtle 
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = C.surface, fg = C.focus })
 vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { bg = C.surface, fg = C.focus })
 vim.api.nvim_set_hl(0, "TelescopeSelection", {
-  bg = "#384d13",
-  fg = "#d1eca0",
+  bg = "#473f77",
+  fg = "#e5deff",
 })
 vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = C.focus })
 
@@ -88,7 +88,7 @@ vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = C.focus })
 -- Lazy & Mason
 ---------------------------------------------------------------------
 set_hl({ "LazyNormal", "MasonNormal" }, { bg = C.bg, fg = C.text })
-vim.api.nvim_set_hl(0, "LazyBorder", { bg = C.bg, fg = "#8f9285" })
+vim.api.nvim_set_hl(0, "LazyBorder", { bg = C.bg, fg = "#928f99" })
 
 set_hl({
   "LazyHeader",
@@ -97,8 +97,8 @@ set_hl({
   "MasonTitle",
   "MasonInstalled",
 }, {
-  bg = "#384d13",
-  fg = "#d1eca0",
+  bg = "#473f77",
+  fg = "#e5deff",
 })
 
 ---------------------------------------------------------------------
@@ -113,8 +113,8 @@ vim.api.nvim_set_hl(0, "lualine_a_normal", {
 })
 
 vim.api.nvim_set_hl(0, "lualine_a_insert", {
-  bg = "#c1caab",
-  fg = "#2b331d",
+  bg = "#c9c3dc",
+  fg = "#312e41",
   bold = true,
 })
 
@@ -152,3 +152,4 @@ vim.api.nvim_set_hl(0, "MsgArea", {
   bg = C.surface2,
   fg = C.focus,
 })
+
