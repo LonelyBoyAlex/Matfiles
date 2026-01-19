@@ -1,0 +1,31 @@
+# Autostart apps
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id picom -b
+exec ~/X11Scripts/wallpaper.sh
+exec dunst
+exec_always --no-startup-id pgrep -x polybar >/dev/null || polybar -c ~/.config/polybar/configNew.ini &
+exec --no-startup-id xss-lock --transfer-sleep-lock --betterlockscreen --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id udiskie --tray
+set $refresh_i3status killall -SIGUSR1 i3status
+
+
+## old one below
+#exec --no-startup-id eval "$(dbus-launch --sh-syntax --exit-with-session)"
+#exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY DBUS_SESSION_BUS_ADDRESS XDG_RUNTIME_DIR
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id dex --autostart --environment i3
+#exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id picom -b
+#exec ~/X11Scripts/wallpaper.sh
+#exec --no-startup-id dunst
+#exec_always --no-startup-id pgrep -x polybar >/dev/null || polybar example &
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+#exec --no-startup-id nm-applet
+## The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+#set $refresh_i3status killall -SIGUSR1 i3status

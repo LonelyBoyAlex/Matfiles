@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Paths
+WALL="$(cat ~/.cache/wal/wal)"
+MODE="$(cat ~/.cache/mode)"  # 'light' or 'dark'
+
+# Available styles
+styles=("default" "mono" "fruit" "tonal")
+
+# Rofi prompt
+STYLE=$(printf "%s\n" "${styles[@]}" | rofi -config ~/HyprlandScripts/thewe.rasi -dmenu -p "Select wal style:")
+
+# Exit if no selection made
+[ -z "$STYLE" ] && exit
+
+# Base wal command
+CMD="wal -n -i \"$WALL\" "
+
+# Apply selected style
+case "$STYLE" in
+    mono)
+        eval $CMD --saturate 0.1 --contrast 2.0
+        ;;
+    fruit)
+        eval $CMD --saturate 1.8 --contrast 2.0 --backend fast_colortheif  
+        ;;
+    tonal)
+        eval $CMD --saturate 0.6 --contrast 1.5 --backend haishoku
+        ;;
+    *)
+        eval $CMD
+        ;;
+esac
+
+# Optional: trigger reloads (waybar, rofi, etc.)
+

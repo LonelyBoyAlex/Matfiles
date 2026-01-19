@@ -1,0 +1,25 @@
+layout {
+  focus-ring {
+    active-color "{{ colors.primary_container.default.hex }}ff"
+    inactive-color "{{ colors.background.default.hex }}ff"
+  }
+
+  border {
+    active-color "{{ colors.on_primary.default.hex }}"
+    inactive-color "{{ colors.surface.default.hex }}"
+    urgent-color "{{ colors.error.default.hex }}"
+  }
+
+  shadow {
+    color "{{ colors.shadow.default.hex }}"
+  }
+
+  tab-indicator {
+    active-color "{{ colors.primary.default.hex }}"
+    inactive-color "{{ colors.primary.default.hex }}55"
+  }
+
+  insert-hint {
+    color "{{ colors.surface.default.hex }}22"
+  }
+}

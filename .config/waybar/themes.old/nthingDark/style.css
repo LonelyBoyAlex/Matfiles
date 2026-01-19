@@ -1,0 +1,156 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Firacode Nerd Font";
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#waybar {
+    background: alpha(@foreground, 0);
+    /* color:@color8; */
+    color: @foreground;
+}
+
+.modules-left,
+#rightpill,
+#mpris {
+    background: alpha(@background, 0.75);
+    border-radius: 1.5em;
+    padding: .05em 1em;
+}
+
+#expand {
+    /* background: @foreground; */
+    background: alpha(@background, 0.75);
+    border-radius: 1.5em;
+    padding: .05em .8em;
+    margin-right: 0.3em;
+}
+
+#mpris {
+    background: transparent;
+    margin-left: 1em;
+}
+
+/* icons fontsize*/
+#custom-overview,
+#custom-appmenu,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#idle_inhibitor,
+#custom-notification,
+#custom-logout{
+    font-size: 20px;
+    margin: 0px 16px;
+}
+
+#idle_inhibitor.activated{
+    color: @color3;
+}
+
+/*taskbar settings*/
+
+#workspaces,
+#taskbar button {
+    box-shadow: none;
+    background: alpha(@background, 0.75);
+    /* background: @foreground; */
+    border-radius: 1.5em;
+    padding: .05em .5em;
+    margin: 0px 4px;
+}
+
+#taskbar button.active {
+    background: alpha(@background,0.35);
+    transition: all 0.2s ease-in;
+    border-radius: 12px;
+    padding-left:1em;
+    padding-right:1em;
+}
+
+#taskbar button:hover {
+    background: @color3;
+    color: @foreground;
+    transition: all 0.2s ease-out;
+}
+
+#custom-overview {
+    margin-right: 1em;
+}
+
+/* sliders*/
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: transparent;
+    border: none;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 100px;
+    min-height: 18px;
+    border-radius: 1.5em;
+    background: alpha(@foreground,0.25);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 1.5em;
+    background-color: @color9;
+}
+
+#custom-appmenu {
+    font-size: 28px;
+    background: alpha(@background, 0.75);
+    /* background: @foreground; */
+    border-radius: 1.5em;
+    padding: 0px 0.4em 0px 0.8em;
+    margin: 0px 4px;
+}
+
+#custom-notification {
+    font-size: 22px;
+    background: alpha(@background, 0.75);
+    border-radius: 1.5em;
+    margin-right:0em;
+    margin-left:0.2em;
+    padding-left:0.2em;
+    padding-right:0.2em;
+}
+
+#workspaces button {
+    color: @foreground;
+}
+
+#workspaces button.empty {
+    color: alpha(@foreground, 0.5);
+}
+
+#workspaces button:hover {
+    background: alpha(@foreground, 0.5);
+    color: @color9;
+    border-radius: 1.5em;
+}
+
+#workspaces button.active {
+    background: @color9;
+    border-radius: 100em;
+    padding: 0px 8px 0px 9px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s cubic-bezier(0.3, 0, 0, 1);
+}
+
+#custom-spacer {
+    margin: 0px 6px;
+    padding: 0px 6px;
+}
+
+#custom-logout{
+    margin-right:0.5em;
+}

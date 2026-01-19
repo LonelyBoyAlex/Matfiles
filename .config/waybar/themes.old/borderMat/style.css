@@ -1,0 +1,287 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font Propo","Hurmit Nerd Font";
+    font-weight: bold; 
+    font-size: 16px;
+}
+
+#custom-gpuinfo,#memory,#custom-notification,
+#custom-menu,#window,#clock {
+    color: @foreground; 
+}
+
+window#waybar {
+    background: alpha(@background,.15);
+    border: 2px solid @color2;
+    border-radius: 24px;
+}
+
+#window{
+    color:@background;
+    background: alpha(@foreground,0.25);
+    margin: 4px 0px;
+    margin-left:.5rem;
+      border-radius: 24px 0px 42px 24px;
+      padding: 0rem 1rem;
+}
+
+#clock,#custom-datee {
+    font-weight: 900;
+    /*background: linear-gradient(to right,@color2,@color3);*/
+    background: alpha(@background,0.25);
+    padding: 0px 14px;
+    margin: 6px 0px;
+    border-radius:24px;
+}
+
+#custom-datee {
+    border-radius: 0px 24px;
+}
+
+tooltip {
+    background: @background; 
+    color: @foreground; 
+    font-size: 14px;
+    border-radius: 12px;
+    border: 2px solid @color6;
+    margin: 6px;
+}
+
+#workspaces {
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    margin: 0px .5rem;
+}
+
+#workspaces button {
+    background:alpha(@foreground,0.25);
+    color:transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 24px;
+    transition:all 0.2s ease-out;
+    margin: 12px 2px;
+    padding: 0px;
+}
+
+#workspaces button:not(.empty) {
+    background:alpha(@foreground,0.25);
+    color: alpha(@background,1); 
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 24px;
+    transition:all 0.2s ease-out;
+    margin: 12px 2px;
+    padding: 0px;
+ /*   padding-left: 2px;
+    padding-right: 2px;*/
+}
+
+#custom-empty_workspace {
+    background:alpha(@foreground,0); 
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 24px;
+    transition:all 0.2s ease;
+    margin-right:0.5rem;
+}
+#workspaces button.active {
+    background: alpha(@background,0.5);
+    font-weight:900;
+    font-size:24px;
+    color: @color2; 
+    margin: 8px 2px;
+    padding-right:1em;
+    padding-left:1em;
+    transition: all 0.2s ease-out;
+}
+
+#workspaces button:hover {
+    background: none;
+    box-shadow: inherit;
+    color: @color6; 
+}
+
+#workspaces button.focused {
+    background-color: @color2; 
+}
+
+#idle_inhibitor {
+      color: @background; 
+      background: alpha(@color2,1);
+      border-radius: 24px 0px 24px 24px;
+      padding : 0rem 1rem;
+}
+
+#idle_inhibitor.activated {
+      color:@color0;
+}
+#cpu {
+    color: @color6; 
+    margin: 6px;
+}
+
+#memory{
+    margin: 6px;
+}
+
+#mpris {
+    color: @foreground; 
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    padding:2px 8px;
+}
+
+ @keyframes blink {
+    to {
+        color: @color9;
+    }
+}
+
+#network {
+    color: @foreground; 
+}
+
+#custom-menu {
+    margin: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+#upower#headset,
+#upower {
+    color: @color5; 
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    min-width: 1px;
+    min-height: 2px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 20px;
+    border-radius: 0px 24px;
+    background: @color0; 
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 0px 24px;
+    background: @color2; 
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @foreground; 
+}
+
+#battery.critical:not(.charging) {
+    color: @color9; 
+}
+
+#backlight,#pulseaudio{
+  color: @color6;
+} 
+
+#custom-expand {
+    min-width: 25px;
+    color: @foreground; 
+}
+
+#custom-wallchange{
+    color: @color4; 
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 12px;
+}
+
+modules-center{
+    background:alpha(@background,0.35);
+    border-radius:24px;
+    margin:2px;
+    padding-left:2px;
+    padding-right:2px;
+}
+.modules-right,.modules-left{
+    background:alpha(@background,0.35);
+    border-radius:24px;
+    margin:2px;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+#custom-appmenu {
+    font-weight: 900;
+    color:@background;
+    font-size: 24px;
+    background: @color2;
+    padding: 0px 32px 0px 18px;
+    margin: 0px;
+    border-radius: 24px 0px 42px 24px;
+}
+
+#custom-logout {
+    font-weight: 900;
+    font-size: 24px;
+    color:@background;
+    background: @color2;
+    padding: 0px 18px 0px 32px;
+    margin: 0px;
+    border-radius: 0px 24px 24px 42px;
+}
+
+#custom-empty_workspace,#idle_inhibitor,#network,#pulseaudio,#backlight,#upower,#custom-notification,#memory,#cpu{
+  font-size: 20px;
+}
+
+/*#backlight,#battery,#pulseaudio,#network,#cpu,#memory,#wallchange#custom-notification{
+    margin:4px;
+}*/
+
+#custom-notification{
+      background: alpha(@color2,1);
+      color:@background;
+      border-radius: 0px 24px 24px 24px;
+      padding : 0rem 1.15rem;
+}
+
+window#waybar.empty #window{
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+#upower { 
+      padding-right: 0.5rem;
+}
+
+.modules-left{ 
+      background: alpha(@color2,0.5);
+      border-radius: 24px 0px 42px 24px;
+      padding: 0rem 1rem 0rem 0rem;
+}
+
+.modules-right{ 
+      background: alpha(@color2,0.5);
+      border-radius: 0px 24px 24px 42px;
+      padding: 0rem 0rem 0rem 1rem;
+}
+
+.modules-center { 
+      background: alpha(@color2,0.5);
+      border-radius: 50px;
+      padding: 0rem;
+}

@@ -1,0 +1,17 @@
+; (defwidget logout []
+  ;     (button :class "logout"
+    ;         ; :onclick "pidof fuzzel >/dev/null && killall fuzzel || ~/HyprlandScripts/fuzzelPowermenu.sh"
+    ;         (label :text "󰤆")
+  ;     )
+; )
+
+(defwidget logout []
+  (eventbox
+    :onhover "eww get ispowermenu | grep true &>/dev/null && (eww close powermenu && eww update isrevealedpower=false) || (eww open powermenu && eww update isrevealedpower=true)"
+    ; :onhoverlost "(eww close powermenu && eww update isrevealedpower=false)"
+    (button :class "logout"
+      :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
+      (label :text "󰤆")
+    )
+  )
+)

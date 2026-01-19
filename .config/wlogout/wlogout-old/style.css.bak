@@ -1,0 +1,106 @@
+/* Import the Wal colors file */
+@import url("/home/papa/.cache/wal/colors-waybar.css");
+
+* {
+    background-color: transparent;
+    font-size: 16px; /* Set a default font size */
+    font-family: hermit; /* Use Hurmit font */
+}
+
+
+button {
+    color: @foreground; /* White text for contrast */
+    /* background: linear-gradient(135deg, #4A4E69, #9A8C98);     */
+    background: @background;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    border: 1px solid white;
+    border-radius: 12px; /* Slightly more rounded corners */
+    padding: 12px 20px; /* Add some padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    animation: fadeIn 0.5s ease-out; /* Apply fade-in animation */
+    transition: background 0.3s ease; /* Smooth transitions */
+}
+
+
+button:hover {
+    background: rgba(25, 25, 25, 0.2); /* Light hover effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    border:none;
+}
+
+button:focus {
+    outline: none; /* Remove default outline */
+    background: rgba(22, 22, 22, 0.2); /* Light hover effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    animation: scaleUp 1s ease; /* Scale effect on focus */
+    border:6px inset white;
+}
+
+
+/* *:not(button){
+    background-image: url("/home/papa/Downloads/dark-stone.jpg");
+} */
+
+/* Specific button styles */
+#lock, #logout, #suspend, #shutdown, #hibernate, #reboot {
+    background-size: 25%; 
+    background-repeat: no-repeat;
+    padding: 2em; /* Space for icons */
+    margin: 2em; /* Space between buttons */
+    background-position: center 38%; /* Position icon for all buttons */
+}
+
+#lock {
+    background-image: url("$HOME/.config/wlogout/icons/lock_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/lock.png"), 
+    url("/usr/local/share/wlogout/icons/lock.png");
+}
+
+#logout {
+    background-image: url("$HOME/.config/wlogout/icons/logout_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/logout.png"), 
+    url("/usr/local/share/wlogout/icons/logout.png");
+}
+
+#suspend {
+    background-image: url("$HOME/.config/wlogout/icons/suspend_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/suspend.png"), 
+    url("/usr/local/share/wlogout/icons/suspend.png");
+}
+
+#shutdown {
+    background-image: url("$HOME/.config/wlogout/icons/shutdown_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/shutdown.png"), 
+    url("/usr/local/share/wlogout/icons/shutdown.png");
+}
+
+#hibernate {
+    background-image: url("$HOME/.config/wlogout/icons/hibernate_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/hibernate.png"), 
+    url("/usr/local/share/wlogout/icons/hibernate.png");
+}
+
+#reboot {
+    background-image: url("$HOME/.config/wlogout/icons/reboot_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/reboot.png"), 
+    url("/usr/local/share/wlogout/icons/reboot.png");
+}
+
+/* Define keyframe animations */
+/* @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0.8; 
+    }
+    to {
+        opacity: 1;
+    }
+} */

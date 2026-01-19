@@ -1,0 +1,135 @@
+//@import "~/.cache/wal/colors-rofi-dark.rasi"
+@import "~/.config/rofi/colors.rasi"
+
+* {
+  font: "JetBrainsMono Nerd Font 12";
+  spacing: 0;
+  padding: 10px;
+  background:none;
+  border-color:transparent;
+  background:transparent;
+  background-color:transparent;
+  color:transparent;
+}
+
+window {
+  width: 71em;
+  height: 14em;
+  border: 2px;
+  border-color: @primary;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+mainbox {
+  orientation: vertical;
+  children: [listview];
+  border-radius: 12px;
+  padding:0px;
+  background-color: transparent;
+}
+
+listview {
+  orientation: horizontal;
+  columns:8;
+  lines: 1;
+  spacing: 20;
+  fixed-height: false;
+  scrollbar: false;
+  background-color: transparent;
+}
+
+element {
+  padding: 0px;
+  border: none; //2px;
+  border-radius: 12px;
+  border-color: @primary;
+  background:none;
+  orientation: vertical;
+  spacing: 0;
+  children: [element-icon, element-text];
+  background-color:transparent;
+  background:none;
+}
+
+element-icon {
+  size: 200px;
+  border-radius:12px;
+  background-color: transparent;
+  background:none;
+  color:transparent;
+}
+
+element-icon.selected {
+  background-color:transparent;
+  background:none;
+  border-radius: 12px 12px 0px 0px;
+  border: 8px 8px 0px 8px solid;
+  border-color:@on-primary-container;
+}
+
+element.selected {
+  border: 2px solid;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 2px ;
+  background:none;
+  background-color:@on-primary-container;
+  shadow-color:@on-primary;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  background-color: transparent;
+  background:none;
+  color:@on-primary-container;
+}
+element-text.selected { 
+  background-color:@on-primary-container;
+  color:@surface;
+  text-shadow:2px 2px 2px;
+}
+
+element.alternate.normal {
+  background-color: transparent;
+  background:none;
+}
+
+
+
+/*---------------------------------*/
+element normal.normal {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+    text-color:       @on-primary-container;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color: @error;
+}
+
+element normal.active {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    background-color: transparent;
+    text-color: @surface;
+}
+
+element selected.urgent {
+    background-color: transparent;
+    text-color: @on-primary-container;
+}
+
+element selected.active {
+    background-color: transparent;
+    text-color: @primary;
+}
+

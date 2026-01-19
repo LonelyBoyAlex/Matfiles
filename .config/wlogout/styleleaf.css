@@ -1,0 +1,109 @@
+/* Import the Wal colors file */
+@import url("colors.css");
+
+* {
+    background-color: transparent;
+    font-family: Hermit Nerd Font Mono; /* Use Hurmit font */
+}
+
+/*
+button {
+    color: @foreground; 
+    background: @background;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+    border: 1px solid white;
+    border-radius: 0px; 
+    padding: 12px 20px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    animation: fadeIn 0.5s ease-out; 
+    transition: background 0.3s ease;
+}
+
+
+button:hover,button:focus {
+    background: rgba(25, 25, 25, 0.2); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+    border:none;
+    animation: scaleUp 1s ease; 
+    border-radius: 0px;
+}
+*/
+
+#Lock, #Logout, #Shutdown, #Reboot {
+    background:alpha(@background,0.25);
+    background-size: 25%; 
+    background-repeat: no-repeat;
+    border:4px solid;
+    border-color: @color5;
+    background-position: center; /* Position icon for all buttons */
+}
+
+#Lock {
+    background-image: url("$HOME/.config/wlogout/icons/lock_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/lock.png"), 
+    url("/usr/local/share/wlogout/icons/lock.png");
+    border-radius: 42px 0px 0px 0px;
+}
+#Lock:hover,#Logout:hover,
+#Shutdown:hover,#Reboot:hover,
+#Cancel:hover,#Lock:focus,#Logout:focus,
+#Shutdown:focus,#Reboot:focus,
+#Cancel:focus{
+    background-image: none;
+    background-repeat: no-repeat;
+    background: alpha(@color3,0.25);
+    font-size : 32pt;
+    padding:2.5em;
+    margin:.1em;
+}
+#Logout {
+    background-image: url("$HOME/.config/wlogout/icons/logout_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/logout.png"), 
+    url("/usr/local/share/wlogout/icons/logout.png");
+    border-radius: 0px 0px 0px 42px;
+}
+
+#Shutdown {
+    background-image: url("$HOME/.config/wlogout/icons/shutdown_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/shutdown.png"), 
+    url("/usr/local/share/wlogout/icons/shutdown.png");
+    border-radius: 0px 42px 0px 0px;
+}
+
+#Cancel {
+    margin: 2em;
+    padding:1rem;
+    background: inherit;
+    border-radius: 42px;
+}
+
+#Reboot {
+    background-image: url("$HOME/.config/wlogout/icons/reboot_#B0B4E7.png"),
+    url("/usr/share/wlogout/icons/reboot.png"), 
+    url("/usr/local/share/wlogout/icons/reboot.png");
+    border-radius: 0px 0px 42px 0px;
+}
+
+/* Define keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/*
+@keyframes scaleUp {
+    from {
+        opacity: 0.8; 
+    }
+    to {
+        opacity: 1;
+    }
+} */
+#blank {
+    background: blue;
+    color: transparent;
+    border: none;
+}

@@ -1,0 +1,86 @@
+.notiPanel {
+  background:$surf;
+  border-radius:12px;
+}
+
+.DNDbox {
+  border-radius:12px;
+}
+
+.notiftext {
+  min-height:32px;
+  font-size:24px;
+  padding:16px 16px 8px 16px;
+  color:$accent;
+  border-bottom:2px solid $accent;
+  margin-bottom: 8px;
+}
+
+.headingtext,.checker,.cleartext {
+  min-height:24px;
+  font-size:18px;
+    padding:16px;
+  background:darken($surf,10%);
+}
+
+.headingtext {
+  border-radius:12px 0px 0px 12px;
+  margin-left:0.5rem;
+}
+
+.checker {
+  border-radius:0px 12px 12px 0px;
+}
+
+.cleartext {
+  border-radius:12px;
+  margin-right:0.5rem;
+  transition:all 0.2s ease-out;
+}
+.cleartext:hover {
+  background-color:darken($surf,7.5%);
+  border:2px solid $fg;
+  padding:14px;
+  color:lighten($surf,10%);
+  transition:all 0.2s ease-out;
+}
+
+.notibox,.controlgridbox {
+  background-color:lighten($surf,5%);
+  min-height:40rem;
+  margin:16px 8px;
+  border-radius:12px;
+}
+
+.controlgridbox { 
+  min-height:8rem;
+}
+
+.gridbtn {
+  background-color:darken($surf,7.5%);
+  margin:8px;
+  border-radius:12px;
+  &:hover {
+  background-color:darken($surf,2.5%);
+  }
+}
+
+
+
+
+
+.end-history-box {
+  background: $surf;
+  border-radius: 12px;
+  margin: 4px 0px;
+  padding: 16px;
+  
+  &:hover { background: darken($surf, 10%); }
+}
+
+.end-history-title-bar {
+  .end-default-notification-appname {
+    // @extend .notiftext;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,6 @@
+(defwidget battery []
+  (box :orientation "v"
+    (label :text "󰁹")
+    ; (label :text "{EWW_BATTERY[BAT0].capacity}")
+  )
+)

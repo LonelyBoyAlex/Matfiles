@@ -1,0 +1,25 @@
+# ~/.config/swayidle/config
+
+#swayidle -w \
+#    timeout 120 'brightnessctl -s set 10%' \
+#    resume 'brightnessctl -r' \
+#    \
+#    timeout 180 'swaylock -f -c 000000' \
+#    \
+#    timeout 300 'swaymsg "output * dpms off"' \
+#    resume 'swaymsg "output * dpms on"' \
+#    \
+#    before-sleep 'swaylock -f -c 000000' \
+#    \
+#    lock 'swaylock -f -c 000000' \
+#    \
+#    # Lid close suspend (systemd handles it)
+#    # swayidle can listen too:
+#    idlehint 300 \
+#    \
+#    \
+#    # Optional: listen for lid switch
+#    seat seat0 idle_inhibitor disabled \
+#    \
+#    event "before-sleep" "swaylock -f -c 000000"
+###

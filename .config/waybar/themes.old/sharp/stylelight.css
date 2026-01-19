@@ -1,0 +1,411 @@
+@import url("/home/papa/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font";
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+#custom-notification {
+    font-family: "Hurmit Nerd Font";
+    font-size: 20px;
+    color: @foreground; /* #c7c7c8 */
+    margin: 2px 0;
+}
+
+window#waybar {
+    /*background:transparent;*/
+    background: @color1;
+    border: 2px solid @background; /* #C3A47C */
+    border-radius: 12px;
+    opacity : 1;
+}
+
+#window {
+    color: @foreground;
+    background: @color2;
+    border-radius:60px;
+    opacity: 1;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "Hurmit Nerd Font";
+    margin: 6px 6px;
+    padding: 0px 15px;
+}
+
+tooltip {
+    background: @background; /* #201f24 */
+    color: @foreground; /* #c7c7c8 */
+    font-size: 13px;
+    border-radius: 12px;
+    border: 2px solid @color6;
+    margin: 6px;
+
+}
+
+#workspaces {
+    background: rgba(40, 40, 40, 0.0);
+    color: @color5; /* #C7B58F */
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    padding: 2px 4px ;
+}
+
+#workspaces button {
+    padding: 1px 5px;
+    background-color: transparent;
+    color: @foreground; /* #c7c7c8 */
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 12px;
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#workspaces button.active {
+    background: @foreground;
+    color: @color11; /* #C3A47C */
+    transition: all 0.3s ease;
+    margin: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+    box-shadow: inherit;
+    color: @color6; /* #BDC3B1 */
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.focused {
+    background-color: @color2; /* #A09075 */
+}
+
+#taskbar button {
+    box-shadow: none;
+    text-shadow: none;
+    font-size: 4px;
+    padding: 0px;
+    border-radius: 9px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: @color5; /* #C7B58F */
+}
+
+#taskbar button.active {
+    background: @color6; /* #BDC3B1 */
+    color: @foreground; 
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    min-height: 9px; 
+}
+
+#taskbar button:hover {
+    background: @color3; /* #C3A47C */
+    color: @foreground; 
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#tray menu * {
+    min-height: 16px;
+    font-weight: bold;
+    font-size: 13px;
+    color: @foreground; /* #c7c7c8 */
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#custom-spacer {
+    opacity: 0.8;
+}
+
+#custom-smallspacer {
+    opacity: 0.8;
+}
+
+#custom-mouse {
+    font-size: 14px;
+    margin-bottom: 6px;
+    background: @background; /* #201f24 */
+}
+
+#custom-power {
+    font-size: 15px;
+    color: @foreground; /* #c7c7c8 */
+    background: rgba(40, 40, 40, 0.9);
+    margin: 6px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#backlight {
+    color: @color6; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    font-weight: normal;
+    font-size: 19px;
+    margin: 1px 0;
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+#bluetooth,
+#custom-cliphist {
+    color: @foreground; /* #c7c7c8 */
+    background: @background; /* #201f24 */
+    opacity: 1;
+    margin: 4px 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#battery {
+    font-weight: normal;
+    font-size: 22px;
+    color: @color4; /* #A9A793 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#idle_inhibitor {
+    color: @color6; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 4px 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#clock {
+    color: @foreground; /* #c7c7c8 */
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "Hurmit Nerd Font";
+    /* background: rgba(40, 40, 40, 0.0); */
+    background: @color2;
+    opacity: 1;
+    margin: 6px 6px;
+    padding: 0px 15px;
+    border-radius:60px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    /* border: 2px solid @color3; */
+    /* border: none; */
+}
+
+#pulseaudio {
+    font-weight: normal;
+    font-size: 18px;
+    color: @color6; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#cpu {
+    font-weight: normal;
+    font-size: 22px;
+    color: @color2; /* #A09075 */
+}
+
+#custom-gpuinfo,
+#custom-keybindhint,
+#language,
+#memory {
+    font-weight: normal;
+    font-size: 22px;
+    color: @foreground; /* #c7c7c8 */
+}
+
+#mpris {
+    color: @foreground; /* #c7c7c8 */
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* @keyframes blink {
+    to {
+        color: @color9;
+    }
+}
+*/
+
+#network {
+    color: @foreground; /* #c7c7c8 */
+    font-weight: normal;
+    font-size: 19px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+#custom-notifications,
+#custom-spotify,
+#taskbar,
+#custom-theme,
+#custom-menu {
+    color: @foreground; /* #c7c7c8 */
+    background: rgba(40, 40, 40, 0.0);
+    margin: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    opacity: 0.1;
+}
+
+#tray,
+#custom-updates,
+#custom-wallchange,
+#custom-wbar,
+#window {
+    color: @foreground; /* #c7c7c8 */
+    /* font-family: "Martian Mono"; */
+}
+
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#cava,
+#upower#headset,
+#upower {
+    color: @color5; /* #C7B58F */
+}
+
+#mpris {
+    font-weight: bold;
+}
+
+#custom-rr_end {
+    font-weight: normal;
+    color: @foreground; /* #c7c7c8 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: @foreground; /* #c7c7c8 */
+    background-color: transparent;
+    box-shadow: none;
+    margin-right: 7px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin-top: -3px;
+    min-width: 90px;
+    min-height: 10px;
+    margin-bottom: -4px;
+    border-radius: 8px;
+    background: @color0; /* #201f24 */
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 8px;
+    background-color: @color6; /* #BDC3B1 */
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @foreground; /* #c7c7c8 */
+}
+
+#battery.critical:not(.charging) {
+    color: @color9; /* #7C847A */
+}
+
+#taskbar {
+    padding: 1px;
+}
+
+#custom-r_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-l_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-rr_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-expand {
+    min-width: 25px;
+    color: @foreground; /* #c7c7c8 */
+    font-size: 16px;
+}
+
+#group-minimized {
+    border-left: solid;
+    border-left-width: 0.5px;
+}
+
+/*#custom-logout {
+    font-weight: 900;
+    background: @color2;
+    font-size: 20px;
+    padding-right: 2px;
+    padding-left: 8px;
+    margin:4px 0px;
+    border-radius:12px;
+}*/
+
+#custom-appmenu,#custom-logout {
+    font-weight: 900;
+    color: @color2;
+    background: @color7;
+    font-size: 20px;
+    padding-left: 12px;
+    padding-right: 6px;
+    margin-top:6px;
+    margin-bottom:6px;
+    margin-left:6px;
+    margin-right:4px;
+    border-radius:60px;
+}

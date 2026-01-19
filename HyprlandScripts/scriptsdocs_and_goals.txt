@@ -1,0 +1,3 @@
+(done)  + make wlogout change colors with pywal
++ make rofi look good (use external script maybe?)
++ delete not in use scripts and dejunk the setup

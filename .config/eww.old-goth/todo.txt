@@ -1,0 +1,22 @@
+[DONE]  {workspaces module 
+          + scripts for 
+              -> get workspaces
+              -> get active ws
+              -> change ws
+          + modules 
+              -> ws -> listener from get ws .sh
+                    -> }
+
+[DONE]  idle_inhibitor module
+        add hyprland support to idle_inhibitor
+
+[DONE]  expanding/module for brightness&volume
+
+tray submenu styling (if possible)
+finish notification module
+
+battery module 
+
+music module
+
+active window module

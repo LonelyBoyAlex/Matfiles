@@ -1,0 +1,41 @@
+; (defvar applist_apps "[]")
+(defvar query "")
+(deflisten applist_apps :initial "[]" "bash ~/.config/eww/scripts/app-list.sh")
+
+
+(defvar islauncher true)
+(defwindow applist []
+    :stacking "overlay"
+    :monitor "0"
+    :focusable "true"
+    :exclusive "false"
+    :geometry (geometry 
+        :anchor "top center"
+        :width "25%" 
+        :height "60%"
+    )
+    :class "applistwindow"
+    :namespace "eww_applist"
+    (applist)
+)
+(defwidget applist []
+    (box :orientation "v" 
+         :class "launcherbox"
+         :space-evenly "false"
+        (box :class "inputbar" 
+          (input
+            :value {query}
+            :onchange "eww update query='{}'"
+            :onaccept "eww update query='' && eww close applist"
+            )
+        )
+        (scroll :class "apps-scroll"
+            (box :class "apps-grid" :orientation "v"
+                (for app in applist_apps
+            (button :class "app-entry"
+                    :onclick "bash -c '${app.exec}' &"
+                    (label :text "${app.name}")))
+            )
+        )
+    )
+) 

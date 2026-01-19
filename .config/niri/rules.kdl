@@ -1,0 +1,94 @@
+// ++++++++++++++--> RULES <--++++++++++++++++++++
+window-rule {
+//sets 0px radius on all windows
+geometry-corner-radius 0
+clip-to-geometry true
+}
+
+window-rule {
+match app-id=r#"zen$"# title="^Picture-in-Picture$"
+open-floating true
+}
+
+window-rule {
+match title="^Save As$"
+open-floating true
+default-window-height { proportion 0.75 ; }
+default-floating-position x=0 y=0
+}
+
+window-rule {
+match title="Select a Wallpaper"
+match app-id="xdg-desktop-portal-gtk"
+match app-id="Timeshift-gtk"
+open-floating true
+}
+
+window-rule {
+match app-id=r#"kitty$"#
+//geometry-corner-radius 8
+opacity 1.0
+shadow {
+	 on
+	}
+}
+
+window-rule {
+match app-id="zen"
+//geometry-corner-radius 8
+opacity 1.0
+shadow {
+	 on
+	}
+}
+
+window-rule {
+match app-id=r#"code-oss$"#
+match is-active=true
+//geometry-corner-radius 8
+opacity 1.0
+shadow {
+	 off
+	}
+}
+
+layer-rule {
+match namespace="^eww_powermenu$"
+shadow {
+off
+}
+opacity 0.99
+//geometry-corner-radius 8
+}
+
+layer-rule {
+match namespace="gtk-layer-shell"
+opacity 1.0
+shadow {
+off
+}
+//geometry-corner-radius 8
+place-within-backdrop false
+}
+
+layer-rule {
+match namespace="wallpaper"
+place-within-backdrop true
+}
+
+layer-rule {
+//match namespace="rofi"
+match namespace="^launcher$"
+opacity 0.99
+shadow {
+on
+softness 10
+spread 5
+offset x=0 y=0
+draw-behind-window true
+color "#000000aa"
+}
+//geometry-corner-radius 8
+place-within-backdrop true
+}
+

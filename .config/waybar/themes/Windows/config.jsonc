@@ -1,0 +1,424 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "mod": "dock",
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  // -----------  layout --------- //
+  "modules-left": [
+    "custom/smallspacer",
+    "custom/appmenu",
+    "group/group3",
+    // "custom/empty_workspace",
+    "mpris"
+  ],
+  "modules-center": [
+    "wlr/taskbar"
+  ],
+  "modules-right": [
+    //   "custom/smallspacer",
+    "group/group2",
+    "custom/smallspacer",
+    //   "memory",
+    //   "cpu",
+    //   "custom/logout",
+    "group/group1"
+  ],
+  // -----------  modules --------- //
+  "group/group1": {
+    "orientation": "horizontal",
+    "modules": [
+      "idle_inhibitor",
+      "group/clock",
+      "custom/notification"
+    ]
+  },
+  "group/group2": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/expand",
+      "group/expand-bat",
+      "group/expand-Net",
+      "group/expand-audio",
+      "group/expand-light",
+    ]
+  },
+  "group/group3": {
+    "orientation": "horizontal",
+    "modules": [
+      //"group/window",
+      "hyprland/window",
+      "hyprland/workspaces",
+    ]
+  },
+  "custom/appmenu": {
+    //"format":"",
+    "format": "",
+    //"on-click": "pidof rofi >/dev/null && killall rofi || $HOME/HyprlandScripts/launcher.sh",
+    "on-click": "nwg-drawer",
+    "on-click-right": "pidof fuzzel >/dev/null && killall fuzzel || fuzzel --config .config/fuzzel/fuzzeledited.ini",
+    "tooltip": false,
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "rotate": 0,
+    "icon-size": 28,
+    // "icon-theme": "Tela-circle-standard",
+    //"icon-theme": "Numix-Circle",
+    "icon-theme": [
+      "besgnulinux-mono-black",
+      "Tela-circle-standard"
+    ],
+    "spacing": 2,
+    "active-first": false,
+    "sort-by-app-id": true,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-right": "close",
+    "ignore-list": [
+      "Youtube"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition",
+    },
+  },
+  "custom/empty_workspace": {
+    "format": "{}",
+    "exec": "WS=$(hyprctl activeworkspace | awk 'NR==1 {print $3}'); if hyprctl clients | awk '$1 == \"workspace:\" {print $2+0}' | grep -qx \"$WS\"; then echo '󰐗 '; else echo ''; fi",
+    "on-click": "hyprctl dispatch workspace empty",
+    "tooltip": false,
+    "interval": 1
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true,
+      //  "click-to-reveal": true
+    },
+    "modules": [
+      "custom/menu",
+      "tray",
+      "custom/spacer"
+    ],
+  },
+  "tray": {
+    "icon-size": 28,
+    "rotate": 0,
+    "spacing": 10,
+  },
+  "custom/menu": {
+    "format": "󰅃",
+    "tooltip": false,
+    "rotate": 90,
+  },
+  "group/expand-bat": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true,
+      "click-to-reveal": true,
+    },
+    "modules": [
+      //"battery",
+      "upower",
+      "upower/headset"
+    ],
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 40,
+      "critical": 30,
+    },
+    "format": "{icon}",
+    "rotate": 0,
+    "format-charging": "󱐋",
+    "format-plugged": "",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "interval": 10,
+  },
+  "upower": {
+    "format": " {}",
+    //"format-alt": "{} {percentage} [{time}]",
+    "format-alt": "{} [{time}]",
+    "tooltip": false,
+    "show-icon": true, //set to false if use battery module
+    "rotate": 0,
+    "tooltip-spacing": 20,
+    "format-charging": "󱐋 ",
+    "format-plugged": " ",
+    "format-icons": [
+      "󰂎 ",
+      "󰁺 ",
+      "󰁻 ",
+      "󰁼 ",
+      "󰁽 ",
+      "󰁾 ",
+      "󰁿 ",
+      "󰂀 ",
+      "󰂁 ",
+      "󰂂 ",
+      "󰁹 "
+    ]
+  },
+  "upower#headset": {
+    "format": " {percentage}",
+    "native-path": "/org/freedesktop/UPower/devices/headset_dev_A6_98_9A_0D_D3_49",
+    "show-icon": true,
+    "tooltip": false,
+  },
+  "group/expand-Net": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true
+    },
+    "modules": [
+      "network",
+      "custom/nettext"
+    ]
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": "{icon} ",
+    "format-icons": [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤥 ",
+      "󰤨 "
+    ],
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": " ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "/usr/local/bin/ags -t ControlPanel",
+    "interval": 2
+  },
+  "custom/nettext": {
+    "exec": "sh -c 'ssid=$(nmcli -t -f active,ssid dev wifi | awk -F: \"/^yes/ {print \\$2}\"); echo \"${ssid:-disconnected}\"'",
+    "interval": 5,
+    "tooltip": false
+  },
+  "group/expand-audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ],
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-muted": "󰓄 ",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        " ",
+        " ",
+        " ",
+        "󱄠 "
+      ]
+    }
+  },
+  "pulseaudio/slider": {
+    "min": 5,
+    "max": 100,
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 1
+  },
+  "group/expand-light": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "rotate": 0,
+    "format": "{icon}",
+    "format-icons": [
+      "󰃞 ",
+      "󰃝 ",
+      "󰃟 ",
+      "󰃠 "
+    ],
+    "scroll-step": 1,
+    "min-length": 2
+  },
+  "backlight/slider": {
+    "min": 5,
+    "max": 100,
+    "rotate": 0,
+    "device": "amdgpu_bl1",
+    "scroll-step": 1
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-icons": {
+      "activated": "󰥔",
+      "deactivated": ""
+    }
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    // "format": "{:%-I:%M %p\n%a, %b %d}",
+    "rotate": 0,
+    "on-click": "gnome-clocks",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "custom/date": {
+    "format": "{}",
+    "exec": "date '+%a, %b %d'",
+    "interval": 60
+  },
+  "group/clock": {
+    "orientation": "vertical",
+    "modules": [
+      "clock",
+      "custom/date"
+    ]
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "rotate": 0,
+    "format-icons": {
+      "email-notification": " <span foreground='white'><sup></sup></span>",
+      "chat-notification": "󱋊 <span foreground='white'><sup></sup></span>",
+      "warning-notification": "󱨪 <span foreground='yellow'><sup></sup></span>",
+      "error-notification": "󱨪 <span foreground='red'><sup></sup></span>",
+      "network-notification": "󱂇 <span foreground='white'><sup></sup></span>",
+      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+      "update-notification": "󰚰 <span foreground='white'><sup></sup></span>",
+      "music-notification": "󰝚 <span foreground='white'><sup></sup></span>",
+      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+      "none": " ",
+      "notification": "󰅸 ",
+      "dnd-notification": "󰅸 ",
+      "dnd-none": "󱏨 ",
+      "inhibited-notification": "󰅸 ",
+      "inhibited-none": "󰂜 ",
+      "dnd-inhibited-notification": "󰅸 ",
+      "dnd-inhibited-none": "󱏨 "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click-right": "swaync-client -d -sw",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
+  "custom/padd": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/smallspacer": {
+    "format": " "
+  },
+  "group/window": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/window",
+      "custom/closer"
+    ]
+  },
+  "custom/closer": {
+    "format": "{}",
+    "on-click": "hyprctl dispatch killactive",
+    "tooltip": false,
+    "exec": "WS=$(hyprctl activeworkspace | awk 'NR==1 {print $3}'); if hyprctl clients | awk '$1 == \"workspace:\" {print $2+0}' | grep -qx \"$WS\"; then echo '×'; else echo ''; fi",
+    "interval": 1,
+  },
+  "hyprland/window": {
+    "format": "<span  weight='bold'>{class}</span>",
+    "max-length": 120,
+    "icon": false,
+    "icon-size": 13,
+    "tooltip": true,
+    "tooltip-format": "right click to close",
+    "on-click-right": "hyprctl dispatch killactive"
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "active-only": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+    "max-length": 40,
+    "player-icons": {
+      "default": "     ",
+      "mpv": "🎵 ",
+    },
+    "status-icons": {
+      "paused": " ▶    ",
+    },
+    // "ignored-players": ["firefox"]
+  },
+}

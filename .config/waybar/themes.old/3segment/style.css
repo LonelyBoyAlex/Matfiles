@@ -1,0 +1,381 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font","Hermit Nerd Font","JetBrains Mono Nerd Font";
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+#custom-notification {
+    font-family: "Hurmit Nerd Font";
+    font-size: 20px;
+    /* color: @foreground; */
+    color:@color5;
+    margin: 2px 0;
+}
+
+window#waybar {
+    background: alpha(@background,0);
+    border: none;
+}
+
+#window {
+    color: @color6;
+    background: alpha(@background,0.25);
+    border-radius:0px;
+    margin:0px;
+    padding: 0px 14px 0px 4px;
+}
+
+tooltip {
+    background: @background; /* #201f24 */
+    color: @foreground; /* #c7c7c8 */
+    font-size: 13px;
+    border-radius: 12px;
+    border: 2px solid @color6;
+    margin: 6px;
+
+}
+
+#workspaces {
+    padding: 0px 8px 0px 0px;
+    background: alpha(@background,0.25);
+}
+#workspaces button {
+    all: unset;
+    padding: 0px 8px;
+    color: alpha(@foreground, .21);
+    transition: all 0.2s ease;
+}
+#workspaces button:hover {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: @color5;
+    border: none;
+    padding:0px 16px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+#workspaces button.empty {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
+}
+#workspaces button.empty:hover {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: @color5;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+#tray menu * {
+    min-height: 16px;
+    font-weight: bold;
+    font-size: 13px;
+    color: @foreground; /* #c7c7c8 */
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#custom-spacer {
+    opacity: 0.8;
+}
+
+#custom-smallspacer {
+    opacity: 0.8;
+}
+
+#custom-power {
+    color: @foreground; /* #c7c7c8 */
+    background: rgba(40, 40, 40, 0.9);
+    margin: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#backlight {
+    color: @color6; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    font-weight: normal;
+    font-size: 19px;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+
+#idle_inhibitor {
+    color: @color5; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#clock {
+    color: @foreground; /* #c7c7c8 */
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "Hurmit Nerd Font";
+    background: @color2;
+}
+
+#pulseaudio {
+    font-weight: normal;
+    font-size: 18px;
+    color: @color6; /* #BDC3B1 */
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#cpu {
+    font-weight: normal;
+    font-size: 22px;
+    color: @color2; /* #A09075 */
+}
+
+#custom-gpuinfo,
+#custom-keybindhint,
+#language,
+#memory {
+    font-weight: normal;
+    font-size: 22px;
+    color: @foreground; /* #c7c7c8 */
+}
+
+#mpris {
+    color: @foreground; /* #c7c7c8 */
+    font-weight: bold;
+    background:alpha (@background,0.25);
+    animation: repeat;
+    border-radius:0px;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+ @keyframes blink {
+    to {
+        color: @color9;
+    }
+}
+
+
+
+/*  sliders  */
+
+#backlight-slider,
+#pulseaudio-slider {
+    background:alpha(@background,0.25);
+    margin:0px;
+    border-top:2px solid @foreground;
+    border-bottom:2px solid @foreground;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    min-height:1px;
+    min-width:1px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 14px;
+    margin:-4px 4px;
+    border-radius: 60px;
+    background: @color0;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background-color: @color6; 
+}
+
+
+/*      plugging logic    */
+
+#battery.charging,
+#battery.plugged {
+    color: @foreground; 
+}
+
+#battery.critical:not(.charging) {
+    color: @color9;
+}
+
+
+/*      appmenu     */
+#custom-appmenu{
+    font-weight: 900;
+    color:@foreground;
+    background: alpha(@background,0.25);
+    font-size: 22px;
+    padding-left: 20px;
+    padding-right: 8px;
+    border-radius:0px;
+}
+
+/*    --------  center pill --------- */
+#idle_inhibitor, #clock, #custom-notification{
+    background:alpha(@background,0.5);
+    margin: 0px;
+    padding: 0px 4px;
+    border-radius:0px;
+    border: 2px solid @foreground;
+    border-top:none;
+}
+
+#idle_inhibitor{
+    border-radius:0px 0px 0px 24px;
+    padding-left: 24px;
+    padding-right: 12px;
+    border-right:none;
+}
+#custom-notification{
+    border-radius:0px 0px 24px 0px;
+    padding-left: 12px;
+    padding-right:16px;
+    border-left:none;
+}
+
+#custom-nettext{
+    background:alpha(@background,0.25);
+    margin: 0px;
+    padding: 0px 8px;
+    border-top:2px solid @foreground;
+    border-bottom:2px solid @foreground;
+}
+    
+/* ------------   icons and right pill ----------- */
+#custom-menu,#tray,#network, #pulseaudio, #backlight, #upower, #cpu, #memory, #custom-wallchange, #custom-logout, #custom-cpu, #custom-mem{
+    font-size:20px;
+    background:alpha(@background,0.5);
+    color:@color7;
+    margin:0px;
+    padding: 0px 8px;
+    border-radius:0px;
+    border:2px solid @foreground;
+    border-top:none;
+}
+
+#tray,#custom-menu{
+  padding:0px;
+  border-left:none;
+  border-right:none;
+    border-top:none;
+}
+
+#custom-logout{
+    font-size:20px;
+    padding-left:8px;
+    margin:0px;
+    padding-right:20px;
+    border-radius:0px;
+    border-top:2px solid @foreground;
+    border-bottom:2px solid @foreground;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+}
+
+#custom-empty_workspace{
+    color:alpha(@foreground, .5);
+    background: alpha(@background, 0.25);
+    font-size: inherit;
+    padding-left:4px;
+    padding-right:8px;
+}
+
+#custom-cpu,#custom-mem{
+    font-size:14px;
+    padding:0px;
+}
+#custom-bgspacer{
+    background:alpha(@background,0.5);
+    padding:4px;
+    margin: 0px;
+    border-top:2px solid @foreground;
+    border-bottom:2px solid @foreground;
+    border-top:none;
+}
+#custom-separator{
+    background:alpha(@background,0.5);
+    padding:0px 4px;
+    margin:0px;
+    border-top:2px solid @foreground;
+    border-bottom:2px solid @foreground;
+    border-top:none;
+}
+
+/*  ----------- left pill ------------  */
+#custom-appmenu,#workspaces,#custom-empty_workspace,#window,#mpris,#custom-rend{
+    margin-top: 0px;
+    margin-bottom: 0px;
+   /* border-top:2px solid @foreground;*/
+    border-bottom:2px solid @foreground;
+    background:alpha(@background,0.5);
+}
+#custom-rend{
+    padding:0px 10px 0px 10px;
+    border-radius:0px 0px 24px 0px;
+    background:alpha(@background,0.5);
+    border-right:2px solid @foreground;
+}
+#custom-l_end{
+    padding:10px;
+    border-radius:0px 0px 0px 24px;
+    background:alpha(@background,0.5);
+    border:2px solid @foreground;
+    border-right:none;
+    border-top:none;
+}
+
+
+
+#network, #pulseaudio, #backlight, #upower, #cpu, #memory, #custom-wallchange, #custom-cpu, #custom-mem,#clock{
+    border-left:none;
+    border-right:none;
+}
+
+/*
+.modules-left{
+    border-bottom: 4px solid alpha(@foreground,0.75);
+    border-right: 4px solid alpha(@foreground,0.75);
+    border-radius: 0px 0px 26px 0px;
+}
+.modules-center{
+    border: 4px solid alpha(@foreground,0.75);
+    border-top: none;
+    border-radius: 0px 0px 26px 26px;
+}
+.modules-right{
+    border-bottom: 4px solid alpha(@foreground,0.75);
+    border-left: 4px solid alpha(@foreground,0.75);
+    border-radius: 0px 0px 0px 26px;
+}
+*/

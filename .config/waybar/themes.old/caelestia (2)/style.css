@@ -1,0 +1,187 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font Propo";
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+}
+
+tooltip {
+    background: @background; 
+    color: @foreground; 
+    font-size: 14px;
+    border-radius: 2px;
+    border: 2px solid @color6;
+}
+
+window#waybar {
+    /*background: alpha(@color0,1);*/
+    background: alpha(@color0,0.75);
+    border-radius: 0px;
+    min-width:48px;
+    border-right:3px solid;
+    border-color:@color1;
+}
+
+#custom-appmenu {
+    color:@color1;
+    font-size:32px;
+    padding: .6rem;
+    margin:0px;
+}
+
+#workspaces ,#rightwrap {
+    background: alpha(@color1,0.75);
+    margin : 0px .6rem;
+    border-radius:60px;
+    padding:.8rem 2px;
+}
+
+#workspaces button {
+    color:@color0;
+}
+
+#workspaces button:not(.empty){
+    color:alpha(@color15,.5);
+}
+
+#workspaces button.empty{
+    opacity:0.5;
+}
+
+#workspaces button.active {
+    color:@color12;
+    background:alpha(@color5,0.2);
+    border-radius:60px;
+    margin:2px;
+    padding : 2px 4px;
+}
+
+#window {
+    color:@color1;
+    min-height:5rem;
+    padding:16px 0px;
+    margin:24px 12px 4px 12px;
+    border-radius:60px;
+    font-weight:800;
+    background:alpha(@color0,1.0);
+}
+
+window#waybar.empty #window{
+    margin:0px;
+    padding:0px;
+    min-height:0px;
+    min-width:0px;
+    color:transparent;
+    background: transparent;
+}
+
+#mpris {
+    color:@color11;
+    font-family:"JetBrainsMono Nerd Font Propo";
+    padding:1rem;
+    margin:0px 0.25rem;
+}
+
+#mpris.paused{
+    color:@color7;
+    opacity:0.25;
+}
+
+#custom-window-icon {
+    padding:4px;
+    font-size: 20px;
+    font-weight: 900;
+    color:@color1;
+    margin:4px;
+    margin-top:1rem;
+}
+
+#idle_inhibitor {
+    padding: 4px;
+    color:@color1;
+    font-size:18px;
+}
+
+#idle_inhibitor.activated{
+    color:@color9;
+}
+
+
+#custom-clockD,#custom-clockH,
+#custom-clockM {
+    font-weight: 900;
+    /*font-family: "HeavyData Nerd Font";*/
+    font-family: "Proggyclean Nerd Font";
+    font-size: 28px;
+    padding:8px 4px;
+    color:@color7;
+}
+
+#custom-clockD {
+    background:alpha(@color2,.75);
+    border-radius:60px;
+    padding:8px 4px;
+}
+
+#clockey{
+    margin:.6rem;
+    padding:0px;
+    border:2px solid alpha(@color2,.75);
+    border-radius:60px;
+}
+
+#network,
+#pulseaudio,#backlight,
+#battery,#upower{
+    font-size: 20px;
+    color:@color0;
+    padding:2px;
+    margin:2px;
+}
+
+#custom-logout,
+#custom-notification {
+    font-size: 20px;
+    color:@color1;
+    padding:2px;
+    margin:2px;
+}
+
+#backlight-slider,
+#pulseaudio-slider {
+    margin:inherit;
+    padding:inherit;
+    background: inherit;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: transparent;
+    min-width: 10px;
+    min-height: 1px;
+    border:none;
+    color:transparent;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 12px;
+    min-height: 80px;
+    border-radius: 60px;
+    background: @color12; 
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background: @color1; 
+}
+
+/* #rightwrap {
+    background: alpha(@color1,0.75);
+    margin : 0px .6rem;
+    border-radius:60px;
+    padding : .8rem 4px;
+} */
+

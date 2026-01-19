@@ -1,0 +1,83 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+  font: "JetBrainsMono Nerd Font 14";
+  spacing: 0;
+  padding: 0px;
+  background:transparent;
+  colu:6;
+}
+
+window {
+  width: calc(100%+4px);
+  height: calc(10%*5.2);
+  border: 2px solid;
+  border-color: @foreground;
+ // padding: 0px;
+  border-radius:0px;
+  background-color:transparent;
+}
+
+mainbox {
+  orientation: vertical;
+  children: [listview];
+  border-radius: 0px;
+  background-color:transparent;
+}
+
+listview {
+  orientation: horizontal;
+  columns: @colu;
+  lines: 1;
+  spacing: 30;
+  fixed-height: false;
+  scrollbar: false;
+  background-color:transparent;
+}
+
+element {
+  padding:0px 0px 0px 0px;
+  border-radius: 50px;
+  orientation: vertical;
+  spacing: 0;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+  children: [element-icon, element-text];
+  background-color:transparent;
+  background:none;
+}
+
+element.selected {
+  border: 6px solid;
+//  border-color: @foreground;
+//  background-color: @selected-normal-background;
+  border-radius: 50px;
+  box-shadow: 0 0 10px 2px ;
+  shadow-color:@foreground;
+  border-color:@selected-normal-background;
+}
+
+element-icon {
+  size: 387px;
+  padding:0px;
+  margin:0px;
+  border: none;
+  border-radius:50px;
+  background-color:transparent;
+  background:none;
+  vertical-align: 0;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  background:none;
+  color:@active-background;
+  padding:20px;
+  background-color:transparent;
+}
+element-text.selected { 
+  background:@foreground;
+  background-color:@selected-normal-background;
+  color:@selected-urgent-foreground;
+  text-shadow:2px 2px 2px;
+}

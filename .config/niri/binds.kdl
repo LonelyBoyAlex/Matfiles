@@ -1,0 +1,134 @@
+//  Keybinds
+binds {
+  SUPER+Shift+u { spawn-sh "killall swaync || swaync -c ~/testconfigs/niristyle/config.json -s ~/testconfigs/niristyle/style.css";}
+  Mod+Tab repeat=false {toggle-overview;}
+  Mod+Backspace {spawn-sh "~/HyprlandScripts/fuzzelPowermenu.sh";}
+  //;;scripts
+  Mod+T repeat=false { spawn "~/HyprlandScripts/theme_switcher.sh";}
+  Mod+W { spawn "~/HyprlandScripts/change_wallpaper_final.sh";}
+  Ctrl+Alt+W repeat=false {spawn "~/HyprlandScripts/rofiwall.sh";}
+  Mod+U repeat=false {spawn "~/HyprlandScripts/ewwStarter.sh" "bar";}
+  Mod+Comma repeat=false{spawn-sh "~/HyprlandScripts/pywalbitheme.sh";}
+  Mod+Period repeat=false {spawn-sh "~/HyprlandScripts/fuzzel-emoji.sh";}
+  SUPER+Shift+Return { spawn "kitty";}
+  SUPER+Return { spawn "alacritty";}
+  SUPER+E { spawn "nautilus";}
+  SUPER+Shift+E { spawn "thunar";}
+  SUPER+Shift+B { spawn "brave";}
+  SUPER+B { spawn "zen-browser";}
+  SUPER+C { spawn "code";}
+  SUPER+G { spawn "github-desktop";}
+  Mod+Space { spawn-sh "pkill rofi || rofi -show drun -config ~/HyprlandScripts/style-12.rasi" ;}
+  Alt+Backslash { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
+  Alt+Space { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
+  Mod+Alt+H {spawn-sh "alacritty -e nvim ~/.config/niri/config.kdl";}
+  Mod+Q repeat=false { close-window; }
+  Alt+F4 repeat=false { close-window;}
+  Ctrl+Alt+Delete {quit;}
+  Mod+Left { focus-column-left; }
+  Mod+Down { focus-window-down; }
+  Mod+Up { focus-window-up; }
+  Mod+Right { focus-column-right; }
+  Mod+Ctrl+E {spawn-sh "pgrep -x eww | killall eww || eww --config .config/eww.old-goth open-many bar paneltop panelryt panelbot barcornertop barcornertopryt barcornerbottom barcornerbottomryt";}
+
+
+  //focus shifting 
+  Mod+H { focus-column-left; }
+  Mod+J { focus-workspace-down; }
+  Mod+K { focus-workspace-up; }
+  Mod+L { focus-column-right; }
+  Mod+Page_Down { focus-workspace-down; }
+  Mod+Page_Up 	 { focus-workspace-up; }
+  
+  Mod+Shift+Left { move-column-left; }
+  Mod+Shift+Right { move-column-right; }
+  Mod+Shift+Up { move-window-up; }
+  Mod+Shift+Down { move-window-down; }
+  
+  Mod+Shift+H { move-column-left; }
+  Mod+Shift+J { move-window-to-workspace-down; }
+  Mod+Shift+K { move-window-to-workspace-up; }
+  Mod+Shift+L { move-column-right; }
+  
+  Mod+Shift+Page_Down { move-column-to-workspace-down; }
+  Mod+ShifT+Page_Up { move-column-to-workspace-up; }
+  Mod+Shift+WheelScrollDown cooldown-ms=250 { focus-workspace-down; }
+  Mod+Shift+WheelScrollUp cooldown-ms=250 { focus-workspace-up; }
+  
+  Mod+WheelScrollDown cooldown-ms=250 { focus-column-right; }
+  Mod+WheelScrollUp cooldown-ms=250 { focus-column-left; }
+  Mod+Ctrl+WheelScrollRight { move-column-right; }
+  Mod+Ctrl+WheelScrollLeft { move-column-left; }
+  
+  Mod+BracketLeft { consume-or-expel-window-left; }
+  Mod+BracketRight { consume-or-expel-window-right; }
+  
+  Mod+X { switch-preset-column-width; }
+  Mod+Shift+X { switch-preset-window-height; }
+  Mod+Ctrl+X { reset-window-height; }
+  Mod+A { maximize-column; }
+  Alt+return { fullscreen-window; }
+  Mod+Shift+S { fullscreen-window; }
+  //Mod+Ctrl+S { expand-column-to-available-width; }
+  Mod+Shift+C { center-column; }
+  Mod+Ctrl+C { center-visible-columns; }
+  Mod+F { toggle-window-floating; }
+  Mod+Shift+F { switch-focus-between-floating-and-tiling; }
+  Mod+Minus { set-column-width "-10%"; }
+  Mod+Equal { set-column-width "+10%"; }
+  Mod+Shift+Minus { set-window-height "-10%"; }
+  Mod+Shift+Equal { set-window-height "+10%"; }
+  
+  //  Workspaces (direct switch)
+  Mod+1 { focus-workspace 1 ; }
+  Mod+2 { focus-workspace 2 ; }
+  Mod+3 { focus-workspace 3 ; }
+  Mod+4 { focus-workspace 4 ; }
+  Mod+5 { focus-workspace 5 ; }
+  Mod+6 { focus-workspace 6 ; }
+  Mod+7 { focus-workspace 7 ; }
+  Mod+8 { focus-workspace 8 ; }
+  Mod+9 { focus-workspace 9 ; }
+  
+  //  Move focused window to workspace
+  Mod+Shift+1 { move-window-to-workspace 1 ; }
+  Mod+Shift+2 { move-window-to-workspace 2 ; }
+  Mod+Shift+3 { move-window-to-workspace 3 ; }
+  Mod+Shift+4 { move-window-to-workspace 4 ; }
+  Mod+Shift+5 { move-window-to-workspace 5 ; }
+  Mod+Shift+6 { move-window-to-workspace 6 ; }
+  Mod+Shift+7 { move-window-to-workspace 7 ; }
+  Mod+Shift+8 { move-window-to-workspace 8 ; }
+  Mod+Shift+9 { move-window-to-workspace 9 ; }
+  
+  //  Media keys
+  XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh up"     ;}
+  XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh down"   ;}
+  XF86AudioMute allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh toggle"        ;}
+  XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh up"     ;}
+  XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh down" ;}
+  Ctrl+Alt+BracketRight allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh up"   ;}
+  Ctrl+Alt+BracketLeft allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh down"  ;}
+  XF86AudioPlay { spawn-sh "playerctl play-pause"                                                 ;}
+  XF86AudioNext { spawn-sh "playerctl next"                                                       ;}
+  XF86AudioPrev { spawn-sh "playerctl previous"                                                   ;}
+  
+  //# Screenshot
+  Print { spawn-sh "~/HyprlandScripts/nirirofishot.sh"      ;}
+  Ctrl+Alt+S { spawn-sh "~/HyprlandScripts/nirirofishot.sh" ;}
+  
+  //Mod+N { spawn-sh "$(('eww get isnotiopen' == 'true' ? 'eww close notifications' : 'eww open notifications')) ";}
+  Mod+SHIFT+N {spawn-sh "swaync-client --toggle-panel";}
+  Mod+N {
+      spawn-sh "
+          if [ \"$(eww get isnotiopen)\" = \"true\" ]; then
+              eww close notifications
+              eww update isnotiopen=false
+          else
+              eww open notifications
+              eww update isnotiopen=true
+          fi
+      ";
+  }
+}
+

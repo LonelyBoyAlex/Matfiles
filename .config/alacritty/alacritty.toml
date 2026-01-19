@@ -1,0 +1,59 @@
+[general]
+#  import = ["~/.cache/wal/colors-alacritty.toml"]
+  import = ["./colors.toml"]
+
+[window]
+#opacity = 1
+#dynamic_padding = true
+#padding.x = 32
+#padding.y = 32
+  opacity = 1.0
+  dynamic_padding = true
+  padding.x = 16
+  padding.y = 32
+  decorations = "Full"
+  decorations_theme_variant = "Dark" # "Light"
+
+[font]
+  normal.family = "JetBrains Mono Nerd Font"
+  bold.family = "JetBrains Mono Nerd Font"
+#bold.family = "Cascadia Code PL"
+  italic.family = "JetBrains Mono Nerd Font"
+#italic.family = "Cascadia Code PL"
+  bold_italic.family = "JetBrains Mono Nerd Font"
+#bold_italic.family = "Cascadia Code PL"
+  normal.style = "Regular"
+  bold.style = "Bold"
+  italic.style = "Italic"
+  bold_italic.style = "Bold Italic" 
+  size = 14
+
+# $HOME/.config/alacritty/alacritty.toml
+# by Rito Ghosh 2023-10-06
+
+# Alacritty now uses TOML formatting for its config files.
+# This is a simple example.
+
+# There are the specification here: https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
+# It is not obvious how it translates to TOML. But it is extremely straightforward.
+
+# example: WINDOW, COLORS, etc. are tables, and should be represented as [window], [colors], respectively.
+# specifics of variables go under them. e.g.- look under "dynamic_padding" under-
+# https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#window
+# write `dynamic_padding = true` (without backticks -`) under the table [window]
+# for variables with multiple values, use "dotted keys". Like setting `padding.x = 5` under [window].
+# This is simple. If not clear, do several trials and errors.
+
+# Below is my initial set-up. The TOML homepage (https://toml.io/en/v1.0.0) was very helpful in figuring this out. 
+# I put the file alacritty.toml in $HOME/.config/alacritty. However it can be kept anywhere among the places mentioned in
+# https://github.com/alacritty/alacritty/tree/master#configuration
+# Tip: for inspiration, look for values in the source code files of your favorite VS Code themes, and use the color picker in
+# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a 
+# small box when a HEX is detected by the editor.
+#[cursor]
+#    smooth_motion = true       # Enable smooth motion
+#    smooth_motion_factor = 0.5 #0.2 Adjust the smoothness (0.0 is instant, 1.0 is full smoothness)
+#    smooth_motion_spring = 0.4 #0.5 Controls the springiness of the animation
+#    smooth_motion_max_stretch_x = 3.0 # Limits horizontal stretch
+#    smooth_motion_max_stretch_y = 3.0 # Limits vertical stretch
+#    block_replace_shape = "underline" # Optional: changes the cursor shape when moving

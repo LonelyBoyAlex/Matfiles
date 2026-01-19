@@ -1,0 +1,84 @@
+animations {
+ //off
+// slowdown 3.0
+//slowdown 0.55
+slowdown 1.5
+
+// Individual animations.
+workspace-switch {
+duration-ms 150
+//curve "cubic-bezier" 0.52 1.68 0.64 0.15
+curve "cubic-bezier" 0.16 0.05 0.18 1
+//spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+}
+
+// window-open {
+// duration-ms 250
+//curve "ease-out-expo"
+// curve "ease-out-cubic"
+// }
+window-open {
+duration-ms 150
+curve "linear"
+custom-shader r"
+vec4 expanding_circle(vec3 coords_geo, vec3 size_geo) {
+vec3 coords_tex = niri_geo_to_tex * coords_geo                     ;
+vec4 color = texture2D(niri_tex, coords_tex.st)                    ;
+vec2 coords = (coords_geo.xy - vec2(0.5, 0.5)) * size_geo.xy * 2.0 ;
+coords = coords / length(size_geo.xy)                              ;
+float p = niri_clamped_progress                                    ;
+if (p * p <= dot(coords, coords)) color = vec4(0.0)                ;
+return color                                                       ;
+}
+vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+return expanding_circle(coords_geo, size_geo)                      ;
+}
+"
+}
+window-close {
+duration-ms 150
+curve "ease-out-quad"
+}
+
+horizontal-view-movement {
+ duration-ms 150 //380
+// curve "cubic-bezier" 0.10 0.15 0.20 1.0
+// curve "cubic-bezier" 0.39 1.29 0.35 0.98
+curve "ease-out-cubic"
+//spring damping-ratio=0.75 stiffness=50 epsilon=0.001
+}
+
+window-movement {
+duration-ms 150 //380
+curve "ease-out-cubic"
+//spring damping-ratio=1.5 stiffness=600 epsilon=0.0001
+}
+
+window-resize {
+spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+}
+
+config-notification-open-close {
+ duration-ms 150 //380
+curve "ease-out-cubic"
+//spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+}
+
+exit-confirmation-open-close {
+ duration-ms 150 //380
+curve "ease-out-cubic"
+//spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+}
+
+screenshot-ui-open {
+duration-ms 150 //200
+curve "ease-out-quad"
+}
+
+overview-open-close {
+ duration-ms 150   //380
+curve "ease-out-quad"
+//spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+}
+}
+

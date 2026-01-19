@@ -1,0 +1,234 @@
+@import url("colors.css");
+* {
+  all:unset;
+  transition: all 0.15s ease-out;
+  font-family: "JetBrains Mono Nerd Font Propo";
+}
+
+window#waybar{
+  background:alpha(@primary_container,0.25);
+  min-width: 1000px;
+  min-height: 24px;
+  margin: 0px 12px;
+}
+
+tooltip {
+  background:alpha(@primary_container,1);
+  color:@on_primary_container;
+  padding:4px;
+  margin:4px;
+  border:2px solid @primary;
+  border-radius:8px;
+}
+
+#custom-appmenu
+, #custom-logout{
+  /*  min-width: 24px;
+  margin: 4px;
+  border-radius:24px 4px 24px 24px;*/
+min-width:12px;
+margin: 4px 4px;
+background: alpha(@background,1);
+border-radius:24px 4px 24px 24px;
+padding:0px 12px;
+font-size: 1.25em;
+}
+
+#clock {
+  min-width: 12px;
+  font-size: 1.2em;
+  font-weight: 900;
+  background: alpha(@on_primary,1);
+  color:@primary;
+  padding: 0px 12px;
+  margin:2px 4px;
+  border:2px solid alpha(@primary,0.75);
+  border-radius:24px 4px 24px 24px;
+}
+
+#workspaces {
+  min-width: 20px; 
+  border-radius: 4px 24px 24px 24px;
+  background: alpha(@tertiary,0.25);
+  padding:0px;
+  margin:4px;
+}
+
+#workspaces button {
+  min-width: 8px;
+  padding: 2px 8px;
+  margin: 2px 4px;
+  color:@surface;
+  /*background: alpha(@tertiary,0.25);
+  border: 2px solid alpha(@on_surface,0.5);*/
+border-radius: 4px 24px 24px 24px;
+}
+#workspaces button:not(.empty) {
+  color:@primary;
+}
+#workspaces button.active {
+  background: alpha(@primary_container,1);
+  color:@on_primary_container;
+  min-width:24px;
+  border-radius: 4px 24px 24px 24px;
+}
+
+#idle_inhibitor {
+  min-width:12px;
+  padding: 0px 8px;
+  margin: 4px 4px;
+  background: alpha(@primary_container,1);
+  color:@on_primary_container;
+  border-radius:24px 4px 24px 24px;
+  padding:0px 12px;
+  font-size:1.25em;
+  font-weight:900;
+}
+
+#idle_inhibitor.activated {
+  min-width:12px;
+  padding: 0px 8px;
+  margin: 4px 4px;
+  background: alpha(@on_primary_container,1);
+  color:@primary_container;
+  border-radius:24px 4px 24px 24px;
+  padding:0px 12px;
+  font-size:1.5em;
+  font-weight:900;
+}
+
+.modules-center {
+  min-width:12px;
+  background: alpha(@primary_container,1);
+  border-radius:4px 4px 24px 24px;
+  padding:2px 8px;
+  margin:4px 0px;
+  font-size:1.25em;
+}
+
+#backlight,
+#pulseaudio{
+  color:@on_primary;
+  background: alpha(@primary,0.5);
+  border-radius:4px 0px 0px 24px;
+  padding:0px 4px 0px 12px;
+  margin-right:0px;
+}
+
+#pulseaudio{
+  border-radius:24px 0px 0px 24px;
+}
+
+#custom-backlighttxt,
+#custom-pulseaudiotxt{
+  color:@on_primary;
+  background: alpha(@primary,0.5);
+  padding:0px 12px 0px 0px;
+  font-size:1.0em;
+  border-radius: 0px 24px 24px 0px;
+  margin-left:0px;
+  font-weight: 500;
+}
+
+#custom-pulseaudiotxt{
+  border-radius: 0px 0px 24px 0px;
+}
+
+#network{
+  color:@on_primary;
+  background: alpha(@primary,0.5);
+  border-radius:4px 0px 0px 24px;
+  padding:0px 8px 0px 16px;
+  margin:4px 0px;
+  font-size:1.25em;
+  font-weight: 500;
+}
+
+#custom-nettext{
+  color:@on_primary;
+  background: alpha(@primary,0.5);
+  padding:0px 12px 0px 0px;
+  font-size:1.0em;
+  border-radius: 0px 24px 24px 0px;
+  margin:4px 0px;
+  font-size:1em;
+  font-weight: 500;
+}
+
+#musicplayer {
+  min-width:12px;
+  background: alpha(@primary_container,0.5);
+  border-radius:24px 4px 24px 24px;
+  padding:2px 8px;
+  margin:4px 0px;
+}
+
+#custom-music, #mpris {
+  color:@on_primary;
+  background: alpha(@primary,0.5);
+  font-size:1.0em;
+  font-weight: 500;
+}
+
+#custom-music{
+  font-size:1.45em;
+  border-radius:24px 0px 0px 24px;
+  padding:0px 8px;
+}
+#mpris{
+  font-size:1em;
+  border-radius:0px 4px 24px 0px;
+  padding:0px 12px 0px 0px;
+}
+
+#window {
+  padding:0px 16px;
+  color:alpha(@on_secondary_container,0.85);
+  font-size:1em;
+  font-weight:500;
+  transition:all 0.5s ease-in-out;
+}
+
+window#waybar.empty #window {
+  margin:0px 4px;
+  padding:0px;
+  color:transparent;
+  background:inherit;
+}
+
+#custom-logout {
+  border-radius: 0px 24px 24px 24px;
+}
+
+#battery {
+   color:@primary;
+   background:@primary_container;
+   /*border:2px solid @on_surface;*/
+   border-radius:4px 24px 24px 24px;
+   padding:0px 16px 0px 16px;
+   margin:4px 8px 4px 0px;
+   font-size:1.25em;
+   font-weight: 200;
+}
+
+#battery.charging {
+   color:@primary;
+   background:@on_primary;
+   border:none;
+   margin:2px 8px 2px 0px;
+}
+
+#battery.critical {
+   color:@on_tertiary_container;
+   background: alpha(@tertiary_container,1);
+   border:1px solid @on_surface;
+   margin:2px 8px 2px 0px;
+}
+
+#battery.critical {
+   color:@on_error;
+   background:@error;
+   border:2px solid red;
+   margin:2px 8px 2px 0px;
+}
+

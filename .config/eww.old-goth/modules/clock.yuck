@@ -1,0 +1,14 @@
+(defpoll clock_hr :interval "1s" "date +%I" )
+(defpoll clock_min :interval "1s" "date +%M" )
+(defpoll clock_sec :interval "1s" "date +%S" )
+(defpoll clock_mer :interval "1s" "date +%p")
+
+(defwidget clock []
+    (box :orientation "v" :class "clock"
+        :valign "center" :halign "center"
+        ; (label :text clock_mer :class "clock_mer")
+        (label :text clock_hr :class "clock_hr")
+        (label :text clock_min :class "clock_min")
+        (label :text clock_sec :class "clock_min")
+    )
+)

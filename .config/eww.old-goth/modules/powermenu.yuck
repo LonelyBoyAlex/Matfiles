@@ -1,0 +1,47 @@
+(defvar ispowermenu true)
+(defvar isrevealedpower true)
+
+(defwindow powermenu []
+    :stacking "fg"
+    :monitor "0"
+    :exclusive "false"
+    :geometry (geometry 
+        :anchor "left center"
+        :width "8%" 
+        :height "60%"
+    )
+    :class "powermenu"
+    :namespace "eww_powermenu"
+    (revealer
+    :transition "slideright"    ; slide in from the left into place
+    :duration "300ms"
+    :reveal isrevealedpower
+    (powermenu))
+)
+
+(defwidget powermenu []
+;     (eventbox :onhover "eww updat    (eventbox :onhover "eww update isrevealedpower='true'" 
+;               :onhoverlost "eww update isrevealpower='false'"
+;         (box :orientation "h" :space-evenly "false" :class "transparentbox"
+; ))e isrevealedpower='true'" 
+;               :onhoverlost "eww update isrevealpower='false'"
+;         (box :orientation "h" :space-evenly "false" :class "transparentbox"
+; ))
+    ; (revealer :reveal isrevealedpower :transition "slideright" :duration "600ms"
+      (box :orientation "v"
+        (button :onclick "~/.config/swaylock/swaylock-wal.sh" 
+           :class "powermenu btn" (label :text "󰌾" :class "btn1icon"))
+   
+        (button :onclick "scripts/logout.sh" 
+           :class "powermenu btn" (label :text "" :class "btn1icon"))
+   
+        (button :onclick "systemctl poweroff" 
+           :class "powermenu btn" (label :text "󰤆" :class "btn1icon"))
+   
+        (button :onclick "systemctl reboot" 
+            :class "powermenu btn" (label :text "󰜉" :class "btn1icon"))
+   
+        (button :onclick "eww close powermenu" 
+            :class "powermenu btn" (label :text "" :class "btn1icon"))
+    ))
+
