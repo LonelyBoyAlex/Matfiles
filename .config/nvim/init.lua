@@ -18,6 +18,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 -- Setup lazy.nvim
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  ui = {
+    border = "rounded",
+  },
+})
 
 
