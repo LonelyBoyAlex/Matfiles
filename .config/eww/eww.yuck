@@ -5,8 +5,8 @@
   :geometry (geometry
     :anchor "left center"
     :width "24px"
-    :height "100%"
-;;    :height "60%"
+;;    :height "100%"
+    :height "60%"
   )
   (centerbox
     :class "mybar"

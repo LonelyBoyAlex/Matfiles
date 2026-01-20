@@ -44,13 +44,16 @@ box-shadow: 24px 24px 0px 0px $surf;
   /* border: 2px solid $fg;
 border-left:none;
 padding: 2rem 0px;
-border-radius: 12px 60px 60px 12px;*/
-  //border-radius: 12px;
+border-radius: 12px 60px 60px 12px;
   border-radius: 0px;
-  border-left:3px solid $surf;
-  border-right:3px solid transparentize($fg,0.5);
-  padding: 8px 0px;
-  transition: all 2s ease-in;
+*/
+border-radius: 12px;
+border-left:3px solid $surf;
+border-top:1px solid transparentize($fg,0.5);
+border-bottom:1px solid transparentize($fg,0.5);
+border-right:3px solid transparentize($fg,0.5);
+padding: 8px 0px;
+transition: all 2s ease-in;
 }
 
 .launcher {
