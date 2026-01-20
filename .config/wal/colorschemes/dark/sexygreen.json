@@ -1,0 +1,28 @@
+{
+    "checksum": "bae2d3fa0c867ba89bc2529abe1e93f5",
+    "wallpaper": "/home/papa/X11Scripts/themes/everREst/wallpapers/kiddae.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#222222",
+        "foreground": "#c7c2c6",
+        "cursor": "#c7c2c6"
+    },
+    "colors": {
+        "color0": "#222222",
+        "color1": "#2cb430",
+        "color2": "#31b92e",
+        "color3": "#2ebb31",
+        "color4": "#2fbd2f",
+        "color5": "#31c431",
+        "color6": "#32cb32",
+        "color7": "#c7c2c6",
+        "color8": "#c1309f",
+        "color9": "#2cb430",
+        "color10": "#31b92e",
+        "color11": "#2ebb31",
+        "color12": "#2fbd2f",
+        "color13": "#31c431",
+        "color14": "#32cb32",
+        "color15": "#c7c2c6"
+    }
+}

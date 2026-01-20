@@ -1,0 +1,28 @@
+{
+    "checksum": "98384eb6303bb0944778ca11c07cd670",
+    "wallpaper": "/home/papa/X11Scripts/wallpapers/fog_forest_2.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1b2125",
+        "foreground": "#c6c7c8",
+        "cursor": "#c6c7c8"
+    },
+    "colors": {
+        "color0": "#1b2125",
+        "color1": "#7D8882",
+        "color2": "#87918B",
+        "color3": "#86918A",
+        "color4": "#89938C",
+        "color5": "#89948D",
+        "color6": "#8B958F",
+        "color7": "#c6c7c8",
+        "color8": "#626f78",
+        "color9": "#7D8882",
+        "color10": "#87918B",
+        "color11": "#86918A",
+        "color12": "#89938C",
+        "color13": "#89948D",
+        "color14": "#8B958F",
+        "color15": "#c6c7c8"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "checksum": "2327a8fdff0d18eed7a702be42a3357e",
+    "wallpaper": "/home/papa/X11Scripts/wallpapers/imgonline-com-ua-ReplaceColor-tJcbiQutVbr.png",
+    "alpha": "100",
+    "special": {
+        "background": "#101e0d",
+        "foreground": "#c3c6c2",
+        "cursor": "#c3c6c2"
+    },
+    "colors": {
+        "color0": "#101e0d",
+        "color1": "#1C9106",
+        "color2": "#21990A",
+        "color3": "#1FA605",
+        "color4": "#23AE09",
+        "color5": "#389227",
+        "color6": "#48A939",
+        "color7": "#c3c6c2",
+        "color8": "#5f705c",
+        "color9": "#1C9106",
+        "color10": "#21990A",
+        "color11": "#1FA605",
+        "color12": "#23AE09",
+        "color13": "#389227",
+        "color14": "#48A939",
+        "color15": "#c3c6c2"
+    }
+}

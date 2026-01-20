@@ -4,3 +4,13 @@ X11Scripts/todo.txt
 .config/matugen/templates/neovim/README.md
 .config/nvim/lazy-lock.json
 .config/nvim/lazy-lock.json
+.config/alacritty/colors.toml
+.config/eww/colors.scss
+.config/fuzzel/colors.ini
+.config/hypr/colorshypr.conf
+.config/i3/colors.Xresources
+.config/kitty/colors.conf
+.config/niri/colors.kdl
+.config/waybar/colors.css
+.config/wlogout/colors.css
+.config/zed/themes/matugen.json

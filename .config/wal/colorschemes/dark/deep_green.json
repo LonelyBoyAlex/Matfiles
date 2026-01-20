@@ -1,0 +1,28 @@
+{
+    "checksum": "6462d94b10619eb8999b96806eaa3757",
+    "wallpaper": "/home/papa/.cache/currwall",
+    "alpha": "100",
+    "special": {
+        "background": "#070f10",
+        "foreground": "#c1c3c3",
+        "cursor": "#c1c3c3"
+    },
+    "colors": {
+        "color0": "#070f10",
+        "color1": "#2d5a54",
+        "color2": "#445c54",
+        "color3": "#3f7857",
+        "color4": "#649484",
+        "color5": "#5ea176",
+        "color6": "#84947c",
+        "color7": "#c1c3c3",
+        "color8": "#566969",
+        "color9": "#2d5a54",
+        "color10": "#445c54",
+        "color11": "#3f7857",
+        "color12": "#649484",
+        "color13": "#5ea176",
+        "color14": "#84947c",
+        "color15": "#c1c3c3"
+    }
+}

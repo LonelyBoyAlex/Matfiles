@@ -1,0 +1,28 @@
+{
+    "checksum": "fa5db42ef798024c48b2434e0b8075e2",
+    "wallpaper": "/home/papa/X11Scripts/wallpapers/fantasy-water-character.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c1b1b",
+        "foreground": "#c2c6c6",
+        "cursor": "#c2c6c6"
+    },
+    "colors": {
+        "color0": "#0c1b1b",
+        "color1": "#476C60",
+        "color2": "#877A5B",
+        "color3": "#5B9562",
+        "color4": "#88B257",
+        "color5": "#407B85",
+        "color6": "#439AA1",
+        "color7": "#c2c6c6",
+        "color8": "#5b6f6f",
+        "color9": "#476C60",
+        "color10": "#877A5B",
+        "color11": "#5B9562",
+        "color12": "#88B257",
+        "color13": "#407B85",
+        "color14": "#439AA1",
+        "color15": "#c2c6c6"
+    }
+}

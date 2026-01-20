@@ -1,0 +1,114 @@
+/* ====== Base Colors from Pywal ====== */
+@define-color foreground {foreground};
+@define-color background {background};
+@define-color cursor     {cursor};
+@define-color color0     {color0};
+@define-color color1     {color1};
+@define-color color2     {color2};
+@define-color color3     {color3};
+@define-color color4     {color4};
+@define-color color5     {color5};
+@define-color color6     {color6};
+@define-color color7     {color7};
+@define-color color8     {color8};
+@define-color color9     {color9};
+@define-color color10    {color10};
+@define-color color11    {color11};
+@define-color color12    {color12};
+@define-color color13    {color13};
+@define-color color14    {color14};
+@define-color color15    {color15};
+
+/* ====== App-Specific Styling ====== */
+/* Nautilus, EOG, GNOME Clocks, GParted, Evince */
+window.nautilus-window,
+window.eog-window,
+window.org-gnome-clocks,
+window.gparted,
+window.evince-window,
+window.org-gnome-evince,
+dialog.nautilus-window,
+dialog.eog-window,
+dialog.org-gnome-clocks,
+dialog.gparted,
+dialog.evince-window,
+dialog.org-gnome-evince {{
+    background-color: @background;
+    color: @foreground;
+}}
+
+/* Toolbar backgrounds */
+window.nautilus-window toolbar,
+window.eog-window toolbar,
+window.org-gnome-clocks toolbar,
+window.gparted toolbar,
+window.evince-window toolbar,
+window.org-gnome-evince toolbar {{
+    background-color: shade(@background, 1.15);
+    color: @foreground;
+}}
+
+/* Sidebar styling */
+window.nautilus-window .sidebar,
+window.gparted .sidebar,
+window.evince-window .sidebar,
+window.org-gnome-evince .sidebar {{
+    background-color: shade(@background, 0.9);
+    color: @foreground;
+}}
+window.nautilus-window .sidebar row:selected,
+window.gparted .sidebar row:selected,
+window.evince-window .sidebar row:selected,
+window.org-gnome-evince .sidebar row:selected {{
+    background-color: @color4;
+    color: @background;
+}}
+
+/* Selected items */
+window.nautilus-window iconview.view:selected,
+window.nautilus-window list row:selected,
+window.eog-window iconview.view:selected,
+window.org-gnome-clocks list row:selected,
+window.gparted list row:selected,
+window.evince-window list row:selected,
+window.org-gnome-evince list row:selected {{
+    background-color: @color4;
+    color: @background;
+}}
+
+/* Links */
+window.nautilus-window a,
+window.eog-window a,
+window.org-gnome-clocks a,
+window.gparted a,
+window.evince-window a,
+window.org-gnome-evince a {{
+    color: @color4;
+}}
+
+/* Sliders & progress bars */
+window.nautilus-window scale slider,
+window.eog-window scale slider,
+window.org-gnome-clocks scale slider,
+window.gparted scale slider,
+window.evince-window scale slider,
+window.org-gnome-evince scale slider,
+window.nautilus-window progressbar progress,
+window.eog-window progressbar progress,
+window.org-gnome-clocks progressbar progress,
+window.gparted progressbar progress,
+window.evince-window progressbar progress,
+window.org-gnome-evince progressbar progress {{
+    background-color: @color4;
+}}
+
+/* Switches */
+window.nautilus-window switch slider,
+window.eog-window switch slider,
+window.org-gnome-clocks switch slider,
+window.gparted switch slider,
+window.evince-window switch slider,
+window.org-gnome-evince switch slider {{
+    background-color: @color4;
+}}
+

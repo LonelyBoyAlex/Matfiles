@@ -1,0 +1,52 @@
+# Global properties
+separator=true
+separator_block_width=30
+
+# 1. Active Window Name
+[window]
+#command=xtitle -s
+command=~/.config/i3blocks/scripts/active_window.sh
+interval=persist
+color=#ebdbb2
+
+# 2. Time (HH:MM 24-hr)
+[time]
+command=date '+%H:%M'
+interval=5
+label=  
+color=#83a598
+
+# 3. Date (Thu 01 Jan)
+[date]
+command=date '+%a %d %b'
+interval=60
+label= 
+color=#b8bb26
+
+# 9. Backlight
+[backlight]
+command=~/.config/i3blocks/scripts/backlight.sh
+interval=once
+signal=11
+label=
+# 4. Volume (98% [|||||||||])
+# This script creates a visual bar. 
+# It calculates the number of bars based on volume percentage.
+[volume]
+command=~/.config/i3blocks/scripts/volume.sh
+interval=once
+signal=10
+label=
+
+# 5. WiFi Name (SSID Only, No IP)
+[wifi]
+command=~/.config/i3blocks/scripts/wifi.sh
+interval=10
+label= 
+
+# 6. Power Button
+[shutdown_menu]
+full_text= 
+command=~/X11Scripts/powermenu.sh
+color=#cc241d
+
