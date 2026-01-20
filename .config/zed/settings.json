@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
   "buffer_font_weight": 300.0,
   "ui_font_weight": 300.0,
   "ui_font_family": "JetBrainsMono Nerd Font Propo",
@@ -18,7 +22,7 @@
   },
   "icon_theme": "Zed (Default)",
   "telemetry": {
-    "diagnostics": false,
+    "diagnostics": true,
     "metrics": false
   },
   "ui_font_size": 19.0,

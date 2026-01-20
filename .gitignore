@@ -54,3 +54,5 @@ X11Scripts/todo.txt
 .config/fuzzel/colors.ini
 .config/eww/colors.scss
 .config/alacritty/colors.toml
+/.config/gtk-4.0/assets
+/.config/gtk-4.0/windows-assets

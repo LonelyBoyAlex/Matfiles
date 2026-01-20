@@ -1,1 +1,265 @@
-/home/papa/.config/waybar/themes/teardrop/config.jsonc
+{
+   "layer": "top",
+   "position": "bottom",
+   "exclusive": true,
+   "passthrough": false,
+   "gtk-layer-shell": true,
+   "reload_style_on_change": true,
+  //-- positions ---
+  "modules-left": [
+     "custom/appmenu",
+     "idle_inhibitor",
+     "clock",
+     "group/musicplayer"
+  ],
+  "modules-center": [
+     "group/light",
+     "hyprland/window",
+     "group/audio"
+  ],
+  "modules-right": [
+     "battery",
+     "group/net",
+     "hyprland/workspaces",
+     "custom/logout",
+  ],
+  //----------declarations----------------
+  "custom/appmenu": {
+     "format": "",
+     "on-click": "pgrep -x rofi | killall rofi || ~/HyprlandScripts/launcher.sh",
+     "tooltip": false
+  },
+  "clock": {
+     "format": "{:%I:%M %p}",
+     "format-alt": "{:%a, %b %d  %H:%M }",
+     "rotate": 0,
+     "on-click-right": "gnome-clocks",
+     "tooltip-format": "<tt>{calendar}</tt>",
+     "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+           "months": "<b>{}</b>",
+           "weekdays": "<b>{}</b>",
+           "today": "<b>{}</b>"
+        }
+     },
+     "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+     }
+  },
+  "hyprland/workspaces": {
+     "format": "{icon}",
+     "format-icons": {
+        "1": "一", // 1 → 一 (ichi)
+        "2": "二", // 2 → 二 (ni)
+        "3": "三", // 3 → 三 (san)
+        "4": "四", // 4 → 四 (shi)
+        "5": "五", // 5 → 五 (go)
+        "6": "六", // 6 → 六 (roku)
+        "7": "七", // 7 → 七 (shichi)
+        "8": "八", // 8 → 八 (hachi)
+        "9": "九", // 9 → 九 (kyuu) 
+        "default": " " // empty dot (fa-circle-thin)
+     },
+     "persistent-workspaces": {
+        "*": [
+           1,
+           2,
+           3,
+           4,
+           5
+        ] // 2-5 on every monitor
+     },
+     "icon-size": 32
+  },
+  "idle_inhibitor": {
+     "format": "{icon}",
+     "rotate": 0,
+     "format-icons": {
+        "activated": "󰥔",
+        "deactivated": ""
+     }
+  },
+  "backlight": {
+     "device": "",
+     "rotate": 0,
+     "format": "{icon}",
+     "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+     "scroll-step": 1,
+     "min-length": 2
+  },
+  "custom/backlighttxt": {
+     "exec": "(curr=$(brightnessctl get); max=$(brightnessctl max); echo $(( curr * 100 / max ))%)",
+     "interval": 1,
+     "return-type": "text",
+     "format": "{}"
+  },
+  "group/light": {
+     "orientation": "horizontal",
+//    "drawer": {
+//      "transition-duration": 400,
+//      "children-class": "not-power",
+      //"transition-to-left": true,
+      //"click-to-reveal": true,
+//    },
+    //"modules": ["custom/backlighttxt", "backlight/slider"],
+    "modules": ["backlight", "custom/backlighttxt"]
+  },
+
+
+
+  "pulseaudio": {
+     "format": "{icon}",
+     "rotate": 0,
+     "format-muted": "",
+     "tooltip-format": "{icon} {desc} // {volume}%",
+     "scroll-step": 5,
+     "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""],
+     },
+  },
+
+  "custom/pulseaudiotxt": {
+     "exec": "(sink=$(pactl get-default-sink); mute=$(pactl get-sink-mute \"$sink\" | awk '{print $2}'); vol=$(pactl get-sink-volume \"$sink\" | grep -oP '\\d+(?=%)' | head -1); [[ \"$mute\" == \"yes\" || $vol -eq 0 ]] && echo Muted || echo \"${vol}%\")",
+     "interval": 1,
+     "return-type": "text",
+     "format": "{}",
+  },
+
+  "group/audio": {
+     "orientation": "horizontal",
+    //    "drawer": {
+    //      "transition-duration": 400,
+    //      "children-class": "not-power",
+    //      "transition-to-left": true,
+    //      "click-to-reveal": true,
+    //    },
+    //"modules": ["custom/pulseaudiotxt", "pulseaudio/slider"],
+    "modules": ["pulseaudio","custom/pulseaudiotxt"]
+  },
+  "network": {
+     "tooltip": true,
+    //"format-wifi": "{icon} {bandwidthTotalBytes}",
+    "format-wifi": "{icon}",
+    "format-icons": [
+       "󰤯",
+       "󰤟",
+       "󰤢",
+       "󰤥",
+       "󰤨",
+    ],
+    "rotate": 0,
+    "format-ethernet": "󰈀",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>",
+    "format-linked": "󰈀{ifname} (No IP)",
+    "format-disconnected": "",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "kitty -e 'nmtui'",
+    "interval": 2,
+  },
+  "custom/nettext": {
+     "exec": "sh -c 'ssid=$(nmcli -t -f active,ssid dev wifi | awk -F: \"/^yes/ {print \\$2}\"); echo \"${ssid:-disconnected}\"'",
+     "interval": 5,
+     "tooltip": false
+  },
+  "group/net": {
+     "orientation": "horizontal",
+//    "drawer": {
+//      "transition-duration": 400,
+//      "children-class": "not-power",
+      //"transition-to-left": true,
+      //"click-to-reveal": true,
+//    },
+    //"modules": ["custom/backlighttxt", "backlight/slider"],
+    "modules": ["network", "custom/nettext"]
+  },
+  "group/musicplayer": {
+     "orientation": "horizontal",
+     "modules": [
+        "custom/music",
+        "mpris",
+     ]
+  },
+  "mpris": {
+    //"format": "{player_icon} {dynamic}",
+    "format": "{dynamic}",
+    //"format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+    "format-stopped": "Nothing Playing",
+    "max-length": 35,
+    "player-icons": {
+       "mpv": "",
+       "default": ""
+    },
+    "status-icons": {
+       "playing": "",
+       "paused": ""
+    },
+    "expand": true,
+    "tooltip": false
+  },
+
+  "custom/music": {
+     "exec": "statuz=$(playerctl status 2>/dev/null); if [ \"$statuz\" = \"Playing\" ]; then echo ''; elif [ \"$statuz\" = \"Paused\" ]; then echo ''; elif [ \"$statuz\" = \"Stopped\" ]; then echo 'Nothing Playing'; else echo ''; fi",
+     "interval": 1,
+     "return-type": "text",
+     "format": "{}",
+     "max-length": 35,
+     "tooltip": false
+  },  
+
+
+
+
+  "hyprland/window": {
+     "format": "<span  weight='bold'>{class}</span>",
+     "max-length": 120,
+     "icon": false,
+     "icon-size": 13,
+     "tooltip": true,
+     "tooltip-format": "right click to close",
+     "on-click-right": "hyprctl dispatch killactive",
+  },
+
+  "custom/logout": {
+     "format": "󰍃",
+     "on-click": "~/HyprlandScripts/fuzzelPowermenu.sh",
+     "tooltip": false
+  },
+
+  "battery": {
+     "interval": 1,
+     "states": {
+        "warning":20,
+        "critical":15
+     },
+     "format": "{icon} {capacity}%",
+     "format-alt": "{time} / {power}",
+     "format-icons": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+     ],
+     "format-charging": "󰠠 {capacity}%",
+     "format-plugged": "󰠠 {capacity}%",
+  }
+}
