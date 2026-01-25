@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/papa/.config/themes/Golden/wallpapers/shedGB.png",
+  "wallpaper": "/home/papa/.config/themes/active/wallpapers/chinatown.jpg",
   "alpha": "100",
   "colors": {
-    "color0": "#19120c",
+    "color0": "#1a110e",
     "color1": "",
     "color2": "",
     "color3": "",
@@ -12,11 +12,11 @@
     "color7": "",
     "color8": "",
     "color9": "",
-    "color10": "#ffb77d",
+    "color10": "#ffb596",
     "color11": "",
     "color12": "",
-    "color13": "#413731",
+    "color13": "#423733",
     "color14": "",
-    "color15": "#efe0d6"
+    "color15": "#f1dfd9"
   }
 }

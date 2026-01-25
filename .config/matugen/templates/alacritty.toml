@@ -1,5 +1,6 @@
 [colors.primary]
 background = '{{colors.surface.default.hex}}'
+#background = '{{colors.primary_container.default.hex}}'
 foreground = '{{colors.on_primary_container.default.hex}}'
  
 [colors.cursor]

@@ -19,9 +19,9 @@ input_path = 'templates/alacritty.toml'
 output_path = '~/.config/alacritty/colors.toml'
 # post_hook = 'hyprctl reload'
 
-[templates.kitty]
-input_path = 'templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
+#[templates.kitty]
+#input_path = 'templates/kitty-colors.conf'
+#output_path = '~/.config/kitty/colors.conf'
 
 [templates.rofi]
 input_path = 'templates/rofi-colors.rasi'
@@ -39,6 +39,7 @@ output_path = '~/.config/eww/colors.scss'
 [templates.xresources]
 input_path = "templates/colors.xresources.tmpl"
 output_path = "~/.config/i3/colors.Xresources"
+post_hook = 'i3-msg reload'
 
 [templates.fuzzel]
 input_path = 'templates/fuzzel.ini'
@@ -76,6 +77,25 @@ post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings s
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.mango]
+input_path = '~/.config/matugen/templates/mangowc.conf'
+output_path = '~/.config/mango/colors.conf'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty'
+output_path = '~/.config/ghostty/themes/Matugen'
+#post_hook = 'pkill -SIGUSR2 ghostty'
+
+#[templates.starship]
+#input_path = 'templates/mystarship.toml'
+#output_path = '~/.config/starship.toml'
+
+[templates.polybar]
+input_path = 'templates/mypolybar'
+output_path = '~/.config/polybar/colors-polybar'
+post_hook = 'polybar-msg cmd restart'
+#post_hook = 'pkill -SIGUSR2 polybar || polybar &'
 
 [templates.waybar]
 input_path = 'templates/colors.css'

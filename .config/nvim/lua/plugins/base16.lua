@@ -4,6 +4,7 @@ return {
   priority = 1000,
   config = function()
     vim.opt.termguicolors = true
+    --vim.cmd.colorscheme("base16-colorscheme")
 
     -- Your matugen file already calls setup() - just source it
     require("matugen.base16") -- Runs the setup + custom highlights

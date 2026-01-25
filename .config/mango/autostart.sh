@@ -17,7 +17,7 @@ swaync &
 swww-daemon &
 swww img ~/.cache/currwall \
   --transition-type center \
-  --transition-duration 1.0 &
+  --transition-duration 4 &
 
 # top bar
 # waybar &
@@ -27,7 +27,7 @@ swww img ~/.cache/currwall \
 # wl-clip-persist --clipboard regular --reconnect-tries 0 &
 
 # clipboard content manager
-# wl-paste --type text --watch cliphist store & 
+# wl-paste --type text --watch cliphist store &
 
 # xwayland dpi scale
 echo "Xft.dpi: 125" | xrdb -merge
@@ -44,4 +44,3 @@ pidof hypridle >/dev/null 2>&1 || hypridle &
 # tui tools
 nm-applet &
 blueman-applet &
-

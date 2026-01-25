@@ -13,7 +13,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec kitty
 bindsym $mod+q kill
-bindsym mod1+space exec --no-startup-id "rofi -show drun -theme ~/X11Scripts/rofi/config.rasi -font 'mono 15'"
+bindsym mod1+space exec --no-startup-id "rofi -show drun -theme ~/HyprlandScripts/rofistyles/i3apps.rasi -font 'JetBrains Mono Nerd Font 13'"
 #bindsym Control+space exec --no-startup-id "pkill anyrun || anyrun"
 ## change focus
 bindsym $mod+j focus left
@@ -129,14 +129,16 @@ bindsym $mod+Mod1+Up mode "resize"
 bindsym $mod+Mod1+Down mode "resize"
 
 # custom My Apps
-bindsym Control+Mod1+w exec "~/X11Scripts/wallpaper.sh switcher"
-bindsym Control+Mod1+t exec "~/X11Scripts/themer.sh"
+#bindsym Control+Mod1+t exec "~/X11Scripts/themer.sh"
+#bindsym Control+Mod1+w exec "~/X11Scripts/wallpaper.sh switcher"
+bindsym Control+Mod1+w exec "~/HyprlandScripts/rofiwall.sh"
+bindsym Control+Mod1+t exec "~/HyprlandScripts/theme_switcher.sh"
 # bracket keys for brightness
-bindsym Control+Mod1 + bracketright exec "~/X11Scripts/brightness.sh up && pkill -RTMIN+11 i3blocks"
-bindsym Control+Mod1 + bracketleft exec "~/X11Scripts/brightness.sh down && pkill -RTMIN+11 i3blocks"
+bindsym Control+Mod1 + bracketright exec "~/HyprlandScripts/brightness.sh up && pkill -RTMIN+11 i3blocks"
+bindsym Control+Mod1 + bracketleft exec "~/HyprlandScripts/brightness.sh down && pkill -RTMIN+11 i3blocks"
 # logout menu
-bindsym $mod+BackSpace exec "~/X11Scripts/powermenu.sh"
-bindsym Control+Mod1 + Delete exec "~/X11Scripts/powermenu.sh"
+bindsym $mod+BackSpace exec "~/HyprlandScripts/rofiPowermenu.sh"
+bindsym Control+Mod1 + Delete exec "~/HyprlandScripts/rofiPowermenu.sh"
 # screenshot menu
 set $scrsht exec "~/X11Scripts/screenshot.sh"
 bindsym $mod+Shift+S $scrsht
@@ -147,7 +149,7 @@ bindsym $mod+Shift+B exec "brave"
 bindsym $mod+C exec "code"
 bindsym $mod+E exec "pcmanfm"
 bindsym $mod+Shift+E exec "thunar"
-bindsym $mod+U exec "killall polybar || polybar -c ~/.config/polybar/configNew.ini"
+bindsym $mod+U exec "killall polybar || polybar -c ~/.config/polybar/config.ini"
 
 #bindsym Control+Mod1+w exec "feh --bg-scale .cache/currwall.png"
 # exit i3 (logs you out of your X session)

@@ -1,10 +1,16 @@
 * {
    background : #2e3440 ;
+   bgtr : #2e344044 ;
    background-alt : #3b4252;
    foreground : #d8dee9;
-   primary : #88c0d0;
-   secondary : #5e81ac;
+   primary : #3b4252;
+   secondary : #88c0d0;
    alert : #bf616a;
-   disabled : #4c566a;
+   disabled : #88c0d0;
+   primary-container: #4c566a;
+   on-primary-container: #88c0d0;
+   surface: #2e3440;
+   on-surface: #e5e9f0;
+   error: #bf616a;
+   bordline: #d8dee9;
 }
-

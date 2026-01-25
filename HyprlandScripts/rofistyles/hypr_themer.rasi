@@ -1,0 +1,151 @@
+/* @import "~/.cache/wal/colors-rofi-dark.rasi" */
+@import "~/.config/rofi/colors.rasi"
+
+* {
+  font: "JetBrainsMono Nerd Font 14";
+  spacing: 0;
+  padding: 0px;
+  background-color: transparent;
+  background: none;
+  border-color:transparent;
+  colu: 6;
+}
+
+window {
+  width: calc(100%);
+  height: calc(60%);
+  border: 2px 0px solid;
+  border-radius: 0px;
+  border-color: @primary;
+  background-color: transparent;
+}
+
+mainbox {
+  orientation: vertical;
+  children: [listview, inputbar];
+  border-radius: 0px;
+  background-color: transparent;
+  padding: calc(2%) 0px;
+}
+
+listview {
+  orientation: horizontal;
+  columns: @colu;
+  lines: 1;
+  spacing: 30;
+  fixed-height: false;
+  fixed-columns: true;
+  scrollbar: false;
+  background-color: transparent;
+  background: none;
+  expand: true;
+  padding:8px;
+  border:none;
+  border-color: transparent;
+}
+
+element {
+  padding: 0px 0px 0px 0px;
+  border-radius: 50px;
+  orientation: vertical;
+  spacing: 0;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+  children: [element-icon, element-text];
+  background-color: transparent;
+  background: none;
+}
+
+element.selected {
+  border: 2px solid;
+  //  border-color: @foreground;
+  background-color: @primary;
+  border-radius: 50px;
+  box-shadow: 0 0 10px 2px;
+  shadow-color: @on-surface;
+  border-color: @primary;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+    text-color:       @on-primary-container;
+}
+
+element-icon {
+  size: 400px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  border-radius: 50px;
+  background-color: transparent;
+  background: none;
+  vertical-align: 0;
+  /* border: 4px solid;border-color: white; */
+}
+
+element-icon.selected {
+  size: 400px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  border-radius: 50px 50px 0px 0px;
+  background-color: transparent;
+  background: none;
+  vertical-align: 0;
+  /* border: 4px solid;border-color: white; */
+}
+
+element-text {
+  horizontal-align: 0.5;
+  background: none;
+  color: @on-primary-container;
+  padding: 20px;
+  background-color: transparent;
+}
+
+element-text.selected {
+  background-color: @primary;
+  color: @surface;
+  text-shadow: 2px 2px 2px;
+}
+
+
+
+/*****----- Inputbar -----*****/
+inputbar {
+  enabled: true;
+  expand: false;
+  spacing: 20px;
+  padding: 15px;
+  width: 40%;
+  height: 20px;
+  border-radius: 60px;
+  background-color: transparent;
+  text-color:@on-primary-container;
+  children: ["dummy", "textbox-prompt-colon", "entry", "dummy2"];
+}
+
+textbox-prompt-colon {
+  enabled: true;
+  expand: false;
+  str: "  ";
+  background-color: inherit;
+  text-color: inherit;
+}
+
+entry {
+  enabled: true;
+  background-color: inherit;
+  text-color: inherit;
+  cursor: text;
+  placeholder: "Search";
+  placeholder-color: inherit;
+}
+
+dummy {
+  expand: true;
+}
+
+dummy2 {
+  expand: true;
+}

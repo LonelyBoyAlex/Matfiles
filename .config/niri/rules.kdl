@@ -1,7 +1,7 @@
 // ++++++++++++++--> RULES <--++++++++++++++++++++
 window-rule {
 //sets 0px radius on all windows
-geometry-corner-radius 0
+geometry-corner-radius 12
 clip-to-geometry true
 }
 

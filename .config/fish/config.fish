@@ -26,7 +26,7 @@ alias piq 'yay -S --noconfirm --needed '
 alias pmi 'sudo pacman -S --needed '
 alias clch 'sudo pacman -Scc'
 alias pcc 'sudo pacman -Rcns $(pacman -Qtdq)'
-alias xx 'exit'
+alias xx exit
 alias prem 'sudo pacman -Rsn '
 alias hyr 'hyprctl reload'
 alias ged 'gnome-text-editor '
@@ -38,6 +38,12 @@ alias update-grub 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias srch 'yay -Ss '
 alias v 'nvim '
 alias veww 'nvim ~/.config/eww'
+alias vfish 'nvim ~/.config/fish/config.fish'
+alias vmat 'nvim ~/.config/matugen/config.toml'
+
+#alias cdwm 'nvim ~/suckless/dwm/config.h'
+#alias mdwm 'cd ~/suckless/dwm; sudo make clean install; cd -'
+#alias cst 'nvim ~/suckless/st/config.h'
 
 # function fish_prompt
 #   set_color cyan; echo (pwd)

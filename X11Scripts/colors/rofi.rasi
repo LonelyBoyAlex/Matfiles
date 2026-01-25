@@ -1,10 +1,22 @@
 * {
-   background : #2e3440 ;
-   background-alt : #3b4252;
-   foreground : #d8dee9;
-   primary : #88c0d0;
-   secondary : #5e81ac;
-   alert : #bf616a;
-   disabled : #4c566a;
-}
+  background : #232136;
+  bgtr : #23213688;
+  background-alt : #2a273f;
+  foreground : #e0def4;
 
+  primary : #393552;
+  secondary : #3e8fb0;
+
+  alert : #eb6f92;
+  disabled : #ea9a97;
+  //disabled : #6e6a86;
+
+  primary-container : #44415a;
+  on-primary-container : #c4a7e7;
+
+  surface : #232136;
+  on-surface : #e0def4;
+
+  error : #eb6f92;
+  bordline : #6e6a86;
+}

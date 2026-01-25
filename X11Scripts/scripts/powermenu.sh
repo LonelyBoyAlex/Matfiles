@@ -10,16 +10,16 @@ SHUTDOWN="    "
 
 # Detect WM / DE and set logout command
 case "$XDG_SESSION_DESKTOP" in
-  qtile*)
-    LOGOUTCMD="qtile cmd-obj -o cmd -f shutdown"
-    ;;
-  i3)
-    LOGOUTCMD="i3-msg exit"
-    ;;
-  *)
-    # Safe fallback
-    LOGOUTCMD="loginctl terminate-user $USER"
-    ;;
+qtile*)
+  LOGOUTCMD="qtile cmd-obj -o cmd -f 'shutdown'"
+  ;;
+i3)
+  LOGOUTCMD="i3-msg exit"
+  ;;
+*)
+  # Safe fallback
+  LOGOUTCMD="loginctl terminate-user $USER"
+  ;;
 esac
 
 options="$SHUTDOWN  Shutdown
@@ -37,7 +37,7 @@ confirm() {
 }
 
 lock() {
-#  i3lock-fancy
+  #  i3lock-fancy
   betterlockscreen -l blur
 }
 
@@ -69,11 +69,10 @@ answer=$(confirm)
 
 if [[ "$answer" == "    Yes" ]]; then
   case "$chosen" in
-    *Lock)     lock ;;
-    *Logout)   logout ;;
-    *Suspend)  suspend ;;
-    *Reboot)   reboot ;;
-    *Shutdown) shutdown ;;
+  *Lock) lock ;;
+  *Logout) logout ;;
+  *Suspend) suspend ;;
+  *Reboot) reboot ;;
+  *Shutdown) shutdown ;;
   esac
 fi
-

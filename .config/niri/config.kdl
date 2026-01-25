@@ -1,14 +1,15 @@
 include "colors.kdl"
 //    monitors
 output "eDP-1" {
-  mode "1920x1080@90"
+  mode "1920x1080@60"
   position x=0 y=0
   scale 1.0
+  //scale 1.25
 }
 
 // setting layout
 layout {
-//  empty-workspace-above-first
+  empty-workspace-above-first
   gaps 8
   center-focused-column "never" // on-overflow,,always
   always-center-single-column
@@ -21,13 +22,13 @@ layout {
   }
   default-column-width { proportion 0.85; }
   focus-ring {
-	 	off
-    width 4
+	 //off
+    width 2
 //    active-color "#ffffff33"
 //		inactive-color "#505050ff"
   }
   border {
-	 	//off
+	  off
     width 4  //3
 //    active-color "#c4c7ca"
 //    inactive-color "#202020"
@@ -70,7 +71,7 @@ spawn-at-startup "~/HyprlandScripts/ewwStarter.sh" "bar"
 spawn-at-startup "~/.config/niri/scripts/swaync.sh"
 //spawn-at-startup "kwallet"
 //spawn-at-startup "kwalletmanager"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"

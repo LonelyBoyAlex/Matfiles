@@ -38,6 +38,7 @@ listview {
   fixed-height: false;
   scrollbar: false;
   background-color: transparent;
+  border:none;
 }
 
 element {

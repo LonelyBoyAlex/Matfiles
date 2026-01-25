@@ -1,9 +1,16 @@
 * {
    background : #222222;
+   bgtr : #22222244;
    background-alt : #222222;
    foreground : #dedede;
    primary : #787878;
    secondary : #222222;
    alert : #ffdddd;
    disabled : #9a9a9a;
+   primary-container: #222222;
+   on-primary-container: #c5c5c5;
+   surface:#282828;
+   on-surface:#c5c5c5;
+   error: #aa3333;
+   bordline: #2e2e2e;
 }

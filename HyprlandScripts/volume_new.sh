@@ -23,7 +23,7 @@ get_icon() {
         echo "$ICON_MUTED"
     elif (( volume < 35 )); then
         echo "$ICON_LOW"
-    elif (( volume < 70 )); then
+    elif (( volume < 65 )); then
         echo "$ICON_MEDIUM"
     else
         echo "$ICON_HIGH"

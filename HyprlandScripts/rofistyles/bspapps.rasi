@@ -1,0 +1,205 @@
+//this is main app launcher on i3
+@import "~/X11Scripts/colors/rofi.rasi"
+
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  background-color:transparent;
+  border-color:transparent;
+  border:none;
+}
+  
+#window {
+    background-color: @bgtr;
+    border: 2px;
+    border-radius: 4px;
+    padding: 2px ;
+    width:calc(30%);
+    text-align: center;
+    border-color:@on-primary-container;
+}
+
+#mainbox {
+    padding: 0px;
+    border: none;
+}
+
+#message {
+    border: 2px 0px 0px;
+    //border-color: @outline;
+    padding: 1px;
+}
+
+#textbox {
+    text-color: @on-surface;
+}
+
+#inputbar {
+    background-color: @primary-container;
+    border: 0px 0px 2px 0px solid;
+    border-radius:0px;
+    border-color:@on-primary-container;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#case-indicator {
+    text-color: @on-surface;
+    padding:8px;
+}
+
+#entry {
+    spacing: 0;
+    padding:8px;
+    text-color: @on-surface;
+}
+
+#prompt {
+    spacing: 0;
+    padding:8px;
+    text-color: @on-surface;
+}
+
+#textbox-prompt-colon {
+    expand: false;
+    str: " => ";
+    padding:8px;
+    text-color: @on-surface;
+}
+
+#listview {
+    background: transparent;
+    fixed-height: 0;
+    border-radius: 12px;
+    border-color: transparent;
+    spacing: 8px;
+    scrollbar: false;
+    padding: 8px 20px;
+}
+
+#element {
+    background:transparent;
+    padding: 4px 4px 2px 32px;
+    font-size:16px;
+    border-radius:4px;
+    horizontal-align:0.5;
+}
+
+#element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+    font-size:16px;
+    text-size:16px;
+    horizontal-align:0;
+}
+/*
+#element.normal {
+    background:transparent;
+    text-color: @on-surface;
+}
+
+#element.normal.urgent {
+    background-color: @error;
+    text-color: @on-error;
+}
+
+#element.alternate.normal {
+    //background-color: @selected-normal-foreground;
+    //text-color: @active-background;
+    background-color: @on-primary-container;
+    text-color: @primary-container;
+    //border: 2px solid;border-color:white;
+}
+
+#element.normal.active {
+    background-color: @active-background;
+    text-color: @active-foreground;
+    border: 2px solid;border-color:white;
+}
+
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color: @selected-urgent-foreground;
+}
+
+#element.selected.active {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+}
+
+#element.alternate.normal {
+    background-color: @primary-container;
+    text-color: @on-surface;
+}
+
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color: @alternate-active-foreground;
+}
+*/ 
+element normal.normal,
+element alternate.normal {
+    background-color: inherit;
+    text-color: @disabled;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color: @error;
+}
+
+element normal.active {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    //background-color: @on-primary-container;
+    background-color: @on-surface;
+    text-color: @surface;
+}
+
+element selected.urgent {
+    background-color: transparent;
+    text-color: @on-primary-container;
+}
+
+element selected.active {
+    background-color: @on-primary-container;
+    text-color: @primary;
+}
+
+
+
+
+#scrollbar {
+    width: 2px;
+    border: 0;
+    handle-width: 2px;
+    padding: 0;
+}
+
+#sidebar {
+    border: 2px 0px 0px;
+    border-color: @bordline;
+}
+
+#button {
+    text-color: @on-surface;
+}
+
+#button.selected {
+    //background-color: @selected-normal-background;
+    text-color: @on-surface;
+}
+
+#inputbar {
+    spacing: 0;
+    text-color: @on-surface;
+    padding: 1px;
+}
+
+

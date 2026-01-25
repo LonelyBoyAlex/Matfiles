@@ -3,10 +3,10 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango:JetBrains Mono Nerd Font Propo 12.5
+font pango:JetBrains Mono Nerd Font Propo 10
 
 #############################
-#### enclude full conf ####
+#### include full conf ####
 #############################
 include ~/.config/i3/keybinds
 include ~/.config/i3/autostart
@@ -14,7 +14,8 @@ include ~/.config/i3/autostart
 ########################
 #### setting colors ####
 ########################
-exec_always --no-startup-id xrdb -merge "$HOME/X11Scripts/colors/colors.Xresources"
+#exec_always --no-startup-id xrdb -merge "$HOME/X11Scripts/colors/colors.Xresources"
+exec_always --no-startup-id xrdb -merge "$HOME/.config/i3/colors.Xresources"
 set_from_resource $bg background #222436
 set_from_resource $fg foreground #c8d3f5
 set_from_resource $c0 color0 #1b1d2b
@@ -34,9 +35,9 @@ set_from_resource $c13 color13 #caabff
 set_from_resource $c14 color14 #b2ebff
 set_from_resource $c15 color15 #c8d3f5
 
-client.focused $c12 $c12 $bg $c12 $c12
+client.focused $c13 $c13 $c4 $c13 $c13
 client.focused_inactive $c0 $c0 $c3 $c0 $c0
-client.unfocused $c0 $c0 $c7 $c0 $c0
+client.unfocused $c0 $c0 $c5 $c0 $c0
 client.urgent $c9 $c9 $c15 $c9 $c9
 client.placeholder $bg $bg $fg $bg $bg
 client.background $bg
@@ -44,13 +45,14 @@ client.background $bg
 #######################
 #### look and feel ####
 #######################
-gaps inner 6
-gaps outer 4
+gaps inner 2
+gaps outer 2
 smart_gaps off
-default_border normal 3
-default_floating_border normal 2
+default_border normal 5
+default_floating_border normal 5
 title_align center
-hide_edge_borders smart
+hide_edge_borders both
+#smart
 
 #bar {
 #      position bottom

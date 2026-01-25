@@ -2,14 +2,16 @@
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom -b
-exec ~/X11Scripts/wallpaper.sh
+exec feh --bg-fill $(readlink .config/themes/active/wallpapers/current) 
 exec dunst
-exec_always --no-startup-id pgrep -x polybar >/dev/null || polybar -c ~/.config/polybar/configNew.ini &
+exec_always --no-startup-id pgrep -x polybar >/dev/null || polybar -c ~/.config/polybar/config.ini &
 exec --no-startup-id xss-lock --transfer-sleep-lock --betterlockscreen --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id udiskie --tray
 set $refresh_i3status killall -SIGUSR1 i3status
+# exec --no-startup-id i3-msg restart
+exec --no-startup-id xrdb -merge "$HOME/.config/i3/colors.Xresources"
 
 
 ## old one below

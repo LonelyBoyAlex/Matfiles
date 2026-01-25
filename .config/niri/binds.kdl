@@ -5,10 +5,10 @@ binds {
   Mod+Backspace {spawn-sh "~/HyprlandScripts/fuzzelPowermenu.sh";}
   //;;scripts
   Mod+T repeat=false { spawn "~/HyprlandScripts/theme_switcher.sh";}
-  Mod+W { spawn "~/HyprlandScripts/change_wallpaper_final.sh";}
+  Mod+W { spawn "~/HyprlandScripts/wallpaper.sh";}
   Ctrl+Alt+W repeat=false {spawn "~/HyprlandScripts/rofiwall.sh";}
   Mod+U repeat=false {spawn "~/HyprlandScripts/ewwStarter.sh" "bar";}
-  Mod+Comma repeat=false{spawn-sh "~/HyprlandScripts/pywalbitheme.sh";}
+  //Mod+Comma repeat=false{spawn-sh "~/HyprlandScripts/pywalbitheme.sh";}
   Mod+Period repeat=false {spawn-sh "~/HyprlandScripts/fuzzel-emoji.sh";}
   SUPER+Shift+Return { spawn "kitty";}
   SUPER+Return { spawn "alacritty";}
@@ -18,7 +18,7 @@ binds {
   SUPER+B { spawn "zen-browser";}
   SUPER+C { spawn "code";}
   SUPER+G { spawn "github-desktop";}
-  Mod+Space { spawn-sh "pkill rofi || rofi -show drun -config ~/HyprlandScripts/style-12.rasi" ;}
+  //Mod+Space { spawn-sh "pkill rofi || rofi -show drun -config ~/HyprlandScripts/style-12.rasi" ;}
   Alt+Backslash { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
   Alt+Space { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
   Mod+Alt+H {spawn-sh "alacritty -e nvim ~/.config/niri/config.kdl";}
@@ -105,17 +105,18 @@ binds {
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh up"     ;}
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh down"   ;}
   XF86AudioMute allow-when-locked=true { spawn-sh "~/HyprlandScripts/volume_new.sh toggle"        ;}
-  XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh up"     ;}
-  XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh down" ;}
-  Ctrl+Alt+BracketRight allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh up"   ;}
-  Ctrl+Alt+BracketLeft allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness3.sh down"  ;}
+  XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness.sh up"     ;}
+  XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness.sh down" ;}
+  Ctrl+Alt+BracketRight allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness.sh up"   ;}
+  Ctrl+Alt+BracketLeft allow-when-locked=true { spawn-sh "~/HyprlandScripts/brightness.sh down"  ;}
   XF86AudioPlay { spawn-sh "playerctl play-pause"                                                 ;}
   XF86AudioNext { spawn-sh "playerctl next"                                                       ;}
   XF86AudioPrev { spawn-sh "playerctl previous"                                                   ;}
   
   //# Screenshot
   Print { spawn-sh "~/HyprlandScripts/nirirofishot.sh"      ;}
-  Ctrl+Alt+S { spawn-sh "~/HyprlandScripts/nirirofishot.sh" ;}
+  Ctrl+Alt+S { spawn-sh "~/HyprlandScripts/hyprofishot.sh" ;}
+  //Ctrl+Alt+S { spawn-sh "~/HyprlandScripts/nirirofishot.sh" ;}
   
   //Mod+N { spawn-sh "$(('eww get isnotiopen' == 'true' ? 'eww close notifications' : 'eww open notifications')) ";}
   Mod+SHIFT+N {spawn-sh "swaync-client --toggle-panel";}

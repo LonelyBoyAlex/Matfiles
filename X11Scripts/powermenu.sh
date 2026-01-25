@@ -1,25 +1,28 @@
 #!/bin/bash
 
-ROFI_FONT="Hermit Nerd Font Propo 16"
+ROFI_FONT="Iosevka Nerd Font Propo 19"
 
 LOCK=""
 LOGOUT=""
-SUSPEND="鈴"
+SUSPEND="⏾"
 REBOOT=""
 SHUTDOWN=""
 
 # Detect WM / DE and set logout command
 case "$XDG_SESSION_DESKTOP" in
-  qtile*)
-    LOGOUTCMD="qtile cmd-obj -o cmd -f shutdown"
-    ;;
-  i3)
-    LOGOUTCMD="i3-msg exit"
-    ;;
-  *)
-    # Safe fallback
-    LOGOUTCMD="loginctl terminate-user $USER"
-    ;;
+qtile*)
+  LOGOUTCMD="qtile cmd-obj -o cmd -f shutdown"
+  ;;
+i3)
+  LOGOUTCMD="i3-msg exit"
+  ;;
+bspwm)
+  LOGOUTCMD="bspc quit"
+  ;;
+*)
+  # Safe fallback
+  LOGOUTCMD="loginctl terminate-user $USER"
+  ;;
 esac
 
 options="$SHUTDOWN  Shutdown
@@ -31,15 +34,15 @@ $REBOOT  Reboot"
 confirm() {
   echo -e "Yes\nNo" | rofi -i -dmenu \
     -p "Are you sure?" \
-    -config ~/X11Scripts/rofi/config.rasi \
+    -config ~/HyprlandScripts/rofistyles/bspapps.rasi \
     -font "$ROFI_FONT" \
     -theme-str 'window {width: 400px; height: 250px;}'
 }
 #    -config ~/X11Scripts/rofi/pmenu.rasi \
 
 lock() {
- # i3lock-fancy
- betterlockscreen -l blur
+  # i3lock-fancy
+  betterlockscreen -l blur
 }
 
 logout() {
@@ -60,7 +63,7 @@ shutdown() {
 
 chosen=$(echo -e "$options" | rofi -i -dmenu \
   -p "Power" \
-  -config ~/X11Scripts/rofi/config.rasi \
+  -config ~/HyprlandScripts/rofistyles/bspapps.rasi \
   -font "$ROFI_FONT" \
   -theme-str 'window {width: 450px; height:350px;}')
 
@@ -70,11 +73,10 @@ answer=$(confirm)
 
 if [[ "$answer" == "Yes" ]]; then
   case "$chosen" in
-    *Lock)     lock ;;
-    *Logout)   logout ;;
-    *Suspend)  suspend ;;
-    *Reboot)   reboot ;;
-    *Shutdown) shutdown ;;
+  *Lock) lock ;;
+  *Logout) logout ;;
+  *Suspend) suspend ;;
+  *Reboot) reboot ;;
+  *Shutdown) shutdown ;;
   esac
 fi
-

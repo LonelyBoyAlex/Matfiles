@@ -1,0 +1,8 @@
+background = {{colors.primary_container.default.hex}}
+background-alt = {{colors.primary_container.default.hex}}
+foreground = {{colors.on_primary_container.default.hex}}
+foreground-alt = {{colors.on_primary_container.default.hex}}
+primary = {{colors.primary.default.hex}}
+secondary = {{colors.secondary_container.default.hex}}
+alert = {{colors.error.default.hex}}
+disabled = {{colors.surface_dim.default.hex}}

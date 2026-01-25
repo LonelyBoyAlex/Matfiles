@@ -56,3 +56,14 @@ X11Scripts/todo.txt
 .config/alacritty/colors.toml
 /.config/gtk-4.0/assets
 /.config/gtk-4.0/windows-assets
+.config/alacritty/colors.toml
+.config/bspwm/colors-polybar
+.config/eww/colors.scss
+.config/eww.old-goth/colors.scss
+.config/eww/colors.scss
+.config/fuzzel/colors.ini
+.config/nvim/.neoconf.json
+.config/nvim/lazy-lock.json
+.config/nvim/lazyvim.json
+/.config/qtile/__pycache__
+/.config/rofi/icons/recolored

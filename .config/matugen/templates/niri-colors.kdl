@@ -1,12 +1,12 @@
 layout {
   focus-ring {
-    active-color "{{ colors.primary_container.default.hex }}ff"
-    inactive-color "{{ colors.background.default.hex }}ff"
+    active-color "{{ colors.on_primary_container.default.hex }}ff"
+    inactive-color "{{ colors.surface.default.hex }}ff"
   }
 
   border {
-    active-color "{{ colors.on_primary.default.hex }}"
-    inactive-color "{{ colors.surface.default.hex }}"
+    active-color "{{ colors.on_surface.default.hex }}"
+    inactive-color "{{ colors.background.default.hex }}"
     urgent-color "{{ colors.error.default.hex }}"
   }
 

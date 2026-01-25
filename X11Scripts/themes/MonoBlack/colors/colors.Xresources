@@ -1,28 +1,12 @@
-*foreground:        #E0DEF4
-*background:        #232136
-*.foreground:       #E0DEF4
-*.background:       #232136
+XTerm*background: #282828
+XTerm*foreground: #ebdbb2
+XTerm*color0:  #282828
+XTerm*color1:  #cc241d
+XTerm*color2:  #98971a
+XTerm*color3:  #d79921
+XTerm*color4:  #458588
+XTerm*color5:  #b16286
+XTerm*color6:  #689d6a
+XTerm*color7:  #a89984
+XTerm*color8:  #928374
 
-URxvt*foreground:   #E0DEF4
-URxvt*background:   [100]#232136
-URxvt*cursorColor:  #E0DEF4
-URxvt*borderColor:  [100]#232136
-
-*.color0:  #232136
-*.color1:  #EB6F92
-*.color2:  #3E8FB0
-*.color3:  #F6C177
-*.color4:  #9CCFD8
-*.color5:  #C4A7E7
-*.color6:  #6E6A86
-*.color7:  #E0DEF4
-*.color8:  #393552
-*.color9:  #EB6F92
-*.color10: #3E8FB0
-*.color11: #F6C177
-*.color12: #9CCFD8
-*.color13: #C4A7E7
-*.color14: #6E6A86
-*.color15: #F5F3FF
-
-*.color66: #232136
