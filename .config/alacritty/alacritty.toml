@@ -26,7 +26,7 @@
   bold.style = "Bold"
   italic.style = "Italic"
   bold_italic.style = "Bold Italic" 
-  size = 14
+  size = 16
 
 # $HOME/.config/alacritty/alacritty.toml
 # by Rito Ghosh 2023-10-06

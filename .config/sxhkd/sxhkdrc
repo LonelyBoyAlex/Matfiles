@@ -176,3 +176,5 @@ super + c
 	code
 super + e
 	pcmanfm
+super + shift +  e
+	nautilus

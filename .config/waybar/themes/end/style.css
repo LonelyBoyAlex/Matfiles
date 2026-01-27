@@ -1,0 +1,222 @@
+@import url("./colors.css");
+* {
+    font-family: "JetBrains Mono Nerd Font Propo";
+    font-size: 14px;
+}
+
+window#waybar {
+    background: @primary_container;
+    border: 1px solid @outline;
+    padding: 0.5rem 1rem;
+    /*border-radius: 50px 50px;*/
+    border-radius: 8px;
+}
+
+window#waybar.empty #window {
+    background: none;
+}
+
+#window,
+#custom-window {
+    color: @on_primary_container;
+    background: inherit;
+    margin: 0px;
+    margin-left: 0.5rem;
+    padding: 0px 0.25rem;
+    font-weight: 800;
+    font-size: larger;
+}
+
+#workspaces {
+    background: alpha(@surface, 1);
+    color: @on_surface_container;
+    border-radius: 60px;
+    transition: 0.2s ease;
+    padding: 2px 4px;
+    margin: 4px 14px 4px 4px;
+}
+
+#workspaces button {
+    background-color: alpha(@primary_container, 1);
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.2s ease;
+    padding: 0px 8px 0px 10px;
+    margin: 2px 4px;
+    border-radius: 2rem;
+}
+
+#workspaces button:not(.empty) {
+    background-color: inherit;
+    background-color: @on_tertiary;
+    color: @on_primary_container;
+}
+
+#workspaces button.active {
+    background: alpha(@on_secondary, 1);
+    color: alpha(@secondary, 1);
+    transition: all 0.3s ease-in;
+    margin: 2px;
+    padding: 0px 32px;
+    border: 1px solid alpha(@on_primary_container, 0.5);
+    border-radius: 2rem;
+}
+
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    color: inherit;
+    transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#clockk {
+    color: inherit;
+    padding: 0px;
+    margin: 4px 0px;
+    margin-right: 6px;
+    border-radius: 0px 60px 60px 0px;
+}
+
+#clock {
+    background: inherit;
+    padding: 0px 12px;
+}
+
+#custom-date {
+    padding: 0px 12px;
+}
+
+#idle_inhibitor {
+    color: inherit;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+}
+
+#battery {
+    color: inherit;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+}
+
+#idle_inhibitor.activated {
+    color: @primary;
+    background: alpha(@on_primary, 1);
+}
+
+#expand-Bat {
+    margin-left: 6px;
+}
+
+#upower,
+#upower-headset {
+    color: inherit;
+    padding: 0px 12px;
+    margin: 4px 0px;
+    border-radius: 0px 60px 60px 0px;
+}
+
+#battery.critical:not(.charging) {
+    color: @on_error;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-logout,
+#custom-notification {
+    font-size: 20px;
+    background: inherit;
+    color: @on_primary_container;
+    margin: 4px 0px;
+    padding: 0px 8px;
+    border-radius: 0px;
+}
+
+#leftside {
+    padding-left: 12;
+    padding-right: 12;
+    margin-left: 0.75rem;
+}
+
+#rightside {
+    padding-left: 12;
+    padding-right: 12;
+    margin-right: 0.75rem;
+}
+
+#custom-window {
+    margin-top: 2px;
+    padding-bottom: 2px;
+    text-shadow: 2px 2px 4px @background;
+}
+
+#mpris {
+    color: @on_primary_container;
+    border-radius: 60px;
+    margin: inherit;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#custom-music {
+    color: @on_primary_container;
+    border-radius: 60px;
+    margin: 4;
+    padding: 2 12 2 8;
+}
+
+#mpris.playing {
+    color: @primary;
+}
+
+#bluetooth {
+    font-size: 21px;
+    padding-right: 14px;
+}
+
+/*#bluetooth.connected{
+    font-size: 16px;
+    padding-right: 14px;
+}*/
+
+#battery,
+#idle_inhibitor,
+#mpris {
+    border: 0px solid @primary;
+    border-radius: 60px;
+    padding-left : 1rem;
+    padding-right : 1rem;
+}
+
+#idle_inhibitor {
+    font-size: 18px;
+    /* padding-right: 14px;
+    padding-left: 10px; */
+}
+#idle_inhibitor.deactivated {
+    font-size: 16px;
+}
+#expand-Bat,
+#idleclock,
+#musicplayer {
+    background: alpha(@background, 1);
+    border-radius: 60px;
+    padding: 0;
+    margin: 4;
+}
+
+#battery.charging,
+#battery.plugged,
+#battery.full {
+    color: @primary;
+    background: alpha(@surface, 1);
+}
+#custom-menu {
+    color: transparent;
+    background-color: inherit;
+    padding: 4px;
+    margin: 0px 0.5rem;
+}

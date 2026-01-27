@@ -100,5 +100,9 @@ post_hook = 'polybar-msg cmd restart'
 [templates.waybar]
 input_path = 'templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
+
+[templates.quickshell]
+input_path = 'templates/quickshell.qml'
+output_path = '~/.config/quickshell/colors.qml'
 post_hook = 'notify-send "updated matugen colors"'
 

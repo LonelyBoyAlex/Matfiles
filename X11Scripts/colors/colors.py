@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
-# colors.py - Rose Glow (Pink + Deep Purple) for Qtile
+# colors.py - Gruvbox Ash (Rofi-inspired) for Qtile
 
 # Special colors
-BG = "#232136"
-BOR_NOR = "#232136"
-MID = "#ff7eb6"
-BOR_FOC = "#FF7EB6"
-ACCENT= "#232136"
-FG = "#CDB4F6"
+BG = "#2C2618"          # background
+BOR_NOR = "#2C2618"
+MID = "#5A5644"      # primary / alert tone
+BOR_FOC = "#6D6954"     # active background
+ACCENT = "#6D6954"         # background-alt
+FG = "#C4C3C1"          # foreground
 
 # Base 16 colors
-COLOR0  = "#1F1B2E"     # bg
-COLOR1  = "#FF7EB6"     # hot pink (alerts)
-COLOR2  = "#F0729A"     # glow pink
-COLOR3  = "#CDB4F6"     # lavender
-COLOR4  = "#6B5CAD"     # deep purple
-COLOR5  = "#D67AD2"     # pink-violet
-COLOR6  = "#9CCFD8"     # cool contrast (optional)
-COLOR7  = "#E6E1F7"     # fg
+COLOR0  = "#6C6658"     # bg
+COLOR1  = "#5A5644"     # muted red / alert
+COLOR2  = "#6C6756"     # secondary (olive-brown)
+COLOR3  = "#6D6954"     # active bg / yellow-muted
+COLOR4  = "#2D2F2F"     # urgent / deep graphite
+COLOR5  = "#7A7564"     # soft brown-magenta
+COLOR6  = "#707880"     # disabled / desaturated cyan-gray
+COLOR7  = "#C4C3C1"     # fg
 
-COLOR8  = "#26233A"     # surface
-COLOR9  = "#FF94C2"
-COLOR10 = "#F38FB2"
-COLOR11 = "#DAC8FF"
-COLOR12 = "#7A6BC9"
-COLOR13 = "#E09AE3"
-COLOR14 = "#B6E3EE"
-COLOR15 = "#F8F6FF"
+COLOR8  = "#5F5A4E"     # darker bg
+COLOR9  = "#756F5E"     # bright alert
+COLOR10 = "#807A67"     # bright secondary
+COLOR11 = "#8A8571"     # bright bg-alt
+COLOR12 = "#3A3C3C"     # bright graphite
+COLOR13 = "#9A9482"     # bright brown-magenta
+COLOR14 = "#8E9498"     # bright disabled
+COLOR15 = "#E0DED8"     # bright fg

@@ -67,3 +67,11 @@ X11Scripts/todo.txt
 .config/nvim/lazyvim.json
 /.config/qtile/__pycache__
 /.config/rofi/icons/recolored
+/X11Scripts/colors
+/X11Scripts/colors
+X11Scripts/current_theme
+X11Scripts/currWall
+X11Scripts/wallpapers
+.config/wlogout/colors.css
+.config/themes/Mudwash/wallpapers/current
+.config/themes/Rose/wallpapers/current

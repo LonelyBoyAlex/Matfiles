@@ -1,12 +1,12 @@
-XTerm*background: #191724
-XTerm*foreground: #e0def4
+XTerm*background: #282828
+XTerm*foreground: #ebdbb2
+XTerm*color0:  #282828
+XTerm*color1:  #cc241d
+XTerm*color2:  #98971a
+XTerm*color3:  #d79921
+XTerm*color4:  #458588
+XTerm*color5:  #b16286
+XTerm*color6:  #689d6a
+XTerm*color7:  #a89984
+XTerm*color8:  #928374
 
-XTerm*color0:  #191724
-XTerm*color1:  #eb6f92
-XTerm*color2:  #9ccfd8
-XTerm*color3:  #f6c177
-XTerm*color4:  #31748f
-XTerm*color5:  #c4a7e7
-XTerm*color6:  #9ccfd8
-XTerm*color7:  #e0def4
-XTerm*color8:  #403d52

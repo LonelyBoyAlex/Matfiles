@@ -1,22 +1,16 @@
 * {
-  background : #232136;
-  bgtr : #23213688;
-  background-alt : #2a273f;
-  foreground : #e0def4;
-
-  primary : #393552;
-  secondary : #3e8fb0;
-
-  alert : #eb6f92;
-  disabled : #ea9a97;
-  //disabled : #6e6a86;
-
-  primary-container : #44415a;
-  on-primary-container : #c4a7e7;
-
-  surface : #232136;
-  on-surface : #e0def4;
-
-  error : #eb6f92;
-  bordline : #6e6a86;
+   background : #6c6658;
+   bgtr : #6c665844;
+   background-alt  :#6D6954;
+   foreground : #c4c3c1;
+   primary : #2d2f2f;
+   secondary : #6C6756;
+   alert : #5A5644;
+   disabled : #c4c3c1;
+   primary-container: #3c3836;
+   on-primary-container: #bdae93;
+   surface:#282828;
+   on-surface:#ebdbb2;
+   error: #cc241d;
+   bordline: #5A5644;
 }

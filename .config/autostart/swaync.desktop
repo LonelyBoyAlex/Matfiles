@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Sway Notification Center
-Exec=swaync
-Comment=Notification daemon
-NotShowIn=KDE;
-X-GNOME-Autostart-enabled=false
-
