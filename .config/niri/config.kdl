@@ -23,7 +23,7 @@ layout {
   default-column-width { proportion 0.85; }
   focus-ring {
 	 //off
-    width 2
+    width 1
 //    active-color "#ffffff33"
 //		inactive-color "#505050ff"
   }
@@ -65,18 +65,12 @@ overview {
 }
 
 //  autostart
-spawn-at-startup "eww-daemon"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "~/HyprlandScripts/ewwStarter.sh" "bar"
-spawn-at-startup "~/.config/niri/scripts/swaync.sh"
+
+spawn-at-startup "~/.config/niri/autostart.sh"
+//spawn-at-startup "swww-daemon -n wallpapes &"
 //spawn-at-startup "kwallet"
 //spawn-at-startup "kwalletmanager"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent"
-spawn-at-startup "nm-applet"
-spawn-at-startup "blueman-applet"
-spawn-at-startup "~/.config/niri/scripts/swayidle.sh"
-spawn-at-startup "~/.config/niri/scripts/overviewbg.sh"
-spawn-at-startup "udiskie --tray"
+//spawn-at-startup "swww img -n wallpapes $HOME/.cache/wallblurred.png"
 
 //  input 
 input {
