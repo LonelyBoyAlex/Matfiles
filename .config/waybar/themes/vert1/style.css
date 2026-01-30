@@ -1,0 +1,240 @@
+@import url("colors.css");
+
+* {
+  font-family: "Iosevka Nerd Font Propo";
+  font-size: 16px;
+  transition: all 0.25s ease-in-out;
+}
+
+window#waybar { 
+  background:alpha(@primary_container,1);
+  border-radius:0px;
+  border-right: solid @on_primary_container;
+  border-left: solid @on_primary_container;
+}
+
+#custom-appmenu,#custom-logout {
+  min-height:18px;
+  padding:4px 0px;
+  background: alpha(@primary,0.5);
+  color: @on_primary;
+  border-radius: 8px;
+  border:none;
+  margin:4px;
+}
+
+#idle_inhibitor { 
+  min-height:12px;
+  padding:6px 0px;
+  background: alpha(@primary,0.5);
+  color: @background;
+  border-radius: 12px 12px 0px 0px;
+  border:none;
+  margin: 4px 4px 0px 4px;
+}
+
+#idle_inhibitor.activated { 
+  min-height:12px;
+  padding:6px 0px;
+  background: alpha(@on_primary,0.5);
+  color: @on_surface;
+  border-radius: 12px 12px 0px 0px;
+  border:2px solid @primary;
+  border-bottom:none;
+  margin: 2px 4px 0px 4px;
+}
+
+#clockey {
+  background: alpha(@primary,0.5);
+  border-radius: 0px 0px 12px 12px;
+  margin:4px;
+  margin-top:0px;
+  font-weight:800;
+  padding: 4px;
+  color:@background;
+}
+
+#custom-clockD,
+#custom-clockH,
+#custom-clockM,
+#custom-colon {
+  font-size:18px;
+}
+
+#custom-clockD {
+  margin-top:8px;
+  padding-bottom:4px;
+}
+
+#backlight,#pulseaudio { 
+  background: alpha(@primary,0.5);
+  border-radius: 12px 12px 0px 0px;
+  color:@background;
+  padding:8px 4px;
+  margin:4px;
+  margin-bottom: 0px;
+  font-weight:800;
+}
+
+
+#custom-backlighttxt,
+#custom-pulseaudiotxt{
+  background: alpha(@primary,0.5);
+  border-radius: 0px 0px 12px 12px;
+  color:@background;
+  padding:8px 4px;
+  margin:4px;
+  margin-top: 0px;
+}
+
+
+#backlight-slider,
+#pulseaudio-slider {
+  border-radius:12px;
+  background: transparent;
+  padding:0px;
+  margin:0px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  background: @background;
+  min-width: 8px;
+  min-height: 2px;
+  border:none;
+  border-radius:12px;
+  padding:0px 4px;
+  margin:0px 0px;
+  color:transparent;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  margin:0px 4px;
+  padding:4px;
+  min-width: 2px;
+  min-height: 80px;
+  border-radius: 12px;
+  border:2px solid @background;
+  background: alpha(@primary,0.5);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  border-radius: 0px 0px 12px 12px;
+  background: @background; 
+  margin:4px;
+}
+
+#window {
+  color : alpha(@primary,0.75);
+  font-weight : 900;
+  margin: 10px 0px;
+  margin-bottom: 4px;
+  text-shadow: 2px 0px 8px @background;
+}
+
+#custom-window-icon {
+  color : alpha(@primary,0.75);
+  font-weight : 900;
+  margin-bottom: 10px;
+  text-shadow: 2px 0px 8px @background;
+}
+
+#betteryy { 
+  min-height:18px;
+  padding:4px 0px;
+  margin:0px 4px;
+  background: alpha(@primary,0.5);
+  color: @on_primary;
+  border-radius:12px;
+}
+
+#battery {
+  margin-top:4px;
+  margin-bottom:8px;
+}
+#battery.charging {
+  color:@on_primary_container;
+}
+#battery.warning {
+  color:@secondary;
+  background:@on_secondary_container;
+}
+#battery.critical{
+  color:@on_error;
+  background:@error;
+}
+
+#upower{
+  margin-bottom:4px;
+  margin-top:8px;
+  padding-top : 8px;
+  font-weight : 600;
+}
+
+#workspaces {
+  background: alpha(@primary,0.5);
+  border-radius: 12px;
+  color: @background;
+  margin : 4px;
+  padding:4px 0px;
+}
+
+#workspaces button {
+  color: @background;
+  margin: 2px 0px;
+  padding:0px;
+}
+
+#workspaces button:not(.empty) {
+  color: @on_primary;
+}
+
+
+#workspaces button.active {
+  /*background: alpha(@secondary_container,1);
+  color: @tertiary;*/
+  border-radius:12px;
+  margin:0px 2px;
+}
+
+window#waybar.empty #window{
+    margin:0px;
+    padding:0px;
+    min-height:0px;
+    min-width:0px;
+    color:transparent;
+    background: transparent;
+}
+
+#mpris {
+    color:@primary;
+    padding:1rem 0px;
+    margin:0px 0.25rem;
+}
+
+#mpris.paused{
+    color:@on_primary_container;
+    opacity:0.25;
+}
+
+#systray {
+  background: alpha(@primary,0.5);
+  border-radius: 12px;
+  color: @background;
+  padding:4px 0px;
+  margin:4px;
+}
+
+#tray {
+  color:@background;
+}
+
+#custom-appmenu,
+#backlight,
+#pulseaudio,
+#battery,
+#custom-logout {
+  font-size:20px;
+}

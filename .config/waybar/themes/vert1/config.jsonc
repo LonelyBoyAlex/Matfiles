@@ -1,0 +1,301 @@
+{
+  "layer": "top",
+  "position": "left",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  //-- positions ---
+  "modules-left": [
+    "custom/appmenu",
+    "idle_inhibitor",
+    //"group/musicplayer"
+    "group/clockey",
+    "mpris",
+  ],
+  "modules-center": [
+    "backlight",
+    "group/light",
+    "hyprland/window",
+    "custom/window-icon",
+    "pulseaudio",
+    "group/audio"
+  ],
+  "modules-right": [
+    "group/systray",
+    "group/betteryy",
+    //"group/net",
+    "hyprland/workspaces",
+    "custom/logout",
+  ],
+  //----------declarations----------------
+
+  "custom/appmenu": {
+    "format":"",
+    "on-click": "pidof rofi >/dev/null && killall rofi || rofi -show drun -theme ~/.config/rofi/myconfig.rasi",
+    "tooltip": false,
+  },
+
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-icons": {
+      "activated": "󰥔",
+      "deactivated": "",
+    },
+  },
+
+  "custom/clockH": {
+    "exec": "date '+%I'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+
+  "custom/clockM": {
+    "exec": "date '+%M'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+
+  "custom/clockD": {
+    //"exec": "date '+%I \n %M \n %p'",
+    "exec": "date '+%p'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+
+  "custom/colon":{
+    "format":"",
+    //"format":":",
+    "on-click":"gnome-clocks",
+    "rotate":0
+  },
+
+  "group/clockey":{
+    "orientation": "vertical",
+    "modules": [
+      "custom/clockH",
+      "custom/colon",
+      "custom/clockM",
+      "custom/clockD",
+    ],
+  },
+
+  "group/light":{
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 400,
+    //      "children-class": "not-power",
+    //      "transition-to-left": true,
+    //      "click-to-reveal": true,
+    },
+    "modules": [
+      "custom/backlighttxt",
+      "backlight/slider"
+    ],
+  },
+
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "rotate": 0,
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+    "scroll-step": 1,
+    "min-length": 2,
+  },
+
+  "backlight/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation":"vertical",
+    "rotate": 0,
+    "device": "amdgpu_bl1",
+    "scroll-step": 1,
+  },
+
+  "custom/backlighttxt": {
+    "exec": "(curr=$(brightnessctl get); max=$(brightnessctl max); echo $(( curr * 100 / max )))",
+    "interval": 1,
+    "return-type": "text",
+    "format": "{}"
+  },
+  "hyprland/window": {
+      //"format": "<span  weight='bold'>{class}</span>",
+      // "format": "",
+      "format": "{class}",
+      "orientation":"vertical",
+      "expand":true,
+      "rewrite": {
+        "(.*)code-oss(.*)": "code",
+        "(.*)Zen(.*)": "Zen",
+        "org.gnome.Nautilus":"File Manager"
+      },
+      "rotate":90,
+      "max-length": 120,
+      "icon": false,
+      "rotate-icon":180,
+      "icon-size": 18,
+      "swap-icon-label":true,
+      "format-icons":{
+        "firefox":"",
+        "zen":"",
+   // ["brave-browser"]="󰖟",
+   // ["alacritty"]="",
+   "kitty":"",
+   "code-oss":"󰨞",
+    //["discord"]="󰙯"
+    //["thunar"]="",
+    "nvim":"",
+      },
+      "tooltip":true,
+      "tooltip-format":" kill ",
+      "on-click-right": "hyprctl dispatch killactive",
+  },
+
+  "custom/window-icon": {
+    "exec": "~/.config/waybar/scripts/window_icon.sh",
+    "interval": 1,
+    "return-type": "string"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-muted": "󰸈",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "", "󱄠"],
+    },
+  },
+
+  "pulseaudio/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation":"vertical",
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 1,
+  },
+  "custom/pulseaudiotxt": {
+    "exec": "(sink=$(pactl get-default-sink); mute=$(pactl get-sink-mute \"$sink\" | awk '{print $2}'); vol=$(pactl get-sink-volume \"$sink\" | grep -oP '\\d+(?=%)' | head -1); [[ \"$mute\" == \"yes\" || $vol -eq 0 ]] && echo MT || echo \"${vol}\")",
+    "interval": 1,
+    "return-type": "text",
+    "format": "{}",
+  },
+  "group/audio": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 400,
+    //      "children-class": "not-power",
+    //      "transition-to-left": true,
+    //      "click-to-reveal": true,
+    },
+    "modules": ["custom/pulseaudiotxt", "pulseaudio/slider"],
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{icon}",
+    "rotate": 90,
+     //"rotate": 270,
+     "format-charging": "",
+     "format-plugged": "",
+     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      //"on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+      "interval":10,
+  },
+  "group/betteryy": {
+    "orientation": "vertical",
+    "modules": ["upower","battery"],
+  },
+  "upower": {
+  //"format": "{}",
+  "format-alt": "{} {percentage}% [{time}]",
+  "tooltip": false,
+  "show-icon": false,
+  "rotate": 90,
+  "tooltip-spacing": 20,
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+      //"format": "{id}",
+      "show-special":"true",
+      "format-icons": {
+        "empty": "",
+        "default":"",
+        //"2":"",
+        //"1":"",
+        //"3":"",
+        "active": "󰮯",
+      },
+      "persistent-workspaces": {
+        "*": [ 1,2,3,4 ], // 2-5 on every monitor
+        "HDMI-A-1": [ 1 ] // but only workspace 1 on HDMI-A-1
+      }  
+  },
+
+  "mpris": {
+    "format": "{player_icon} {status_icon} {dynamic}",
+    "format-playing": "{player_icon} {dynamic}",
+    "max-length": 32,
+    "player-icons": {
+      "default": "󰎆",
+      "mpv": "",
+      "firefox": "",
+      "youtube-music": "󰎆",
+      "celluloid":"",
+      "vlc":""
+    },
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "default":"󰎆",
+      "stopped":"󰎆"
+    },
+    "expand":true,
+    "rotate":90
+      // "ignored-players": ["firefox"]
+  },
+  "tray": {
+    "icon-size": 28,
+    "rotate": 0,
+    "spacing": 4,
+  },
+  "group/systray": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+    },
+    "modules": ["custom/menu",  "tray"],
+  },
+  "custom/menu": {
+    "format": "",
+    //"format": "󰅃",
+    "rotate": 0,
+    "tooltip":false
+  },
+
+  "custom/logout": {
+    "format": "󰤆",
+    "on-click": "wlogout --buttons-per-row 6 -C .config/wlogout/styletry.css",
+    "tooltip": false,
+    "tooltip-format": "Logout",
+  },
+}
