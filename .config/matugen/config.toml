@@ -34,6 +34,12 @@ output_path = '~/.config/niri/colors.kdl'
 [templates.eww]
 input_path = 'templates/colors.scss'
 output_path = '~/.config/eww/colors.scss'
+[templates.ewwgoth]
+input_path = 'templates/colors.scss'
+output_path = '~/.config/eww.old-goth/colors.scss'
+[templates.ewwFullbar]
+input_path = 'templates/colors.scss'
+output_path = '~/.config/eww.fullbar/colors.scss'
 #post_hook = 'notify-send "updated matugen colors"'
 
 [templates.xresources]
@@ -100,6 +106,11 @@ post_hook = 'polybar-msg cmd restart'
 [templates.waybar]
 input_path = 'templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
+
+[templates.pywalfox]
+input_path = './templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
 
 [templates.quickshell]
 input_path = 'templates/quickshell.qml'

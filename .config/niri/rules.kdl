@@ -1,7 +1,7 @@
 // ++++++++++++++--> RULES <--++++++++++++++++++++
 window-rule {
 //sets 0px radius on all windows
-geometry-corner-radius 12
+geometry-corner-radius 20
 clip-to-geometry true
 }
 
@@ -72,7 +72,7 @@ place-within-backdrop false
 }
 
 layer-rule {
-match namespace="wallpaper"
+match namespace="wallpapes"
 place-within-backdrop true
 }
 

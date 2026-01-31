@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -e
+
+app_dir="/usr/share/applications"
+user_app_dir="$HOME/.local/share/applications"
+
+printf "["
+
+first=1
+
+for file in "$app_dir"/*.desktop "$user_app_dir"/*.desktop; do
+    [ -e "$file" ] || continue
+
+    name=$(grep -m1 "^Name=" "$file" | cut -d= -f2)
+    exec=$(grep -m1 "^Exec=" "$file" |
+           sed 's/^Exec=//; s/%[a-zA-Z]//g')
+
+    if [ -n "$name" ] && [ -n "$exec" ]; then
+        if [ $first -eq 0 ]; then
+            printf ","
+        fi
+        first=0
+
+        printf '{"name":"%s","exec":"%s"}' \
+            "$(printf '%s' "$name" | jq -Rsa . | sed 's/^"//;s/"$//')" \
+            "$(printf '%s' "$exec" | jq -Rsa . | sed 's/^"//;s/"$//')"
+    fi
+done
+
+printf "]\n"

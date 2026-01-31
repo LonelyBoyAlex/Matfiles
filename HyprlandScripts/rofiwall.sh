@@ -93,6 +93,7 @@ if pgrep -x eww >/dev/null; then
   # Symlink current wallpaper for other tools
   ln -sf "$WALLPAPER" ~/.cache/currwall
   ln -sf "$WALLPAPER" ~/.cache/currwall.png
+  ~/HyprlandScripts/ewwStarter.sh reload
 else
   if [[ $WINDOWMAN == "i3" ]]; then
     echo "##################"
@@ -169,7 +170,7 @@ fi
 magick "$WALLPAPER" -blur 10x20 ~/.cache/wallblurred.png
 
 if [[ "${XDG_CURRENT_DESKTOP,,}" == "niri" ]]; then
-  killall swaybg 2>/dev/null
+  ##killall swaybg 2>/dev/null
   "$HOME/.config/niri/scripts/overviewbackground.sh"
   echo "##################"
   echo "blurred wall LOADED..."

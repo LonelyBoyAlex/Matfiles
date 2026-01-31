@@ -7,7 +7,7 @@ binds {
   Mod+T repeat=false { spawn "~/HyprlandScripts/theme_switcher.sh";}
   Mod+W { spawn "~/HyprlandScripts/wallpaper.sh";}
   Ctrl+Alt+W repeat=false {spawn "~/HyprlandScripts/rofiwall.sh";}
-  Mod+U repeat=false {spawn "~/HyprlandScripts/ewwStarter.sh" "bar";}
+  Mod+U repeat=false {spawn "~/HyprlandScripts/ewwStarter.sh" "reload";}
   //Mod+Comma repeat=false{spawn-sh "~/HyprlandScripts/pywalbitheme.sh";}
   Mod+Period repeat=false {spawn-sh "~/HyprlandScripts/fuzzel-emoji.sh";}
   SUPER+Shift+Return { spawn "kitty";}

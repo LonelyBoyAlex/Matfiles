@@ -1,61 +1,68 @@
-//$surf: darken($outline,35%);
-//$fg: lighten($color4,10%);
-//$accent:darken($outline,1%);
 $fg: $on_primary_container;
 $surf: $primary_container;
 $accent: $primary;
-$icns: 24px;
-$txt: 18px;
-$panebg:darken($surf,4%);
+$icns: 22px;
+$txt: 22px;
+//$high: 1060px;
+
 * {
-    margin:0px;
-    padding:0px;
+  all:unset;
+  margin:0px;
+  padding:0px;
+  font-family: "JetBrains Mono Nerd Font Propo", monospace;
 }
 .barcorner {
-  background: transparent;
-  padding: 24px;
-  border-radius: 24px;
+background: transparent;
+padding: 48px;
+border-radius: 24px;
 
-  &.top {
-    box-shadow: -24px -24px 0px 0px $panebg;
-  }
+&.top {
+box-shadow: -48px -48px 0px 0px $surf;
+}
 
-  &.bottom {
-    box-shadow: -24px 24px 0px 0px $panebg;
-  }
+&.bottom {
+box-shadow: -48px 48px 0px 0px $surf;
+}
 
-  &.topryt {
-    box-shadow: 24px -24px 0px 0px $panebg;
-  }
-
-  &.bottomryt {
-    box-shadow: 24px 24px 0px 0px $panebg;
-  }
 }
 
 .panel {
-  background: $panebg;
+  background: transparent;
 }
 
-.bar {
-  min-width: 52px;
-  background: $panebg;
-  border-radius: 0px 0px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  transition: all 2s ease-in;
+.mybar {
+  min-width: 42px;
+//  min-height: $high;
+  background: $surf;
+  /* border: 2px solid $fg;
+border-left:none;
+padding: 2rem 0px;
+border-radius: 0px;
+border-radius: 12px;
+border-left:3px solid $surf;
+border-right:3px solid transparentize($fg,0.5);
+border-top:1px solid transparentize($fg,0.5);
+border-bottom:1px solid transparentize($fg,0.5);
+*/
+border-radius: 0px 0px 0px 0px;
+padding: 12px 0px;
+transition: all 2s ease-in;
 }
 
 .launcher {
   color: $fg;
+  background: lighten($surf, 10%);
   font-size: $icns;
-  padding: 8px 0px 8px 0px;
-  margin: 8px 0px 8px 0px;
-  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 8px 0px;
   transition: all 0.5s ease-out;
+  /*border: 2px solid $fg;*/
+  border-radius: 8px;
+  margin: -4px 2px 8px  2px;
+  border-radius: 60px 60px 60px 12px;
 
   &:hover {
-    background: lighten($surf, 10%);
+    background: lighten($surf, 20%);
     color: $inverse_surface;
   }
 }
@@ -115,46 +122,46 @@ $panebg:darken($surf,4%);
 .ws {
   color: transparentize($background, 0.5);
   background: transparentize($background, 0.5);
-  border-radius: 8px;
-  min-width: 4px;
+  border-radius: 60px;
+  min-width: 8px;
   min-height: 4px;
   margin: 4px;
   transition: all 0.2s ease-out;
 
   &.one {
-    padding: 0px;
+    padding: 0px 2px;
   }
 
   &.two {
-    padding: 0px;
+    padding: 0px 2px;
   }
 
   &.three {
-    padding: 0px;
+    padding: 0px 2px;
   }
 
   &.four {
-    padding: 0px;
+    padding: 0px 2px;
   }
 
   &.five {
-    padding: 0px;
+    padding: 0px 2px;
   }
 
   &.active {
     color: invert-color($primary);
-    padding: 8px 0px;
-    background: darken($primary,45%);
+    background: $accent;
     border-radius: 8px;
     min-height: 8px;
     transition: all 0.2s ease-out;
+    border-radius: 60px;
   }
 
   &.inactive {
     color: transparent;
-    padding: 0px 0px;
     min-height: 2px;
     transition: all 0.2s ease-out;
+    border-radius: 60px;
   }
 }
 
@@ -173,16 +180,18 @@ $panebg:darken($surf,4%);
 .idler {
   font-size: $icns;
   margin: 8px 4px;
-  padding: 4px 0px;
+  padding: 0px 4px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  color: lighten($surf, 25%);
+  transition: all 0.1s ease-out;
   background: inherit;
+  border: none;
+  color: $fg;
+  border-radius: 8px;
 
   &.disabled {
-    background: transparentize($surf, 0.9);
-    color: $fg;
-    border: none;
+    background: lighten($surf, 25%);
+    color: $surf;
+    border: 1px solid $fg;
   }
 
   &:hover {
@@ -252,15 +261,19 @@ $panebg:darken($surf,4%);
   font-size: $icns;
   //font-size: 16px;
   color: $fg;
+  border-radius: 8px;
+  margin: 0px 2px;
 }
 
 .logout {
   color: $fg;
+  background: lighten($surf, 10%);
   font-size: $icns;
-  padding: 8px 0px;
-  margin: 8px 0px;
-  border-radius: 8px;
   transition: all 0.5s ease-out;
+  padding: 4px 8px;
+  margin: 8px 2px -4px  2px;
+  /*border: 2px solid $fg;*/
+  border-radius: 12px 60px 60px 60px;
 
   &:hover {
     background: lighten($surf, 10%);
@@ -269,9 +282,10 @@ $panebg:darken($surf,4%);
 }
 
 .systray {
-  background: darken($primary,45%);
-  border-radius: 24px;
-  padding: 8px 0px;
+  background: darken($surf,10%);
+  border-radius: 60px;
+  border: none;
+  padding: 8px 2px;
   margin: 8px;
 }
 
@@ -315,7 +329,6 @@ $panebg:darken($surf,4%);
 .trayarrow {
   background: inherit;
   font-size: $icns;
-  padding: 4px 0px 0px 0px;
 }
 
 .systemtray {

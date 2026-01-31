@@ -75,3 +75,8 @@ X11Scripts/wallpapers
 .config/wlogout/colors.css
 .config/themes/Mudwash/wallpapers/current
 .config/themes/Rose/wallpapers/current
+.config/eww.fullbar/colors.scss
+.config/eww.old-goth/colors.scss
+.config/eww/colors.scss
+.config/eww/eww/colors.scss
+/.config/eww/eww

@@ -93,7 +93,7 @@ if [[ -f "$WALLPAPER" ]]; then
 fi
 
 if pgrep -x eww >/dev/null; then
-  ~/HyprlandScripts/ewwStarter.sh bar
+  ~/HyprlandScripts/ewwStarter.sh reload
 fi
 
 echo "------blurred wallpaper--------"

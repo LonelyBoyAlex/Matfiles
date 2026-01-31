@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/daddy/.config/themes/active/wallpapers/wallhaven-yq769k.png",
+  "wallpaper": "/home/daddy/.config/themes/active/wallpapers/ce8b3f08d135dd49f16d3e7dec75b15e.jpg",
   "alpha": "100",
   "colors": {
-    "color0": "#19120d",
+    "color0": "#111318",
     "color1": "",
     "color2": "",
     "color3": "",
@@ -12,11 +12,11 @@
     "color7": "",
     "color8": "",
     "color9": "",
-    "color10": "#ffb688",
+    "color10": "#a7c8ff",
     "color11": "",
     "color12": "",
-    "color13": "#413731",
+    "color13": "#37393e",
     "color14": "",
-    "color15": "#f0dfd7"
+    "color15": "#e1e2e9"
   }
 }
