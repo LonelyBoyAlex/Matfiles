@@ -3,7 +3,7 @@
 @define-color selected        @primary;
 @define-color hover           @primary_container;
 @define-color error          @error;
-*/
+ */
 
 * {
   color:            @text;
@@ -18,14 +18,14 @@
 .blank-window {  
   background: transparent;  
 }
-  
+
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  background: @background;
+  background: alpha(@background,0.25);
   border-radius: 12px;
   border: 3px solid @on_primary_container;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+  box-shadow: 0px 0px 10px 0px @background;
   margin: 18px;
   padding: 12px;
 }
@@ -53,14 +53,14 @@
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  background: @selected;
-  color: @text;
+  background: @primary;
+  color: @on_primary;
   border-radius: 12px;
   margin: 6px;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background: @selected;
+  background: @primary;
 }
 
 .control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
@@ -79,22 +79,25 @@
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
-  background-color: @selected;
-  border-radius:12px;
+  background-color: @primary;
+  border-radius:60px;
 }
 
 .control-center .notification-row .notification-background .close-button:active {
-  background-color: @selected;
+  background-color: @primary;
 }
 
 progressbar,
 progress,
 trough {
-  border-radius: 12px;
+  border-radius: 60px;
+  min-height:4px;
+  padding:4px;
+  background:alpha(@primary_container,0.5);
 }
 
 progressbar {
-  background-color: rgba(255,255,255,.1);
+  background:alpha(@primary_container,0.5);
 }
 
 /* Notifications expanded-group */
@@ -131,7 +134,7 @@ progressbar {
 
 /* WIDGETS --------------------------------------------------------------------------- */
 
-  /* Notification clear button */
+/* Notification clear button */
 .widget-title {
   font-size: 1.2em;
   margin: 6px;
@@ -151,7 +154,7 @@ progressbar {
   background-color: transparent;
 }
 
-  /* Do not disturb */
+/* Do not disturb */
 .widget-dnd {
   margin: 6px;
   font-size: 1.2rem;
@@ -170,7 +173,7 @@ progressbar {
 }
 
 .widget-dnd > switch:checked {
-  background: @selected;
+  background: @primary;
 }
 
 .widget-dnd > switch:checked:hover {
@@ -182,183 +185,203 @@ progressbar {
   border-radius: 12px;
 }
 
-  /* Buttons menu */
+/* Buttons menu */
 .widget-buttons-grid {
   font-size: 24px;
-  padding: 6px 2px;
-  margin: 6px;
+  margin: 0px 6px;
   border-radius: 12px;
-    border:2px solid @color7;
+  border:2px solid @on_primary_container;
   background: @background;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 4px 12px;
-  padding: 4px 12px;
-  background: transparent;
+  margin: 6px;
+  padding: 8px 8px;
+  background: @primary_container;
   border-radius: 12px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: @hover;
+  color:@surface;
 }
 
-
-  /* Music player */
+/* Music player */
 .widget-mpris {
-    background: @background;
-    border-radius: 12px;
-    color: @text;
-    margin:  20px 6px;
-    border: 2px solid @color7;
+  background: @primary_container;
+  border-radius: 12px;
+  color: @on_primary_container;
+  margin:  20px 6px;
+  border: 2px solid @on_primary_container;
 }
 
-  /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
+/* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
-    background-color: @background-sec;
-    border-radius: 12px;
-    padding: 6px 14px;
-    margin: 6px;
+  background-color: @primary_container;
+  background: @primary_container;
+  opacity:1;
+  border-radius: 12px;
+  padding: 6px 14px;
+  margin: 6px;
 }
 
 .widget-mpris > box > button {
-  color: @text;
+  color: @on_primary_container;
   border-radius: 12px;
+  background: @primary_container;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 900;
 }
- 
+
 .widget-mpris button {
   color: @text;
+  background: @primary_container;
+  font-size: 20px;
+  padding: 16px;
+  border-radius:60px;
 }
 
 .widget-mpris button:hover {
   color: @text;
+  background: @primary_container;
 }
 
 .widget-mpris-album-art {
   border-radius: 12px;
+  padding:20px;
+  border:2px solid @on_primary_container;
 }
- 
+
 .widget-mpris-title {
-    font-weight: 700;
-    font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: @primary_container;
+  padding:10px 4px;
 }
- 
+
 .widget-mpris-subtitle {
-    font-weight: 500;
-    font-size: 0.8rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 4px;
+  background: @primary_container;
 }
 
 /* Volume */
+.widget-backlight,
 .widget-volume {
-  /*background: transparent;
-  color: @text;*/
+  background: inherit;
+  color: @on_primary_container;
   padding: 4px;
-  margin:12px 6px;
+  margin: 6px;
   border-radius: 12px;
 }
 
+.widget-backlight label,
 .widget-volume label {
-    border-radius: 12px;
-    border:2px solid white;
-    border-right:none;
-    min-width: 35px;
-    padding:2px;
-    background: @color3;
+  border-radius: 60px;
+  border:none;
+  min-width: 36px;
+  padding:6px;
+  background: alpha(@on_primary,0.75);
 }
 
+.widget-backlight slider,
 .widget-volume slider{
-    border:2px solid white;
-    border:none;
-    padding:4px;
-    margin:0px;
-    border-radius: 12px;
-    background: transparent;
-    min-width: 1px;
-    min-height: 6px;
+  border:none;
+  padding:8px 2px;
+  margin:0px;
+  border-radius: 60px;
+  background: alpha(@on_primary_container,0.25);
+  min-width: 2px;
+  min-height: 8px;
 }
 
+.widget-backlight trough,
 .widget-volume trough{
-    border:2px solid white;
-    border-left:none;
-    background: @background;
-    border-radius:12px;
-    min-width: 28px;
+  border:2px solid alpha(@on_surface,0.5);
+  background: inherit;
+  border-radius:60px;
+  min-width: 28px;
+  min-height: 18px;
+  margin-left:12px;
 }
 
+.widget-backlight highlight,
 .widget-volume highlight{
-    padding:14px;
-    margin:0px;
-    background: @color3;
-    min-width: 28px;
-    border-radius:12px;
+  padding:4px;
+  margin:6px 0px;
+  background: alpha(@surface,0.75);
+  border-radius:60px 0px 0px 60px;
 }
+
 
 /* backlight */
 /*.widget-backlight {
-  background: transparent;
-  color: @text;
-  padding: 4px;
-  margin:12px 6px;
-  border-radius: 24px;
+background: transparent;
+color: @text;
+padding: 4px;
+margin:12px 6px;
+border-radius: 24px;
 }
 
 .widget-backlight button {
-    border: 2px solid @color3;
-    min-width: 35px;
-    background: @color3;
-    padding:6px;
+border: 2px solid @color3;
+min-width: 35px;
+background: @color3;
+padding:6px;
 }
 
 .widget-backlight slider{
-    border:2px solid white;
+border:2px solid white;
 }
 
 .widget-backlight trough{
-    border:2px solid white;
+border:2px solid white;
 }*/
-/* bkl */
+/* bkl 
 .widget-backlight {
-  /*background: transparent;
-  color: @text;*/
-  padding: 4px;
-  margin:12px 6px;
-  border-radius: 12px;
+/*background: transparent;
+color: @text;*/
+/*  padding: 4px;
+margin:12px 6px;
+border-radius: 12px;
 }
 
 .widget-backlight label {
-    border-radius: 12px 0px 0px 12px;
-    border:2px 0px 2px 2px solid @primary_container;
-    min-width: 35px;
-    min-height: 35px;
-    padding:2px;
-    background: @on_primary;
-    color : @primary;
+border-radius: 12px 0px 0px 12px;
+border:2px 0px 2px 2px solid @primary_container;
+min-width: 35px;
+min-height: 35px;
+padding:2px;
+background: @on_primary;
+color : @primary;
 }
 
 .widget-backlight slider{
-    border:2px solid @on_primary;
-    border:none;
-    padding:4px;
-    margin:0px;
-    border-radius:12px;
-    background: transparent;
-    min-width: 1px;
-    min-height: 6px;
+border:2px solid @on_primary;
+border:none;
+padding:4px;
+margin:0px;
+border-radius:12px;
+background: transparent;
+min-width: 1px;
+min-height: 6px;
 }
 
 .widget-backlight trough{
-    border:2px solid @on_primary;
-    border-left:none;
-    background: @background;
-    border-radius:0px 12px 12px 0px;
-    min-width: 28px;
-    min-width: 35px;
+border:2px solid @on_primary;
+border-left:none;
+background: @background;
+border-radius:0px 12px 12px 0px;
+min-width: 28px;
+min-width: 35px;
 }
 
 .widget-backlight highlight{
-    padding:14px;
-    margin:0px;
-    background: @on_primary;
-    min-width: 28px;
-    border-radius:12px;
-}
+padding:14px;
+margin:0px;
+background: @on_primary;
+min-width: 28px;
+border-radius:12px;
+}*/
