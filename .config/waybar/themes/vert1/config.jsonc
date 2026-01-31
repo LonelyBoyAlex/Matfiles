@@ -226,7 +226,7 @@
   },
   "upower": {
   //"format": "{}",
-  "format-alt": "{} {percentage}% [{time}]",
+  "format-alt": "{percentage}% [{time}]",
   "tooltip": false,
   "show-icon": false,
   "rotate": 90,

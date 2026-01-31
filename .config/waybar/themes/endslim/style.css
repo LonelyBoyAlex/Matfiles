@@ -1,0 +1,172 @@
+@import url("./colors.css"); /* change */
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    margin: 0px;
+}
+
+window#waybar {
+    background: @primary_container;
+    border-radius: 0px 0px 24px 24px;
+    border-bottom: 2px solid @on_primary_container;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-height:40px;
+}
+
+window#waybar.empty #window {
+    background: none;
+}
+
+#window{
+    color: @on_primary_container;
+    background: inherit;
+    margin: 0px;
+    margin-left: 0.75rem;
+    padding: 0px 0rem;
+    font-weight: 500;
+    font-size: 16px;
+}
+#custom-window {
+    color: @on_primary_container;
+    background: inherit;
+    margin: 0px;
+    margin-left: 1rem;
+    padding: 0px 0px 0px 20px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#mpris {
+    color: @on_primary_container;
+    background: @primary_container;
+    border-radius: 60px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+#custom-music {
+    color: @on_primary_container;
+    border-radius: 60px;
+    padding: 0px;
+}
+
+#mpris.playing {
+    color: @primary;
+}
+
+#workspaces {
+    color: @on_surface_container;
+    border-radius: 60px;
+    transition: 0.2s ease;
+    margin-right:12px;
+    margin-left:12px;
+}
+
+#workspaces button {
+    background-color: inherit;
+    transition: 0.2s ease;
+    border-radius:12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0px 4px;
+}
+
+#workspaces button:not(.empty) {
+    color:@surface;
+    background-color: alpha(@primary, 0.2);
+    transition: 0.2s ease;
+    border-radius:12px;
+}
+
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    color: inherit;
+    transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.active {
+    background: alpha(@on_primary, 1);
+    color: alpha(@primary, 1);
+    border: 2px solid alpha(@on_primary_container, 0);
+    border-radius: 60px;
+}
+
+#clockk {
+    color: @on_primary_container;
+    background: alpha(@surface,0.25);
+    padding: 0px 6px;
+    margin: 6px 0px;
+    border-radius: 0px 60px 60px 0px;
+}
+
+#clock {
+    background: inherit;
+    padding: 0px 12px;
+    font-weight: 900;
+}
+
+#custom-date {
+    padding: 0px 12px;
+}
+
+#idle_inhibitor{
+  color: @on_primary_container;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 6px;
+  margin:6px 0px;
+  background: alpha(@surface,0.25);
+  border-radius: 60px 0px 0px 60px;
+}
+
+#idle_inhibitor.activated {
+    color: @color3;
+    background: alpha(@color8, 0.18);
+}
+
+#battery {
+  color: @on_primary_container;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin:4px;
+}
+
+#battery.charging,
+#battery.plugged,
+#battery.full {
+    color: @on_primary_container;
+    background: alpha(@primary_container, 1);
+}
+
+#battery.critical:not(.charging),
+#battery.warning:not(.charging) {
+    color: @error;
+}
+
+#upower,
+#upower-headset {
+    color: @on_primary_container;
+}
+
+#custom-menu {
+    color:@on_primary_container;
+    background-color: inherit;
+    padding:4px;
+    margin:0px .5rem;
+}
+
+
+#network,
+#bluetooth,
+#custom-notification {
+    font-size: 20px;
+    background: inherit;
+    color: @on_primary_container;
+    margin: 0px;
+    padding: 0px 10px;
+    border-radius: 0px;
+}
+#custom-notification {
+  padding-right:20px;
+}
