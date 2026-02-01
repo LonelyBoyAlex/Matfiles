@@ -80,3 +80,5 @@ X11Scripts/wallpapers
 .config/eww/colors.scss
 .config/eww/eww/colors.scss
 /.config/eww/eww
+.config/mango/binds.conf.bk
+HyprlandScripts/rofistyles/colors.json

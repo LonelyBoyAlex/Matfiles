@@ -58,7 +58,7 @@ elif [[ $WINDOWMAN == "Niri" ]]; then
     -p "🖼 Wallpaper:" -show-icons)
 elif [[ $WINDOWMAN == "mango" ]]; then
   CHOICE=$(printf "$entries" | rofi -i -dmenu \
-    -config ~/HyprlandScripts/rofistyles/niri_themer.rasi \
+    -config ~/HyprlandScripts/rofistyles/mango_themer.rasi \
     -p "🖼 Wallpaper:" -show-icons)
   #-config ~/HyprlandScripts/mango_themer.rasi \
 elif [[ $WINDOWMAN == "i3" ]]; then
@@ -137,7 +137,7 @@ if [[ $WINDOWMAN == "Hyprland" ]]; then
 fi
 
 if pgrep -x eww >/dev/null; then
-  ~/HyprlandScripts/ewwStarter.sh bar
+  ~/HyprlandScripts/ewwStarter.sh reload
 fi
 
 ~/HyprlandScripts/ChromiumPywal/generate-theme.sh

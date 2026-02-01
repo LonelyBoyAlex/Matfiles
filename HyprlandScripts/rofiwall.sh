@@ -65,7 +65,7 @@ elif [[ $WINDOWMAN == "Niri" ]]; then
     -p "🖼 Wallpaper:" -show-icons)
 elif [[ $WINDOWMAN == "mango" ]]; then
   CHOICE=$(printf "$entries" | rofi -i -dmenu \
-    -config ~/HyprlandScripts/mango_themer.rasi \
+    -config ~/HyprlandScripts/rofistyles/mango_themer.rasi \
     -p "🖼 Wallpaper:" -show-icons)
 elif [[ $WINDOWMAN == "i3" ]]; then
   CHOICE=$(printf "$entries" | rofi -i -dmenu \

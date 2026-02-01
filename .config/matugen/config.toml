@@ -85,8 +85,9 @@ input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.mango]
-input_path = '~/.config/matugen/templates/mangowc.conf'
+input_path = './templates/mangowc.conf'
 output_path = '~/.config/mango/colors.conf'
+post_hook = 'mmsg -d reload_config && notify-send "mango reloaded"'
 
 [templates.ghostty]
 input_path = '~/.config/matugen/templates/ghostty'

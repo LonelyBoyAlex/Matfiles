@@ -21,7 +21,7 @@ swww img ~/.cache/currwall \
 
 # top bar
 # waybar &
-~/HyprlandScripts/ewwStarter.sh bar &
+~/HyprlandScripts/ewwStarter.sh reload &
 
 # keep clipboard content
 # wl-clip-persist --clipboard regular --reconnect-tries 0 &
