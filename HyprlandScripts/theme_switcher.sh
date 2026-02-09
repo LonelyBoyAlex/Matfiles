@@ -50,8 +50,9 @@ done
 # Pick rofi config depending on WM
 if [[ $WINDOWMAN == "Hyprland" ]]; then
   CHOICE=$(printf "$entries" | rofi -i -dmenu \
-    -config ~/HyprlandScripts/rofistyles/themer.rasi \
+    -config ~/HyprlandScripts/rofistyles/hypr_themer.rasi \
     -p "🖼 Wallpaper:" -show-icons)
+  #-config ~/HyprlandScripts/rofistyles/themer.rasi \
 elif [[ $WINDOWMAN == "Niri" ]]; then
   CHOICE=$(printf "$entries" | rofi -i -dmenu \
     -config ~/HyprlandScripts/rofistyles/niri_themer.rasi \

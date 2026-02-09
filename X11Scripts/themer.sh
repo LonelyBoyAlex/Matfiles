@@ -47,6 +47,7 @@ ln -sfn "$theme_dir/$theme/wallpapers" "$dir/wallpapers"
 # --- 3. COPY CONFIGS (EXCLUDING WALLPAPERS) ---
 rsync -av --exclude='wallpapers/' "$theme_dir/$theme/" "$dir/"
 cp -f X11Scripts/colors/colors-polybar ~/.config/bspwm/
+cp -f X11Scripts/colors/colors.py ~/.config/qtile/
 
 # --- 4. DUNST CONFIG SYMLINK ---
 mkdir -p "$dunst_conf_dir"
@@ -113,6 +114,7 @@ esac
 $HOME/X11Scripts/wallpaper.sh random
 
 polybar-msg cmd restart
+qtile cmd-obj -o cmd -f reload_config
 
 notify-send "Theme '$theme' applied!"
 echo "$theme" >"$dir/current_theme"

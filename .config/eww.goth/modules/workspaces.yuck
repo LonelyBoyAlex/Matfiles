@@ -1,0 +1,72 @@
+(defpoll current_workspace :interval "0.25s" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+
+(defwidget workspaces-bar []
+  (eventbox
+        
+    :onscroll "scripts/switch-workspaces.sh {}"
+    (box :orientation "v" :class "workspaces-bar"
+       :halign "center" :valign "start" :space-evenly "false"
+       
+    (box :class "ws one ${current_workspace == "1" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 1"
+      :onrightclick "scripts/switch-workspaces.sh 1"
+      :class "wsbtn"
+        (label :text " " :class "wstxt")))
+        ; (label :text "" :class "wstxt")))
+    
+    (box :class "ws two ${current_workspace == "2" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 2" 
+      :onrightclick "scripts/switch-workspaces.sh 2"
+      :class "wsbtn"
+        (label :text " " :class "wstxt")))
+        ; (label :text "" :class "wstxt")))
+    
+    (box :class "ws three ${current_workspace == "3" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 3"
+      :onrightclick "scripts/switch-workspaces.sh 3"
+      :class "wsbtn"
+        (label :text " " :class "wstxt")))
+        ; (label :text "" :class "wstxt")))
+    
+    (box :class "ws four ${current_workspace == "4" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 4"
+      :onrightclick "scripts/switch-workspaces.sh 4"
+      :class "wsbtn"
+      (label :text " " :class "wstxt")))
+        ; (label :text "" :class "wstxt")))
+    
+    (box :class "ws five ${current_workspace == "5" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 5"
+      :onrightclick "scripts/switch-workspaces.sh 5"
+      :class "wsbtn"
+        (label :text " " :class "wstxt")))
+        ; (label :text "" :class "wstxt")))
+  ))
+)
+; (defpoll workspaces :interval "2s" "bash ~/.config/eww/scripts/get-workspaces.sh")
+
+; (defwidget workspace-indicator [id active empty]
+;   ;; Sets CSS classes: 'active', 'empty', or 'occupied' for coloring/styling
+;   (eventbox :onclick "scripts/switch-workspaces.sh $id"
+;     (box :class "workspace-indicator {active ? 'active' : ''} {empty ? 'empty' : 'occupied'}"
+;          :halign "center"
+;          :valign "center"
+;       ;; A simple circle/oval UI for example; swap for your preferred element
+;       (label :class "workspace-icon" :text "")
+;     )
+;   )
+; )
+
+; ;; Main vertical bar widget
+; (defwidget workspaces-bar []
+;   (box :class "workspaces-bar" :orientation "v" :space-evenly true
+;     (for ws in workspaces
+;       (workspace-indicator
+;         :id ws.id
+;         :active (ws.id == current_workspace)
+;         :empty ws.empty
+;       )
+;     )
+;   )
+; )
+

@@ -1,0 +1,6 @@
+(defpoll isidle :interval "1s" "~/.config/eww/scripts/idlecontrol.sh status")
+
+(defwidget idle_inhibitor []
+  (button :class "idler ${isidle == '󰒲' ? 'enabled' : 'disabled'}"
+          :onclick "~/.config/eww/scripts/idlecontrol.sh toggle"
+    (label :text isidle)))

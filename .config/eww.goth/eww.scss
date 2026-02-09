@@ -1,0 +1,11 @@
+//@import "../../.cache/wal/colors.scss";
+@import "./colors.scss";
+
+@import "modules/bar/bar.scss";
+@import "styles/notifications.scss";
+@import "styles/applauncher.scss";
+@import "styles/music.scss";
+
+* {
+    all:unset;
+}
