@@ -68,6 +68,12 @@ topgoth)
   eww open-many bar panelleft panelryt panelbot \
     barcornertop barcornerbottom barcornertopryt barcornerbottomryt
   ;;
+topbar)
+  eww open-many bar
+  ;;
+topbargothic)
+  eww open-many bar barcornertop barcornerbottom barcornertopryt barcornerbottomryt
+  ;;
 *)
   eww open bar
   ;;

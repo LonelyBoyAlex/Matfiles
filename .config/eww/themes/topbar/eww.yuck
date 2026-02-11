@@ -1,0 +1,321 @@
+(defwindow bar []
+ :stacking "fg"
+ :monitor "0"
+ :exclusive "true"
+ :geometry (geometry
+   :anchor "top center"
+   :width "100%"
+   :height "32px"
+   )
+ (centerbox
+  :class "mainbar"
+  :orientation "h"
+  (box (modulesleft)
+  )
+  (box (modulescenter)
+  )
+  (box (modulesright)
+  )
+ )
+ )
+     ;; ------- corners -------------
+     (defwindow barcornertop []
+      :stacking "fg"
+      :monitor "0"
+      :geometry (geometry :anchor "top left"
+        :width "1%" :height "1%"
+        )
+      :namespace "eww"
+      (box :class "barcorner top")
+     )
+
+      (defwindow barcornerbottom []
+       :stacking "fg"
+       :monitor "0"
+       :geometry (geometry :anchor "bottom left"
+         :width "1%" :height "1%"
+         )
+       :namespace "eww"
+       (box :class "barcorner bottom")
+      )
+       (defwindow barcornertopryt []
+        :stacking "fg"
+        :monitor "0"
+        :geometry (geometry :anchor "top right"
+          :width "1%" :height "1%"
+          )
+        :namespace "eww"
+        (box :class "barcorner topryt")
+       )
+
+        (defwindow barcornerbottomryt []
+         :stacking "fg"
+         :monitor "0"
+         :geometry (geometry :anchor "bottom right"
+           :width "1%" :height "1%"
+           )
+         :namespace "eww"
+         (box :class "barcorner bottomryt")
+        )
+
+
+         ;; ---------  widgets  -----------
+
+         (defwidget modulesleft []
+          (box :halign "start" :valign "center"
+           :class "modules-left" :orientation "h" :space-evenly "false"
+           (launcher)
+           (clock)
+           (volume)
+           (backlight)
+          )
+         )
+          (defwidget modulescenter []
+           (box :halign "center" :valign "center"
+            :class "modules-center" :orientation "h" :space-evenly "false"
+            (workspaces-bar)
+            (musicplayer)
+           )
+          )
+           (defwidget modulesright []
+            (box :halign "end" :valign "center"
+             :class "modules-right" :orientation "h" :space-evenly "false"
+             (battery)
+             (traybox)
+             (logout)
+            )
+           )
+
+            ;(idle_inhibitor)
+
+            ;;  -----------  modules  ---------------
+
+            (defpoll clocktxt :interval "1s" "scripts/clockend.sh")
+            (defwidget clock []
+             (box :orientation "h" :class "clockmain"
+              :valign "center" :halign "center"
+              (label :class "clocktext" :text clocktxt )
+             )
+            )
+
+             (defvar isbacklight false)
+  (defpoll valuebacklight :interval "1s" "scripts/backlight.sh get")
+  (defpoll brighticon :interval "1s" "scripts/backlight.sh icon")
+
+  (defwidget backlight []
+   (eventbox
+    :onhover "eww update isbacklight='true'"
+    :onhoverlost "eww update isbacklight='false'"
+    (box :orientation "h" :space-evenly "false" :class "backlight-widget"
+     (box  :orientation "h" :class "backlightbox"
+      (backlight_icon)
+     )
+     (revealer :reveal isbacklight :transition "slideright"
+      (backlight_bar)
+     )
+    )
+   )
+  )
+
+  (defwidget backlight_icon []
+   (box
+    (label :text brighticon :class "brighticon")
+   )
+  )
+
+  (defwidget backlight_bar []
+   (box
+    (scale
+     :flipped false
+     :round-digits 0
+     :class "backlight_bar"
+     :value valuebacklight
+     :onchange "scripts/backlight.sh set {}"
+     :min 1
+     :max 100
+     :orientation "h"
+    )
+   )
+  )
+
+(defvar isvolume false)
+  (defpoll valuevolume :interval "1s" "scripts/volume.sh get")
+  (defpoll volicon :interval "1s" "scripts/volume.sh icon")
+
+  (defwidget volume []
+   (eventbox
+    :onhover "eww update isvolume='true'"
+    :onhoverlost "eww update isvolume='false'"
+    (box :orientation "h" :space-evenly "false" :class "volume-widget"
+     (box  :orientation "h" :class "volumebox"
+      (volume_icon)
+     )
+     (revealer :reveal isvolume :transition "slideright"
+      (volume_bar)
+     )
+    )
+   )
+  )
+
+  (defwidget volume_icon []
+   (box
+    (label :text volicon :class "volicon")
+   )
+  )
+
+  (defwidget volume_bar []
+   (box
+    (scale
+     :flipped false
+     :round-digits 0
+     :class "volume_bar"
+     :value valuevolume
+     :onchange "scripts/volume.sh set {}"
+     :min 0
+     :max 100
+     :orientation "h"
+    )
+   )
+  )
+  (defwidget launcher []
+   (button :class "launcher"
+    :onclick "scripts/launcher.sh"
+    :onrightclick "scripts/launcher.sh"
+    (label :text "")
+   )
+  )
+
+   (defwidget logout []
+    ; (eventbox
+      ;   :onhover "eww get ispowermenu | grep true &>/dev/null && (eww close powermenu && eww update isrevealedpower=false) || (eww open powermenu && eww update isrevealedpower=true)"
+      ;   (button :class "logoutbtn"
+        ;     :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
+        ;     (label :text "󰤆")
+        ;   )
+      ; )
+    (button :class "logoutbtn"
+     :onclick "pidof fuzzel >/dev/null && killall fuzzel || ~/HyprlandScripts/fuzzelPowermenu.sh"
+     (label :text "󰤆")
+    )
+   )
+
+    (defpoll current_workspace :interval "0.25s" "bash ~/.config/eww/scripts/get-active-workseven.sh")
+
+    (defwidget workspaces-bar []
+     (eventbox
+      :onscroll "scripts/switch-workspaces.sh {}"
+
+      (box :orientation "h" :class "workspaces-bar"
+       :halign "center" :valign "center" :space-evenly "false"
+
+       (box :class "ws one ${current_workspace == "1" ? "active" : "inactive"}"
+        (button :onclick "scripts/switch-workspaces.sh 1"
+         :onrightclick "scripts/switch-workspaces.sh 1"
+         :class "wsbtn"
+         (label :text " " :class "wstxt")))
+       ; (label :text "" :class "wstxt")))
+
+     (box :class "ws two ${current_workspace == "2" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 2" 
+       :onrightclick "scripts/switch-workspaces.sh 2"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+     ; (label :text "" :class "wstxt")))
+
+     (box :class "ws three ${current_workspace == "3" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 3"
+       :onrightclick "scripts/switch-workspaces.sh 3"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+     ; (label :text "" :class "wstxt")))
+
+     (box :class "ws four ${current_workspace == "4" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 4"
+       :onrightclick "scripts/switch-workspaces.sh 4"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+     ; (label :text "" :class "wstxt")))
+
+     (box :class "ws five ${current_workspace == "5" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 5"
+       :onrightclick "scripts/switch-workspaces.sh 5"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+
+     (box :class "ws six ${current_workspace == "6" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 6"
+       :onrightclick "scripts/switch-workspaces.sh 6"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+
+     (box :class "ws seven ${current_workspace == "7" ? "active" : "inactive"}"
+      (button :onclick "scripts/switch-workspaces.sh 7"
+       :onrightclick "scripts/switch-workspaces.sh 7"
+       :class "wsbtn"
+       (label :text " " :class "wstxt")))
+     ; (label :text "" :class "wstxt")))
+     ))
+     )
+
+
+(defvar trayisopen false)
+
+  (defwidget traybox []
+   (eventbox 
+    :onhover "eww update trayisopen='true'"
+    :onhoverlost "eww update trayisopen='false'"
+    (box :class "systray" :orientation "h" :space-evenly "false"
+     (label :text "" :class "trayarrow")
+     (revealer :reveal trayisopen :transition "slideleft"      
+      (systray :orientation "h" :space-evenly "true"
+       :icon-size "20" :prepend-new "true"  :spacing "10" :class "systemtray"
+      ))
+    ))
+  )
+
+   (defvar battery_name "BAT1")
+   (defwidget battery []
+     (box :class "batterybox"
+      (label
+       :class {
+       EWW_BATTERY.BAT1.capacity < 20 ? "battery-low" : "battery-normal"
+       }
+       :text {
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 95 ? "󰠠 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 80 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 60 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 40 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 20 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" ? " ${EWW_BATTERY.BAT1.capacity}%" :
+
+       EWW_BATTERY.BAT1.capacity > 95 ? "󰁹 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 80 ? "󰂁 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 60 ? "󰁿 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 40 ? "󰁽 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 20 ? "󰁻 ${EWW_BATTERY.BAT1.capacity}%" :
+       "󰂃 ${EWW_BATTERY.BAT1.capacity}%"
+       }
+      )
+      )
+      )
+
+(deflisten mpris_class
+  "scripts/mpris.sh class"
+)
+
+(deflisten mpris_text
+  "scripts/mpris.sh text"
+)
+
+(defwidget musicplayer []
+  (box :class "mpris"
+  (button
+    :onclick "playerctl play-pause"
+    :onrightclick "playerctl play-pause"
+    (label
+      :class mpris_class
+      :text  mpris_text
+    )
+    )
+  )
+)

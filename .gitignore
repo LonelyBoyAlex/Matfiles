@@ -114,3 +114,5 @@ HyprlandScripts/rofistyles/colors.json
 .config/rofi/icons/recolored/window.svg
 .config/rofi/icons/recolored/fullscreen.svg
 .config/rofi/icons/recolored/clipboard.svg
+.config/eww/eww.scss
+.config/eww/eww.yuck
