@@ -41,9 +41,8 @@ alias veww 'nvim ~/.config/eww'
 alias vfish 'nvim ~/.config/fish/config.fish'
 alias vmat 'nvim ~/.config/matugen/config.toml'
 alias zen-browser firefox
-#alias cdwm 'nvim ~/suckless/dwm/config.h'
-#alias mdwm 'cd ~/suckless/dwm; sudo make clean install; cd -'
-#alias cst 'nvim ~/suckless/st/config.h'
+alias chi 'cowsay hi'
+alias cby 'cowsay bye'
 
 # function fish_prompt
 #   set_color cyan; echo (pwd)

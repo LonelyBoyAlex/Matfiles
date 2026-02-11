@@ -138,7 +138,8 @@ if [[ $WINDOWMAN == "Hyprland" ]]; then
 fi
 
 if pgrep -x eww >/dev/null; then
-  ~/HyprlandScripts/ewwStarter.sh reload
+  #~/HyprlandScripts/ewwStarter.sh reload
+  ~/HyprlandScripts/ewwTheme.sh restore
 fi
 
 ~/HyprlandScripts/ChromiumPywal/generate-theme.sh

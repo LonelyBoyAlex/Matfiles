@@ -6,7 +6,7 @@
 }
 
 window#waybar{
-  background:alpha(@primary_container,0.25);
+  background:alpha(@primary_container,0);
   min-width: 1000px;
   min-height: 24px;
   margin: 0px 12px;

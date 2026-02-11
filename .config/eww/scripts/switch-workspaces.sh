@@ -1,35 +1,3 @@
-# #!/usr/bin/env bash
-
-# if [[ $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
-#     case "$1" in
-#         up)
-#             hyprctl dispatch workspace r+1
-#             ;;
-#         down)
-#             hyprctl dispatch workspace r-1
-#             ;;
-#         *)
-#             hyprctl dispatch workspace "$1"
-#             ;;
-#     esac
-
-# elif [[ $XDG_CURRENT_DESKTOP == "niri" ]]; then
-#         case "$1" in
-#         up)
-#             niri msg action focus-workspace-up
-#             ;;
-#         down)
-#             niri msg action focus-workspace-down
-#             ;;
-#         *)
-#             niri msg action focus-workspace "$1"
-#             ;;
-#     esac
-
-# else
-#     exit 0
-# fi
-
 #!/usr/bin/env bash
 # Switch workspace for Hyprland, Niri, or MangoWC
 # Usage: ./switch-workspaces.sh <up|down|N>

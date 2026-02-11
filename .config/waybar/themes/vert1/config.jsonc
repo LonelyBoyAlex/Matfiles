@@ -212,7 +212,7 @@
       "critical": 20,
     },
     "format": "{icon}",
-    "rotate": 90,
+    "rotate": 0,
      //"rotate": 270,
      "format-charging": "",
      "format-plugged": "",
@@ -222,14 +222,14 @@
   },
   "group/betteryy": {
     "orientation": "vertical",
-    "modules": ["upower","battery"],
+    "modules": ["battery","upower"],
   },
   "upower": {
-  //"format": "{}",
+  "format": "{percentage}",
   "format-alt": "{percentage}% [{time}]",
   "tooltip": false,
   "show-icon": false,
-  "rotate": 90,
+  "rotate": 0,
   "tooltip-spacing": 20,
   },
   "hyprland/workspaces": {

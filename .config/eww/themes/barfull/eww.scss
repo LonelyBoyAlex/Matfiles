@@ -1,0 +1,345 @@
+@import "./colors.scss";
+$fg: $on_primary_container;
+$surf: $primary_container;
+$accent: $primary;
+$icns: 22px;
+$txt: 22px;
+//$high: 1060px;
+
+* {
+  all: unset;
+  margin: 0px;
+  padding: 0px;
+  font-family: "JetBrains Mono Nerd Font Propo", monospace;
+}
+
+.barcorner {
+  background: transparent;
+  padding: 48px;
+  border-radius: 24px;
+
+  &.top {
+    box-shadow: -48px -48px 0px 0px $surf;
+  }
+
+  &.bottom {
+    box-shadow: -48px 48px 0px 0px $surf;
+  }
+
+  &.topryt {
+    box-shadow: 48px -48px 0px 0px $surf;
+  }
+
+  &.bottomryt {
+    box-shadow: 48px 48px 0px 0px $surf;
+  }
+}
+
+.panel {
+  background: transparent;
+}
+
+.mybar {
+  min-width: 42px;
+  //  min-height: $high;
+  background: $surf;
+  /* border: 2px solid $fg;
+border-left:none;
+padding: 2rem 0px;
+border-radius: 0px;
+border-radius: 12px;
+border-left:3px solid $surf;
+border-right:3px solid transparentize($fg,0.5);
+border-top:1px solid transparentize($fg,0.5);
+border-bottom:1px solid transparentize($fg,0.5);
+*/
+  border-radius: 0px 0px 0px 0px;
+  padding: 12px 0px;
+  transition: all 2s ease-in;
+}
+
+.launcher {
+  color: $fg;
+  background: lighten($surf, 10%);
+  font-size: $icns;
+  padding: 4px 10px;
+  margin: 8px 0px;
+  transition: all 0.5s ease-out;
+  /*border: 2px solid $fg;*/
+  border-radius: 8px;
+  margin: -4px 2px 8px 2px;
+  border-radius: 60px 60px 60px 12px;
+
+  &:hover {
+    background: lighten($surf, 20%);
+    color: $inverse_surface;
+  }
+}
+
+.applauncher {
+  border-radius: 8px;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    border: 1px solid $accent;
+    color: $inverse_surface;
+  }
+}
+
+.clock {
+  color: $fg;
+  font-size: $txt;
+  margin: 8px 0px;
+  font-weight: 900;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+  // border: 8px double $fg;
+  border-radius: 6px;
+  padding: 8px 0px;
+}
+
+.clock_hr {
+  padding: 6px 0px;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0px;
+}
+
+.clock_min {
+  padding: 6px 0px;
+  padding-top: 0px;
+  margin-top: .25rem;
+}
+
+.clock_mer {
+  color: darken($surf, 25%);
+  margin: 0rem;
+  padding: 0px;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.workspaces-bar {
+  border-radius: 8px;
+  background: darken($surf, 7.5%);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+// Define invert-color function
+@function invert-color($color) {
+  @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+}
+
+.ws {
+  color: transparentize($background, 0.5);
+  background: transparentize($background, 0.5);
+  border-radius: 60px;
+  min-width: 8px;
+  min-height: 4px;
+  margin: 4px;
+  transition: all 0.2s ease-out;
+
+  &.one {
+    padding: 0px 2px;
+  }
+
+  &.two {
+    padding: 0px 2px;
+  }
+
+  &.three {
+    padding: 0px 2px;
+  }
+
+  &.four {
+    padding: 0px 2px;
+  }
+
+  &.five {
+    padding: 0px 2px;
+  }
+
+  &.active {
+    color: invert-color($primary);
+    background: $accent;
+    border-radius: 8px;
+    min-height: 8px;
+    transition: all 0.2s ease-out;
+    border-radius: 60px;
+  }
+
+  &.inactive {
+    color: transparent;
+    min-height: 2px;
+    transition: all 0.2s ease-out;
+    border-radius: 60px;
+  }
+}
+
+.wsbtn {
+  padding-left: 0px;
+  padding-right: 0px;
+  min-width: 16px;
+  border-radius: 8px;
+}
+
+.wstxt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.idler {
+  font-size: $icns;
+  margin: 8px 4px;
+  padding: 0px 4px;
+  border-radius: 8px;
+  transition: all 0.1s ease-out;
+  background: inherit;
+  border: none;
+  color: $fg;
+  border-radius: 8px;
+
+  &.disabled {
+    background: lighten($surf, 25%);
+    color: $surf;
+    border: 1px solid $fg;
+  }
+
+  &:hover {
+    background: lighten($surf, 10%);
+    color: $inverse_surface;
+  }
+}
+
+.backlightbox,
+.volumebox {
+  padding: 8px 0px;
+}
+
+.backlight_bar,
+.volume_bar {
+  border: 2px solid $outline;
+  min-height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  padding: 8px 0px;
+  transition: all 5s ease-out;
+}
+
+.backlight_bar trough,
+.volume_bar trough {
+  padding: 0px;
+  background: transparent;
+
+}
+
+.backlight_bar highlight,
+.volume_bar highlight {
+  border-top: 4px solid darken($surf, 25%);
+  background: $primary;
+  padding: 0px;
+  margin: -8px 0px;
+  border-radius: 8px;
+  min-width: 18px;
+}
+
+.backlight_bar slider,
+.volume_bar slider {
+  background-color: $outline;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.backlight-widget,
+.volume-widget {
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+.backlight-widget {
+  border-top: none;
+  border-radius: 0px 0px 24px 24px;
+}
+
+.volume-widget {
+  border-bottom: none;
+  border-radius: 24px 24px 0px 0px;
+}
+
+.volicon,
+.brighticon {
+  font-size: $icns;
+  //font-size: 16px;
+  color: $fg;
+  border-radius: 8px;
+  margin: 0px 2px;
+}
+
+.logout {
+  color: $fg;
+  background: lighten($surf, 10%);
+  font-size: $icns;
+  transition: all 0.5s ease-out;
+  padding: 4px 8px;
+  margin: 8px 2px -4px 2px;
+  /*border: 2px solid $fg;*/
+  border-radius: 12px 60px 60px 60px;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    color: $inverse_surface;
+  }
+}
+
+.systray {
+  background: darken($surf, 10%);
+  border-radius: 60px;
+  border: none;
+  padding: 8px 2px;
+  margin: 8px;
+}
+
+.powermenu {
+  background: $surf;
+  border: 2px solid $outline;
+  border-left: none;
+  border-radius: 0px 24px 24px 0px;
+
+  &.btn {
+    border-radius: 60px;
+    border: 2px solid $outline;
+    background: darken($surf, $amount: 60);
+    color: $surf;
+    margin: 10px 18px;
+  }
+}
+
+.powermenu:hover {
+  background: darken($surf, $amount: 30);
+  transition: all .5s ease-out;
+}
+
+.btn1icon {
+  font-size: 3.5rem;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.eventboxnotibtn {
+  padding-left: 360px;
+  padding-right: 360px;
+  border-radius: 8px;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    border: 1px solid $accent;
+    color: $inverse_surface;
+  }
+}
+
+.trayarrow {
+  background: inherit;
+  font-size: $icns;
+}
+
+.systemtray {
+  padding: 10px 0px;
+}

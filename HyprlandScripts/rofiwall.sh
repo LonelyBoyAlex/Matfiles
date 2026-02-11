@@ -93,7 +93,8 @@ if pgrep -x eww >/dev/null; then
   # Symlink current wallpaper for other tools
   ln -sf "$WALLPAPER" ~/.cache/currwall
   ln -sf "$WALLPAPER" ~/.cache/currwall.png
-  ~/HyprlandScripts/ewwStarter.sh reload
+  ~/HyprlandScripts/ewwTheme.sh restore
+  #~/HyprlandScripts/ewwStarter.sh reload
 else
   if [[ $WINDOWMAN == "i3" ]]; then
     echo "##################"

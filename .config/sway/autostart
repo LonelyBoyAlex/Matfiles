@@ -1,0 +1,9 @@
+# Autostart apps
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swww-daemon
+exec swww img $(readlink .config/themes/active/wallpapers/current) --transition grow 
+exec dunst
+exec_always --no-startup-id pgrep -x waybar >/dev/null || waybar &
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id udiskie --tray

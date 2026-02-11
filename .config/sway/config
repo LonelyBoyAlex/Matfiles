@@ -1,0 +1,114 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+font pango:JetBrains Mono Nerd Font Propo 12.5
+
+#############################
+#### include full conf ####
+#############################
+include ~/.config/sway/keybinds
+include ~/.config/sway/autostart
+include ~/.config/sway/colors.conf
+
+########################
+#### setting colors ####
+########################
+#exec_always --no-startup-id xrdb -merge "$HOME/X11Scripts/colors/colors.Xresources"
+#exec_always --no-startup-id xrdb -merge "$HOME/.config/i3/colors.Xresources"
+#set_from_resource $bg background #222436
+#set_from_resource $fg foreground #c8d3f5
+#set_from_resource $c0 color0 #1b1d2b
+#set_from_resource $c1 color1 #ff757f
+#set_from_resource $c2 color2 #c3e88d
+#set_from_resource $c3 color3 #ffc777
+#set_from_resource $c4 color4 #82aaff
+#set_from_resource $c5 color5 #c099ff
+#set_from_resource $c6 color6 #86e1fc
+#set_from_resource $c7 color7 #828bb8
+#set_from_resource $c8 color8 #444a73
+#set_from_resource $c9 color9 #ff8d94
+#set_from_resource $c10 color10 #c7fb6d
+#set_from_resource $c11 color11 #ffd8ab
+#set_from_resource $c12 color12 #9ab8ff
+#set_from_resource $c13 color13 #caabff
+#set_from_resource $c14 color14 #b2ebff
+#set_from_resource $c15 color15 #c8d3f5
+
+#client.focused $c13 $c13 $c4 $c13 $c13
+#client.focused_inactive $c0 $c0 $c3 $c0 $c0
+#client.unfocused $c0 $c0 $c5 $c0 $c0
+#client.urgent $c9 $c9 $c15 $c9 $c9
+#client.placeholder $bg $bg $fg $bg $bg
+#client.background $bg
+# semantic aliases
+#set $bg      $background
+#set $fg      $on_background
+#set $accent  $primary
+#set $muted   $surface
+#set $urgent  $error
+##
+## client colors
+#client.focused          $accent $accent $fg $accent $accent
+#client.focused_inactive $muted  $muted  $fg $muted  $muted
+#client.unfocused        $muted  $muted  $fg $muted  $muted
+#client.urgent           $urgent $urgent $fg $urgent $urgent
+#client.placeholder      $bg     $bg     $fg $bg     $bg
+#client.background       $bg
+#######################
+#### look and feel ####
+#######################
+gaps inner 3
+gaps outer 6
+smart_gaps off
+default_border pixel 3
+#normal 5
+default_floating_border normal 3
+#title_align center
+hide_edge_borders both
+#smart
+
+blur enable
+blur radius 16
+blur iterations 6
+blur noise 0.02
+blur brightness 1.0
+blur contrast 1.25
+
+corner_radius 8
+shadows enable
+shadows_on_csd disable
+for_window [title=".*"] opacity 0.95
+for_window [con_mark="focused"] opacity 1.0
+#animations enable
+#animation windows enable
+#animation windows_duration 200
+#animation windows_curve ease_out_quint
+#animation fade enable
+#animation fade_duration 150
+#animation workspaces enable
+#animation workspaces_duration 250
+#animation workspaces_curve ease_out_cubic
+#animation workspaces enable
+#dim_inactive enable
+#dim_strength 0.2
+#for_window [scratchpad_state="fresh"] animation windows enable
+#for_window [scratchpad_state="fresh"] opacity 0.95
+#for_window [scratchpad_state="fresh"] blur enable
+
+
+
+#bar {
+#      position bottom
+#      status_command i3blocks
+#      font pango:JetBrains Mono Nerd Font 12
+#      tray_output primary
+#     status_command polybar
+     #i3status
+# }
+
+#####################
+#### window rule ####
+#####################
+for_window [class="anyrun"] floating enable, move position center, move left 300 px, move up 450 px, focus, border pixel 0, title_format ""

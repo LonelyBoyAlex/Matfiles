@@ -1,0 +1,206 @@
+@import "./colors.scss";
+
+* {
+  all: unset;
+  margin: 0px;
+  padding: 0px;
+  font-family: "JetBrains Mono Nerd Font Propo";
+  transition: all 0.5s ease-out;
+}
+
+$fg: $on_primary_container;
+$surf: $primary_container;
+$accent: $primary;
+$icns: 20px;
+$txt: 18px;
+$panebg: darken($primary_container, 2%);
+
+.mainbar {
+  background: $panebg;
+  color: $primary;
+  padding: 0px 1rem;
+}
+
+.panel {
+  background: $panebg;
+}
+
+.barcorner {
+  color: transparent;
+  padding: 24px;
+  border: none;
+  border-radius: 24px;
+  background: none;
+  background-color: transparent;
+
+  &.top {
+    box-shadow: -24px -24px 0px 0px $panebg;
+  }
+
+  &.bottom {
+    box-shadow: -24px 24px 0px 0px $panebg;
+  }
+
+  &.topryt {
+    box-shadow: 24px -24px 0px 0px $panebg;
+  }
+
+  &.bottomryt {
+    box-shadow: 24px 24px 0px 0px $panebg;
+  }
+}
+
+.launcher,
+.logoutbtn {
+  background: inherit;
+  // font-size: $icns;
+  min-width: 24px;
+  background: darken($accent, 40%);
+  margin: 4px;
+  // margin-left: 0.8rem;
+  border-radius: 60px;
+  padding: 0px 16px;
+  font-weight: 900;
+
+  &:hover {
+    background: transparentize(darken($accent, 40%), 0.50);
+    color: $inverse_surface;
+    font-weight: 900;
+  }
+}
+
+.clockmain {
+  background: $background;
+  border: 1px solid;
+  border-color: $accent;
+  border-radius: 24px;
+  min-width: 84px;
+  margin: 4px;
+}
+
+.clocktext {
+  color: $on_background;
+  margin: 0px 1.25rem;
+  padding: 0px;
+}
+
+.backlightbox,
+.volumebox {
+  min-width: 24px;
+  background: darken($accent, 40%);
+  margin: 4px;
+  border-radius: 60px;
+  padding: 0px 8px;
+}
+
+.backlight_bar,
+.volume_bar {
+  border: 2px solid;
+  min-width: 90px;
+  border-radius: 8px;
+  margin: 6px 0px;
+  padding: 0px;
+}
+
+.backlight_bar slider,
+.volume_bar slider {
+  min-width: 2px;
+  min-height: 12px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 60px;
+  // background: $on_primary_container;
+  background: $accent;
+}
+
+.backlight_bar trough,
+.volume_bar trough {
+  padding: 0px 8px 0px 6px;
+  // background: transparent;
+}
+
+.backlight_bar highlight,
+.volume_bar highlight {
+  background: $accent;
+  // background: $on_primary_container;
+  margin: 2px 0px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.workspaces-bar{
+  background: darken($accent, 40%);
+  // min-width: 20rem;
+  min-height: 12px;
+  border-radius: 60px;
+  padding:0px 12px;
+  margin:6px 0px;
+}
+
+.ws {
+  margin: 2px 4px;
+  padding: 0px;
+  min-width: 8px;
+  // border: 2px solid blue;
+  border-radius: 60px;
+  background: transparentize($surface,0.5);
+  &.active{
+    border-radius: 60px;
+    // padding:0px;
+    //  margin: 2px 4px;
+    // border: 2px solid $on_primary_container;
+    // min-width: 24px;
+    background: $accent;
+  }
+}
+
+
+.systray {
+  background: darken($accent, 40%);
+  border-radius: 60px;
+  padding: 0px 6px 0px 12px;
+  margin: 4px 0px;
+}
+
+.trayarrow{
+  font-size: smaller;
+  margin-right: 0.5rem;
+  font-weight: 900;
+}
+
+.battery-normal {
+  color: $on_primary_container;
+  // font-size: 14px;
+  font-weight: 400;
+  background: darken($accent, 40%);
+  border-radius: 60px;
+  padding: 0px 12px;
+  margin: 4px 4px 4px 0px;
+}
+
+.battery-low {
+  color: $on_error;  
+  background: $error;
+  border-radius: 60px;
+  padding: 0px 12px;
+  margin: 4px 4px 4px 0px;
+}
+
+.mpris {
+  padding: 0px;
+  margin: 4px 8px;
+}
+
+.playing ,.stopped{
+  color: $on_primary_container;
+  background: darken($accent, 40%);
+  border:1px solid $on_primary_container;
+  border-radius: 60px;
+  padding: 0px 12px;
+}
+.paused{
+  color: $on_primary;
+  background: darken($accent, 40%);
+  border:none;
+  border-radius: 12px;
+  padding: 0px 12px;
+}

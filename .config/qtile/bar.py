@@ -176,7 +176,7 @@ screens = [
                 ),
                 widget.Backlight(
                     # name="backlight",
-                    backlight_name="intel_backlight",  # replace with your device
+                    #backlight_name="intel_backlight",  # replace with your device
                     format=" ☀ {percent:2.0%}",    
                     change_command="brightnessctl set {}%",
                     step=3,

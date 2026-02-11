@@ -7,7 +7,7 @@
 #dynamic_padding = true
 #padding.x = 32
 #padding.y = 32
-  opacity = 1.0
+  opacity = 0.99
   dynamic_padding = true
   padding.x = 16
   padding.y = 32

@@ -3,7 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango:JetBrains Mono Nerd Font Propo 10
+font pango:JetBrains Mono Nerd Font Propo 12.5
 
 #############################
 #### include full conf ####

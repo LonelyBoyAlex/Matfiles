@@ -4,7 +4,8 @@
 eww-daemon &
 swww-daemon &
 swww img $(readlink ~/.config/themes/active/wallpapers/current) &
-~/HyprlandScripts/ewwStarter.sh goth &
+#~/HyprlandScripts/ewwStarter.sh goth &
+~/HyprlandScripts/ewwTheme.sh restore &
 swww-daemon -n wallpapes &
 swww img -n wallpapes .cache/wallblurred.png &
 ~/.config/niri/scripts/swayidle.sh && notify-send 'swayidle' &

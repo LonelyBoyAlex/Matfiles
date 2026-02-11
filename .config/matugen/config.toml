@@ -34,18 +34,22 @@ output_path = '~/.config/niri/colors.kdl'
 [templates.eww]
 input_path = 'templates/colors.scss'
 output_path = '~/.config/eww/colors.scss'
-[templates.ewwgoth]
-input_path = 'templates/colors.scss'
-output_path = '~/.config/eww.old-goth/colors.scss'
-[templates.ewwFullbar]
-input_path = 'templates/colors.scss'
-output_path = '~/.config/eww.fullbar/colors.scss'
+#[templates.ewwgoth]
+#input_path = 'templates/colors.scss'
+#output_path = '~/.config/eww.old-goth/colors.scss'
+#[templates.ewwFullbar]
+#input_path = 'templates/colors.scss'
+#output_path = '~/.config/eww.fullbar/colors.scss'
 #post_hook = 'notify-send "updated matugen colors"'
 
 [templates.xresources]
 input_path = "templates/colors.xresources.tmpl"
 output_path = "~/.config/i3/colors.Xresources"
 post_hook = 'i3-msg reload'
+
+[templates.sway]
+input_path = "templates/sway.conf"
+output_path = "~/.config/sway/colors.conf"
 
 [templates.fuzzel]
 input_path = 'templates/fuzzel.ini'

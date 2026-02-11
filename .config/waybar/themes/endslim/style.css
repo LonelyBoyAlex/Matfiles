@@ -7,10 +7,11 @@
 window#waybar {
     background: @primary_container;
     border-radius: 0px 0px 24px 24px;
-    border-bottom: 2px solid @on_primary_container;
     padding-left: 24px;
     padding-right: 24px;
     min-height:40px;
+    border:2px solid @primary;
+    border-top: none;
 }
 
 window#waybar.empty #window {
@@ -38,15 +39,21 @@ window#waybar.empty #window {
 
 #mpris {
     color: @on_primary_container;
-    background: @primary_container;
-    border-radius: 60px;
+    background: @on_primary;
+    border-radius: 24px 0px 0px 24px;
     padding-left: 14px;
     padding-right: 14px;
+    margin:4px;
+    margin-right:0px;
 }
 #custom-music {
     color: @on_primary_container;
+    background: @on_primary;
     border-radius: 60px;
-    padding: 0px;
+    padding: 0px 12px;
+    border-radius: 0px 24px 24px 0px;
+    margin:4px;
+    margin-left:0px;
 }
 
 #mpris.playing {
@@ -59,6 +66,9 @@ window#waybar.empty #window {
     transition: 0.2s ease;
     margin-right:12px;
     margin-left:12px;
+    margin:0px 8px;
+    padding-top:0px;
+    padding-bottom:0px;
 }
 
 #workspaces button {
@@ -75,6 +85,8 @@ window#waybar.empty #window {
     background-color: alpha(@primary, 0.2);
     transition: 0.2s ease;
     border-radius:12px;
+    padding:0px 8px;
+    margin:4px;
 }
 
 #workspaces button:hover {
@@ -82,6 +94,7 @@ window#waybar.empty #window {
     box-shadow: inherit;
     color: inherit;
     transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    padding:0px 4px;
 }
 
 #workspaces button.active {
@@ -89,13 +102,16 @@ window#waybar.empty #window {
     color: alpha(@primary, 1);
     border: 2px solid alpha(@on_primary_container, 0);
     border-radius: 60px;
+    padding:0px 22px;
+    margin:2px 8px 6px 8px;
+    border: 0px solid @surface;
 }
 
 #clockk {
     color: @on_primary_container;
     background: alpha(@surface,0.25);
-    padding: 0px 6px;
-    margin: 6px 0px;
+    padding: 0px 4px;
+    margin: 4px 0px;
     border-radius: 0px 60px 60px 0px;
 }
 
@@ -114,14 +130,15 @@ window#waybar.empty #window {
   font-size: 16px;
   padding-left: 10px;
   padding-right: 6px;
-  margin:6px 0px;
+  margin:4px 0px;
   background: alpha(@surface,0.25);
   border-radius: 60px 0px 0px 60px;
 }
 
 #idle_inhibitor.activated {
-    color: @color3;
-    background: alpha(@color8, 0.18);
+    color: @surface;
+  padding-left: 10px;
+  padding-right: 6px;
 }
 
 #battery {
@@ -130,13 +147,15 @@ window#waybar.empty #window {
   padding-left: 10px;
   padding-right: 10px;
   margin:4px;
+  margin-right:0px;
+  background: @on_primary;
+  border-radius: 24px 0px 0px 24px;
 }
 
 #battery.charging,
 #battery.plugged,
 #battery.full {
     color: @on_primary_container;
-    background: alpha(@primary_container, 1);
 }
 
 #battery.critical:not(.charging),
@@ -147,6 +166,11 @@ window#waybar.empty #window {
 #upower,
 #upower-headset {
     color: @on_primary_container;
+    margin:4px;
+    margin-left:0px;
+    background: @on_primary;
+    border-radius: 0px 24px 24px 0px;
+    padding:0px 8px;
 }
 
 #custom-menu {
@@ -169,4 +193,16 @@ window#waybar.empty #window {
 }
 #custom-notification {
   padding-right:20px;
+}
+
+.modules-left {
+    background: alpha(@on_primary, 1);
+    border-radius:0px 4px 0px 24px ;
+    padding-right:24px;
+    margin:0px 4px 4px 2px;
+}
+.modules-right {
+    background: alpha(@on_primary, 1);
+    border-radius:4px 0px 24px 0px ;
+    margin:0px 4px 4px 0px;
 }

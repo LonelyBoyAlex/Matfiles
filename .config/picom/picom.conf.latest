@@ -1,0 +1,123 @@
+#################################
+#             Shadows           #
+#################################
+
+shadow = true;
+
+# Keep parameters for future toggling; they are harmless with shadow = false.
+shadow-radius = 16;
+shadow-opacity = 0.5;
+shadow-ignore-shaped = false;
+shadow-exclude = [
+  "name = 'Notification'",
+  "class_g = 'Conky'",
+  "class_g ?= 'Notify-osd'",
+  "class_g = 'Cairo-clock'",
+  "_GTK_FRAME_EXTENTS@:c",
+  "name *= 'picom'",
+  "class_g = 'Zen' && argb"
+];
+
+#################################
+#           Fading              #
+#################################
+
+fading = true;
+fade-in-step  = 0.2;
+fade-out-step = 0.2;
+
+#################################
+#   Transparency / Opacity      #
+#################################
+
+inactive-opacity = 0.95;
+frame-opacity = 1.0;
+inactive-opacity-override = false;
+active-opacity = 1;
+fullscreen-opacity = 1.0;
+
+# Pick either dim or inactive-opacity for subtlety; both are enabled here, tweak if too heavy.
+inactive-dim = 0.15;
+
+focus-exclude = [ "class_g = 'Cairo-clock'" ];
+
+#################################
+#           Corners             #
+#################################
+
+# Square corners to match your preference.
+corner-radius = 0;
+rounded-corners-exclude = [
+  "window_type = 'dock'",
+  "window_type = 'desktop'"
+];
+
+#################################
+#       Background Blurring     #
+#################################
+
+# Use the modern blur block; do not mix with legacy blur-* keys.
+blur: {
+  method = "dual_kawase";
+  size = 4;
+  deviation = 0.95;
+  strength = 8; #10;             # adjust 5–10 to taste
+  background = true;        # blur ARGB/semi-transparent backgrounds
+  background-frame = true; # keep off to reduce bleed around frames
+  background-fixed = true;
+}
+
+# Exclusions to keep panels and special frames sharp
+blur-background-exclude = [
+  "window_type = 'dock'",
+  "window_type = 'desktop'",
+  "_GTK_FRAME_EXTENTS@:c"
+];
+
+#################################
+#       General Settings        #
+#################################
+
+backend = "glx";
+dithered-present = false;
+vsync = true;
+
+# Avoid fullscreen flicker at cost of small perf hit; good default on Xorg.
+unredir-if-possible = true;
+
+mark-wmwin-focused = true;
+mark-ovredir-focused = true;
+
+detect-rounded-corners = true;
+detect-client-opacity = true;
+use-ewmh-active-win = true;
+
+detect-transient = true;
+detect-client-leader = true;
+
+# Damage usage improves perf; turn off only if artifacts occur.
+use-damage = true;
+
+# NVIDIA-friendly toggles
+xrender-sync-fence = true;
+#glx-no-stencil = true;
+glx-copy-from-front = false;
+
+# Logging
+log-level = "warn";
+
+#################################
+#           Wintypes            #
+#################################
+
+wintypes: {
+  tooltip = {
+    fade = true;
+    shadow = false;
+    opacity = 0.85;
+    focus = true;
+  };
+  dropdown_menu = { shadow = true; fade = true;  }; #false; };
+  popup_menu    = { shadow = false; fade = true; };
+  utility       = { shadow = false; fade = true; };
+}

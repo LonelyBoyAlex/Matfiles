@@ -1,0 +1,341 @@
+@import "./colors.scss";
+$fg: $on_primary_container;
+$surf: $primary_container;
+$accent: $primary;
+$icns: 24px;
+$txt: 18px;
+$panebg:lighten($background,2%);
+* {
+  all:unset;
+  margin:0px;
+  padding:0px;
+  font-family:"JetBrains Mono Nerd Font Propo";
+}
+
+// Define invert-color function
+@function invert-color($color) {
+  @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+}
+
+.barcorner {
+  color: transparent;
+  padding:24px;
+  border: none;
+  border-radius: 24px;
+  background: none;
+  background-color: transparent;
+  
+  &.top {
+    box-shadow: -24px -24px 0px 0px $panebg;
+  }
+
+  &.bottom {
+    box-shadow: -24px 24px 0px 0px $panebg;
+  }
+
+  &.topryt {
+    box-shadow: 24px -24px 0px 0px $panebg;
+  }
+
+  &.bottomryt {
+    box-shadow: 24px 24px 0px 0px $panebg;
+  }
+}
+
+.panel {
+  background: $panebg;
+}
+
+.bar {
+  min-width: 32px;
+  background: $panebg;
+  border-radius: 0px 0px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: all 2s ease-in;
+}
+
+.launcher {
+  color: $fg;
+  font-size: $icns;
+  border-radius: 60px;
+  min-width:12px;
+  min-height:12px;
+  padding:6px;
+  margin:4px;
+  transition: all 0.5s ease-out;
+  background:none;
+  &:hover {
+    background: lighten($surf, 10%);
+    color: $inverse_surface;
+  }
+}
+
+.applauncher {
+  border-radius: 8px;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    border: 1px solid $accent;
+    color: $inverse_surface;
+  }
+}
+
+.clock {
+  color: $fg;
+  font-size: $txt;
+  margin: 8px 0px;
+  font-weight: 900;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+  // border: 8px double $fg;
+  border-radius: 6px;
+  padding: 8px 0px;
+}
+
+.clock_hr {
+  padding: 6px 0px;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0px;
+}
+
+.clock_min {
+  padding: 6px 0px;
+  padding-top: 0px;
+  margin-top: .25rem;
+}
+
+.clock_mer {
+  color: darken($surf, 25%);
+  margin: 0rem;
+  padding: 0px;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.workspaces-bar {
+  border-radius: 8px;
+  background: darken($surf, 7.5%);
+  padding: 0px;
+  margin:6px;
+}
+
+.ws {
+  color: transparentize($background, 0.5);
+  background: transparentize($background, 0.5);
+  border-radius: 60px;
+  transition: all 0.2s ease-out;
+  // border: 1px solid white;
+  &.one {
+    padding: 0px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px;
+  }
+
+  &.two {
+    padding: 0px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px;
+  }
+
+  &.three {
+    padding: 0px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px;
+  }
+
+  &.four {
+    padding: 0px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px;
+  }
+
+  &.five {
+    padding: 0px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px;
+  }
+
+  &.active {
+    color: invert-color($primary);
+    padding: 12px 0px;
+    background: darken($primary,45%);
+    border-radius: 80px;
+    min-width: 2px;
+    min-height: 12px;
+    transition: all 0.2s ease-out;
+    margin:4px 4px;
+  }
+
+  &.inactive {
+    color: transparent;
+    transition: all 0.2s ease-out;
+  }
+}
+
+.wsbtn {
+  padding-left: 2px;
+  padding-right: 2px;
+  min-width: 20px;
+  border-radius: 60px;
+}
+
+.wstxt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.idler {
+  font-size: $icns;
+  margin: 8px 4px;
+  padding: 4px 0px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: lighten($surf, 25%);
+  background: inherit;
+
+  &.disabled {
+    background: transparentize($surf, 0.9);
+    color: $fg;
+    border: none;
+  }
+
+  &:hover {
+    background: lighten($surf, 10%);
+    color: $inverse_surface;
+  }
+}
+
+.backlightbox,
+.volumebox {
+  padding: 8px 0px;
+}
+
+.backlight_bar,
+.volume_bar {
+  border: 2px solid $outline;
+  min-height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  padding: 8px 0px;
+  transition: all 5s ease-out;
+}
+
+.backlight_bar trough,
+.volume_bar trough {
+  padding: 0px;
+  background: transparent;
+
+}
+
+.backlight_bar highlight,
+.volume_bar highlight {
+  border-top: 4px solid darken($surf, 25%);
+  background: $primary;
+  padding: 0px;
+  margin: -8px 0px;
+  border-radius: 8px;
+  min-width: 18px;
+}
+
+.backlight_bar slider,
+.volume_bar slider {
+  background-color: $outline;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.backlight-widget,
+.volume-widget {
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+.backlight-widget {
+  border-top: none;
+  border-radius: 0px 0px 24px 24px;
+}
+
+.volume-widget {
+  border-bottom: none;
+  border-radius: 24px 24px 0px 0px;
+}
+
+.volicon,
+.brighticon {
+  font-size: $icns;
+  //font-size: 16px;
+  color: $fg;
+}
+
+.logout {
+  color: $fg;
+  font-size: $icns;
+  padding: 8px 0px;
+  margin: 8px 0px;
+  border-radius: 8px;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    color: $inverse_surface;
+  }
+}
+
+.systray {
+  background: darken($primary,45%);
+  border-radius: 24px;
+  padding: 8px 0px;
+  margin: 8px;
+}
+
+.powermenu {
+  background: $surf;
+  border: 2px solid $outline;
+  border-left: none;
+  border-radius: 0px 24px 24px 0px;
+
+  &.btn {
+    border-radius: 60px;
+    border: 2px solid $outline;
+    background: darken($surf, $amount: 60);
+    color: $surf;
+    margin: 10px 18px;
+  }
+}
+
+.powermenu:hover {
+  background: darken($surf, $amount: 30);
+  transition: all .5s ease-out;
+}
+
+.btn1icon {
+  font-size: 3.5rem;
+  font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.eventboxnotibtn {
+  padding-left: 360px;
+  padding-right: 360px;
+  border-radius: 8px;
+
+  &:hover {
+    background: lighten($surf, 10%);
+    border: 1px solid $accent;
+    color: $inverse_surface;
+  }
+}
+
+.trayarrow {
+  background: inherit;
+  font-size: $icns;
+  padding: 4px 2px 0px 2px;
+}
+
+.systemtray {
+  padding: 10px 0px;
+}

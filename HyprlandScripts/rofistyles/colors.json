@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/daddy/.config/themes/Golden/wallpapers/hybridend.png",
+  "wallpaper": "/home/daddy/.config/themes/Rose/wallpapers/delorean.png",
   "alpha": "100",
   "colors": {
-    "color0": "#19120d",
+    "color0": "#171217",
     "color1": "",
     "color2": "",
     "color3": "",
@@ -12,11 +12,11 @@
     "color7": "",
     "color8": "",
     "color9": "",
-    "color10": "#ffb780",
+    "color10": "#ebb5ed",
     "color11": "",
     "color12": "",
-    "color13": "#413731",
+    "color13": "#3e373d",
     "color14": "",
-    "color15": "#f0dfd6"
+    "color15": "#eadfe6"
   }
 }
