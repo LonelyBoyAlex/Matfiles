@@ -59,7 +59,7 @@
 ;; --------- widget defn -----------
 (defwidget modulesleft []
   (box :valign "start" :halign "center"
-        :class "modules-left" :orientation "v" 
+        :class "modules-left" :orientation "v"
         :space-evenly "false"
     (launcher)
     (workspaces-bar)
@@ -68,7 +68,7 @@
 
 (defwidget modulescenter []
   (box :valign "center" :halign "center"
-        :class "modules-center" :orientation "v" 
+        :class "modules-center" :orientation "v"
         :space-evenly "false"
     (idle_inhibitor)
     (clock)
@@ -77,9 +77,10 @@
 
 (defwidget modulesright []
   (box :valign "end" :halign "center"
-        :class "modules-right" :orientation "v" 
+        :class "modules-right" :orientation "v"
         :space-evenly "false"
     (traybox)
+    (battery)
     (volume)
     (backlight)
     (logout)
@@ -101,39 +102,39 @@
 
 (defwidget workspaces-bar []
   (eventbox
-        
+
     :onscroll "scripts/switch-workspaces.sh {}"
     (box :orientation "v" :class "workspaces-bar"
        :halign "center" :valign "start" :space-evenly "false"
-       
+
     (box :class "ws one ${current_workspace == "1" ? "active" : "inactive"}"
       (button :onclick "scripts/switch-workspaces.sh 1"
       :onrightclick "scripts/switch-workspaces.sh 1"
       :class "wsbtn"
         (label :text " " :class "wstxt")))
         ; (label :text "" :class "wstxt")))
-    
+
     (box :class "ws two ${current_workspace == "2" ? "active" : "inactive"}"
-      (button :onclick "scripts/switch-workspaces.sh 2" 
+      (button :onclick "scripts/switch-workspaces.sh 2"
       :onrightclick "scripts/switch-workspaces.sh 2"
       :class "wsbtn"
         (label :text " " :class "wstxt")))
         ; (label :text "" :class "wstxt")))
-    
+
     (box :class "ws three ${current_workspace == "3" ? "active" : "inactive"}"
       (button :onclick "scripts/switch-workspaces.sh 3"
       :onrightclick "scripts/switch-workspaces.sh 3"
       :class "wsbtn"
         (label :text " " :class "wstxt")))
         ; (label :text "" :class "wstxt")))
-    
+
     (box :class "ws four ${current_workspace == "4" ? "active" : "inactive"}"
       (button :onclick "scripts/switch-workspaces.sh 4"
       :onrightclick "scripts/switch-workspaces.sh 4"
       :class "wsbtn"
       (label :text " " :class "wstxt")))
         ; (label :text "" :class "wstxt")))
-    
+
     (box :class "ws five ${current_workspace == "5" ? "active" : "inactive"}"
       (button :onclick "scripts/switch-workspaces.sh 5"
       :onrightclick "scripts/switch-workspaces.sh 5"
@@ -168,12 +169,12 @@
 (defvar trayisopen false)
 
 (defwidget traybox []
-(eventbox 
+(eventbox
     :onhover "eww update trayisopen='true'"
     :onhoverlost "eww update trayisopen='false'"
   (box :class "systray" :orientation "v" :space-evenly "false"
   (label :text "" :class "trayarrow")
-  (revealer :reveal trayisopen :transition "slideup"      
+  (revealer :reveal trayisopen :transition "slideup"
   (systray :orientation "v" :space-evenly "true"
      :icon-size "18" :prepend-new "true"  :spacing "10" :class "systemtray"
   ))
@@ -199,15 +200,15 @@
 )))
 
 (defwidget volume_icon []
-    (box 
-        (label :text volicon :class "volicon")    
+    (box
+        (label :text volicon :class "volicon")
     )
 )
 
 (defwidget volume_bar []
-    (box 
-        ; (label :text "icon")  
-        (scale 
+    (box
+        ; (label :text "icon")
+        (scale
             :flipped true
             :round-digits 0
             :class "volume_bar"
@@ -216,7 +217,7 @@
             :min 0
             :max 100
             :orientation "v"
-        )  
+        )
     )
 
 )
@@ -241,15 +242,15 @@
 )))
 
 (defwidget backlight_icon []
-    (box 
-        (label :text brighticon :class "brighticon")    
+    (box
+        (label :text brighticon :class "brighticon")
     )
 )
 
 (defwidget backlight_bar []
-    (box 
-        ; (label :text "icon")  
-        (scale 
+    (box
+        ; (label :text "icon")
+        (scale
             :flipped true
             :round-digits 0
             :class "backlight_bar"
@@ -258,7 +259,7 @@
             :min 1
             :max 100
             :orientation "v"
-        )  
+        )
     )
 
 )
@@ -270,3 +271,36 @@
     )
  )
 
+
+  (defwidget battery []
+   (box :class "batterybox"
+    (box :class "batbox" :orientation "v" :space-evenly "false"
+
+     ;; ICON
+     (label
+      :class "baticon"
+      :text {
+      EWW_BATTERY.BAT1.status != "Discharging" ?
+      "󱐌" :
+
+      EWW_BATTERY.BAT1.capacity > 95 ? "󰁹" :
+      EWW_BATTERY.BAT1.capacity > 80 ? "󰂁" :
+      EWW_BATTERY.BAT1.capacity > 60 ? "󰁿" :
+      EWW_BATTERY.BAT1.capacity > 40 ? "󰁽" :
+      EWW_BATTERY.BAT1.capacity > 20 ? "󰁻" :
+      "󰂃"
+      }
+     )
+
+     ;; PERCENT
+     (label
+      :class {
+      EWW_BATTERY.BAT1.capacity < 20 ?
+      "batcent battery-low" :
+      "batcent"
+      }
+      :text "${EWW_BATTERY.BAT1.capacity}%"
+     )
+     )
+     )
+     )

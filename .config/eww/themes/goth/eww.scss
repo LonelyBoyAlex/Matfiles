@@ -4,71 +4,71 @@ $surf: $primary_container;
 $accent: $primary;
 $icns: 18px;
 $txt: 20px;
-$panebg:darken($primary_container,15%);
+$panebg: darken($primary_container, 15%);
 // Define invert-color function
 @function invert-color($color) {
-  @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+    @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
 }
 
 * {
-  all:unset;
-  margin:0px;
-  padding:0px;
-  font-family:"JetBrains Mono Nerd Font Propo";
-  transition: all 0.4s ease-in;
+    all: unset;
+    margin: 0px;
+    padding: 0px;
+    font-family: "JetBrains Mono Nerd Font Propo";
+    transition: all 0.4s ease-in;
 }
 
 .barcorner {
-  color: transparent;
-  padding:24px;
-  border: none;
-  border-radius: 24px;
-  background: none;
-  background-color: transparent;
-  
-  &.top {
-    box-shadow: -24px -24px 0px 0px $panebg;
-  }
+    color: transparent;
+    padding: 24px;
+    border: none;
+    border-radius: 24px;
+    background: none;
+    background-color: transparent;
 
-  &.bottom {
-    box-shadow: -24px 24px 0px 0px $panebg;
-  }
+    &.top {
+        box-shadow: -24px -24px 0px 0px $panebg;
+    }
 
-  &.topryt {
-    box-shadow: 24px -24px 0px 0px $panebg;
-  }
+    &.bottom {
+        box-shadow: -24px 24px 0px 0px $panebg;
+    }
 
-  &.bottomryt {
-    box-shadow: 24px 24px 0px 0px $panebg;
-  }
+    &.topryt {
+        box-shadow: 24px -24px 0px 0px $panebg;
+    }
+
+    &.bottomryt {
+        box-shadow: 24px 24px 0px 0px $panebg;
+    }
 }
 
 .panel {
-  background: $panebg;
+    background: $panebg;
 }
 
 .mainbar {
-  min-width: 28px;
-  background: $panebg;
-  border-radius: 0px 0px;
-  padding-top: 0.9rem;
-  padding-bottom: 2rem;
+    min-width: 28px;
+    background: $panebg;
+    border-radius: 0px 0px;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
 }
 
 .launcher {
-  color: $fg;
-  font-size: $icns;
-  border-radius: 8px;
-  //min-width:12px;
-  min-height:12px;
-  padding:6px;
-  margin:4px;
-  transition: all 0.5s ease-out;
-  background:lighten($on_primary,10%);
-  &:hover {
-    background:$surf;
-    color: $inverse_surface;
-  }
+    color: $fg;
+    font-size: $icns;
+    border-radius: 8px;
+    //min-width:12px;
+    min-height: 12px;
+    padding: 6px;
+    margin: 4px;
+    transition: all 0.5s ease-out;
+    background: lighten($on_primary, 10%);
+    &:hover {
+        background: $surf;
+        color: $inverse_surface;
+    }
 }
 
 // .applauncher {
@@ -82,66 +82,66 @@ $panebg:darken($primary_container,15%);
 // }
 
 .clock {
-  background:lighten($on_primary,10%);
-  font-size: $txt;
-  margin: 8px 0px;
-  font-weight: 900;
-  font-family: "JetBrains Mono Nerd Font", monospace;
-  // border: 1px solid $fg;
-  border-radius: 6px;
-  padding: 8px 4px;
+    background: lighten($on_primary, 10%);
+    font-size: $txt;
+    margin: 8px 0px;
+    font-weight: 900;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    // border: 1px solid $fg;
+    border-radius: 6px;
+    padding: 8px 4px;
 }
 
 .clock_hr {
-  padding: 6px 0px;
-  margin-bottom: 0.25rem;
-  color: darken($on_primary_container,10%);
-  padding: 0px;
+    padding: 6px 0px;
+    margin-bottom: 0.25rem;
+    color: darken($on_primary_container, 10%);
+    padding: 0px;
 }
 
 .clock_min {
-  padding: 6px 0px;
-  padding: 0px;
-  color: darken($on_primary_container,10%);
-  margin-top: .25rem;
+    padding: 6px 0px;
+    padding: 0px;
+    color: darken($on_primary_container, 10%);
+    margin-top: 0.25rem;
 }
 
 .clock_mer {
-  color: darken($surf, 25%);
-  margin: 0rem;
-  padding: 0px;
-  color: darken($on_primary_container,10%);
-  font-family: "JetBrains Mono Nerd Font", monospace;
+    color: darken($surf, 25%);
+    margin: 0rem;
+    padding: 0px;
+    color: darken($on_primary_container, 10%);
+    font-family: "JetBrains Mono Nerd Font", monospace;
 }
 
 .workspaces-bar {
-  border-radius: 8px;
-  background: darken($surf, 7.5%);
-  padding: 4px;
-  margin:8px;
-  min-width:8px;
+    border-radius: 8px;
+    //background: darken($surf, 7.5%);
+    background: lighten($on_primary, 10%);
+    padding: 4px;
+    margin: 8px;
+    min-width: 8px;
 }
 
 .ws {
-  color: transparentize($background, 0.5);
-  background: transparentize($background, 0.5);
-  border-radius: 12px;
-  transition: all 0.2s ease-out;
-  padding: 4px 6px;
-  margin: 2px 2px;
-  
-  &.active {
-    color: invert-color($primary);
-    background: darken($primary,45%);
-    border-radius: 80px;
-    // padding: 12px 0px;
-    // margin:4px 4px;
-  }
-  
-  &.inactive {
-    color: transparent;
+    background: transparentize($background, 0.5);
+    border-radius: 8px;
     transition: all 0.2s ease-out;
-  }
+    padding: 4px 8px;
+    margin: 2px 0px;
+
+    &.active {
+        color: invert-color($primary);
+        background: darken($on_primary, 45%);
+        border-radius: 8px;
+        // padding: 12px 0px;
+        // margin:4px 4px;
+    }
+
+    &.inactive {
+        color: transparent;
+        transition: all 0.2s ease-out;
+    }
 }
 
 // .wsbtn {
@@ -154,71 +154,71 @@ $panebg:darken($primary_container,15%);
 // }
 
 .idler {
-  font-size: $icns;
-  margin: 8px 4px;
-  padding: 4px 0px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  color: lighten($surf, 25%);
-  background: inherit;
+    font-size: $icns;
+    margin: 8px 4px;
+    padding: 4px 0px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: lighten($surf, 25%);
+    background: inherit;
 
-  &.disabled {
-    background: transparentize($surf, 0.9);
-    color: $fg;
-    border: none;
-  }
+    &.disabled {
+        background: transparentize($surf, 0.9);
+        color: $fg;
+        border: none;
+    }
 
-  &:hover {
-    background: lighten($surf, 10%);
-    color: $inverse_surface;
-  }
+    &:hover {
+        background: lighten($surf, 10%);
+        color: $inverse_surface;
+    }
 }
 
 .backlightbox,
 .volumebox {
-  background:lighten($on_primary,10%);
-  padding: 6px 4px;
-  margin: 4px;
-  border-radius: 8px;
+    background: lighten($on_primary, 10%);
+    padding: 6px 4px;
+    margin: 4px;
+    border-radius: 8px;
 }
 
 .backlight_bar,
 .volume_bar {
-  // border: 2px solid $outline;
-  min-height: 80px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 8px;
-  padding: 0px;
-  transition: all 5s ease-out;
+    // border: 2px solid $outline;
+    min-height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    padding: 0px;
+    transition: all 5s ease-out;
 }
 
 .backlight_bar trough,
 .volume_bar trough {
-  background-color: darken($primary,25%);
-  border-radius: 8px;
-  margin: 0px;
-  padding: 2px 0px;
+    background-color: darken($primary, 25%);
+    border-radius: 8px;
+    margin: 0px;
+    padding: 2px 0px;
 }
 
 .backlight_bar highlight,
 .volume_bar highlight {
-  // border-top: 4px solid darken($primary, 25%);
-  background: $primary;
-  margin:  0px;
-  padding: 2px 10px;
-  border-radius:8px 8px;
+    // border-top: 4px solid darken($primary, 25%);
+    background: $primary;
+    margin: 0px;
+    padding: 2px 10px;
+    border-radius: 8px 8px;
 }
 
 .backlight_bar slider,
 .volume_bar slider {
-  // color: $background;
-  background: transparent;
-  // padding: 2px 6px;
-  // margin: 4px 0px;
-  min-width: 1px;
-  min-height: 1px;
-  border-radius: 24px;
+    // color: $background;
+    background: transparent;
+    // padding: 2px 6px;
+    // margin: 4px 0px;
+    min-width: 1px;
+    min-height: 1px;
+    border-radius: 24px;
 }
 
 // .backlight-widget,
@@ -228,8 +228,8 @@ $panebg:darken($primary_container,15%);
 // }
 
 // .backlight-widget {
-  //   border-radius: 0px 0px 24px 24px;
-  //   border-top: none;
+//   border-radius: 0px 0px 24px 24px;
+//   border-top: none;
 // }
 
 // .volume-widget {
@@ -238,96 +238,90 @@ $panebg:darken($primary_container,15%);
 
 .volicon,
 .brighticon {
-  font-size: $icns;
-  //font-size: 16px;
-  color: $fg;
+    font-size: $icns;
+    //font-size: 16px;
+    color: $fg;
 }
 
 .logout {
-  color: $fg;
-  font-size: $icns;
-  font-weight: 900;
-  transition: all 0.5s ease-out;
-  background:lighten($on_primary,10%);
-  padding: 6px;
-  margin: 4px;
-  border-radius: 8px;
-  &:hover {
-    background: lighten($surf, 10%);
-    color: $inverse_surface;
-  }
+    color: $fg;
+    font-size: $icns;
+    font-weight: 900;
+    transition: all 0.5s ease-out;
+    background: lighten($on_primary, 10%);
+    padding: 6px;
+    margin: 4px;
+    border-radius: 8px;
+    &:hover {
+        background: lighten($surf, 10%);
+        color: $inverse_surface;
+    }
 }
 
 .systray {
-  // background: darken($primary,45%);
-  // border-radius: 24px;
-  // padding: 8px 0px;
-  // margin: 8px;
-  // padding: 10px 0px;
-  background: inherit;
+    // background: darken($primary,45%);
+    // border-radius: 24px;
+    // padding: 8px 0px;
+    // margin: 8px;
+    // padding: 10px 0px;
+    background: inherit;
 }
-.trayarrow{
-  font-size: $icns;
-  padding:4px;
-  margin:6px 4px;
+.trayarrow {
+    font-size: $icns;
+    padding: 4px;
+    margin: 6px 4px;
 }
-.systemtray{
-  background:lighten($on_primary,10%);
-  padding: 4px;
-  margin: 4px;
-  border-radius: 8px;
-  border:1px solid $fg;
+.systemtray {
+    background: lighten($on_primary, 10%);
+    padding: 4px;
+    margin: 4px;
+    border-radius: 8px;
+    border: 1px solid $fg;
 }
 
-.systemtray menu{
-  background:lighten($on_primary,10%);
-  color: $on_primary_container;
-  border-radius: 8px;
-  padding:8px;
-  border:2px solid darken($on_primary,20%);
-  font-size: 16px;
-  :hover {
-  background:darken($on_primary,10%);
-  color: lighten($on_primary,20%);
-  }
-  :active {
-  background:lighten($on_primary,20%);
-  color: darken($on_primary,10%);
-  }
+.systemtray menu {
+    background: lighten($on_primary, 10%);
+    color: $on_primary_container;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid darken($on_primary, 20%);
+    font-size: 16px;
+    :hover {
+        background: darken($on_primary, 10%);
+        color: lighten($on_primary, 20%);
+    }
+    :active {
+        background: lighten($on_primary, 20%);
+        color: darken($on_primary, 10%);
+    }
 }
-// .powermenu {
-//   background: $surf;
-//   border: 2px solid $outline;
-//   border-left: none;
-//   border-radius: 0px 24px 24px 0px;
 
-//   &.btn {
-//     border-radius: 60px;
-//     border: 2px solid $outline;
-//     background: darken($surf, $amount: 60);
-//     color: $surf;
-//     margin: 10px 18px;
-//   }
-// }
+//.battery-normal {
+//border:1px solid white;
+//}
 
-// .powermenu:hover {
-//   background: darken($surf, $amount: 30);
-//   transition: all .5s ease-out;
-// }
+.baticon {
+    font-size: $txt;
+    color: $on_primary_container;
+    background: darken($accent, 40%);
+    border-radius: 8px 8px 0px 0px;
+    padding: 4px 0px;
+    margin: 4px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.batcent {
+    font-size: 16px;
+    color: $on_primary_container;
+    background: darken($accent, 40%);
+    border-radius: 0px 0px 8px 8px;
+    padding: 4px 0px;
+    margin: 4px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
 
-// .btn1icon {
-//   font-size: 3.5rem;
-//   font-family: "JetBrains Mono Nerd Font", monospace;
-// }
-
-// .eventboxnotibtn {
-//   padding-left: 360px;
-//   padding-right: 360px;
-//   border-radius: 8px;
-
-//   &:hover {
-//     background: lighten($surf, 10%);
-//     border: 1px solid $accent;
-//     color: $inverse_surface;
-//   }
-// }
+.battery-low {
+    color: $on_error;
+    background: $error;
+}

@@ -9,7 +9,7 @@
    ; :height "80%"
    )
  (centerbox
- :class "mainbar"
+  :class "mainbar"
   :orientation "v"
   (box (modulesleft)
   )
@@ -146,89 +146,89 @@
             (box :valign "end" :halign "center"
              :class "modules-right" :orientation "v" :space-evenly "false"
              (traybox)
+             (battery)
              (volume)
              (backlight)
-             ; (battery)
              (logout)
             )
            )
 
-           ;;------------------ modules -----------------
-           (defwidget launcher []
-            (button :class "launcher"
-             :onclick "scripts/rofilauncher.sh"
-             :onrightclick "scripts/rofilauncher.sh"
-             (label :text "")
+            ;;------------------ modules -----------------
+            (defwidget launcher []
+             (button :class "launcher"
+              :onclick "scripts/rofilauncher.sh"
+              :onrightclick "scripts/rofilauncher.sh"
+              (label :text "")
+             )
             )
-           )
 
-           (defpoll clock_hr :interval "1s" "date +%I" )
-           (defpoll clock_min :interval "1s" "date +%M" )
-           (defpoll clock_sec :interval "1s" "date +%S" )
-           (defpoll clock_mer :interval "1s" "date +%p")
+             (defpoll clock_hr :interval "1s" "date +%I" )
+             (defpoll clock_min :interval "1s" "date +%M" )
+             (defpoll clock_sec :interval "1s" "date +%S" )
+             (defpoll clock_mer :interval "1s" "date +%p")
 
-           (defwidget clock []
-            (box :orientation "v" :class "clock"
-             :valign "center" :halign "center"
-             ; (label :text clock_mer :class "clock_mer")
-             (label :text clock_hr :class "clock_hr")
-             (label :text clock_min :class "clock_min")
-             (label :text clock_sec :class "clock_min")
-            )
-           )
+             (defwidget clock []
+              (box :orientation "v" :class "clock"
+               :valign "center" :halign "center"
+               ; (label :text clock_mer :class "clock_mer")
+               (label :text clock_hr :class "clock_hr")
+               (label :text clock_min :class "clock_min")
+               (label :text clock_sec :class "clock_min")
+              )
+             )
 
-           (defpoll current_workspace :interval "0.25s" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+             (defpoll current_workspace :interval "0.25s" "bash ~/.config/eww/scripts/get-active-workspace.sh")
 
-           (defwidget workspaces-bar []
-            (eventbox
+             (defwidget workspaces-bar []
+              (eventbox
 
-             :onscroll "scripts/switch-workspaces.sh {}"
-             (box :orientation "v" :class "workspaces-bar"
-              :halign "center" :valign "start" :space-evenly "false"
+               :onscroll "scripts/switch-workspaces.sh {}"
+               (box :orientation "v" :class "workspaces-bar"
+                :halign "center" :valign "start" :space-evenly "false"
 
-              (box :class "ws one ${current_workspace == "1" ? "active" : "inactive"}"
-               (button :onclick "scripts/switch-workspaces.sh 1"
-                :onrightclick "scripts/switch-workspaces.sh 1"
+                (box :class "ws one ${current_workspace == "1" ? "active" : "inactive"}"
+                 (button :onclick "scripts/switch-workspaces.sh 1"
+                  :onrightclick "scripts/switch-workspaces.sh 1"
+                  :class "wsbtn"
+                  (label :text " " :class "wstxt")))
+                ; (label :text "" :class "wstxt")))
+
+              (box :class "ws two ${current_workspace == "2" ? "active" : "inactive"}"
+               (button :onclick "scripts/switch-workspaces.sh 2" 
+                :onrightclick "scripts/switch-workspaces.sh 2"
                 :class "wsbtn"
                 (label :text " " :class "wstxt")))
               ; (label :text "" :class "wstxt")))
 
-            (box :class "ws two ${current_workspace == "2" ? "active" : "inactive"}"
-             (button :onclick "scripts/switch-workspaces.sh 2" 
-              :onrightclick "scripts/switch-workspaces.sh 2"
-              :class "wsbtn"
-              (label :text " " :class "wstxt")))
-            ; (label :text "" :class "wstxt")))
+              (box :class "ws three ${current_workspace == "3" ? "active" : "inactive"}"
+               (button :onclick "scripts/switch-workspaces.sh 3"
+                :onrightclick "scripts/switch-workspaces.sh 3"
+                :class "wsbtn"
+                (label :text " " :class "wstxt")))
+              ; (label :text "" :class "wstxt")))
 
-            (box :class "ws three ${current_workspace == "3" ? "active" : "inactive"}"
-             (button :onclick "scripts/switch-workspaces.sh 3"
-              :onrightclick "scripts/switch-workspaces.sh 3"
-              :class "wsbtn"
-              (label :text " " :class "wstxt")))
-            ; (label :text "" :class "wstxt")))
+              (box :class "ws four ${current_workspace == "4" ? "active" : "inactive"}"
+               (button :onclick "scripts/switch-workspaces.sh 4"
+                :onrightclick "scripts/switch-workspaces.sh 4"
+                :class "wsbtn"
+                (label :text " " :class "wstxt")))
+              ; (label :text "" :class "wstxt")))
 
-            (box :class "ws four ${current_workspace == "4" ? "active" : "inactive"}"
-             (button :onclick "scripts/switch-workspaces.sh 4"
-              :onrightclick "scripts/switch-workspaces.sh 4"
-              :class "wsbtn"
-              (label :text " " :class "wstxt")))
-            ; (label :text "" :class "wstxt")))
+              (box :class "ws five ${current_workspace == "5" ? "active" : "inactive"}"
+               (button :onclick "scripts/switch-workspaces.sh 5"
+                :onrightclick "scripts/switch-workspaces.sh 5"
+                :class "wsbtn"
+                (label :text " " :class "wstxt")))
+              ; (label :text "" :class "wstxt")))
+              ))
+              )
 
-            (box :class "ws five ${current_workspace == "5" ? "active" : "inactive"}"
-             (button :onclick "scripts/switch-workspaces.sh 5"
-              :onrightclick "scripts/switch-workspaces.sh 5"
-              :class "wsbtn"
-              (label :text " " :class "wstxt")))
-            ; (label :text "" :class "wstxt")))
-            ))
-            )
+              (defpoll isidle :interval "1s" "~/.config/eww/scripts/idlecontrol.sh status")
 
-            (defpoll isidle :interval "1s" "~/.config/eww/scripts/idlecontrol.sh status")
-
-            (defwidget idle_inhibitor []
-             (button :class "idler ${isidle == '󰒲' ? 'enabled' : 'disabled'}"
-              :onclick "~/.config/eww/scripts/idlecontrol.sh toggle"
-              (label :text isidle)))
+              (defwidget idle_inhibitor []
+               (button :class "idler ${isidle == '󰒲' ? 'enabled' : 'disabled'}"
+                :onclick "~/.config/eww/scripts/idlecontrol.sh toggle"
+                (label :text isidle)))
 
 (defvar isbacklight false)
   (defpoll valuebacklight :interval "1s" "scripts/backlight.sh get")
@@ -333,8 +333,42 @@
     ; :onhover "eww get ispowermenu | grep true &>/dev/null && (eww close powermenu && eww update isrevealedpower=false) || (eww open powermenu && eww update isrevealedpower=true)"
     ; :onhoverlost "(eww close powermenu && eww update isrevealedpower=false)"
     (button :class "logout"
-    ;  :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
+     ;  :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
      (label :text "󰤆")
     )
    )
   )
+
+
+  (defwidget battery []
+   (box :class "batterybox"
+    (box :class "batbox" :orientation "v" :space-evenly "false"
+
+     ;; ICON
+     (label
+      :class "baticon"
+      :text {
+      EWW_BATTERY.BAT1.status != "Discharging" ?
+      "󱐌" :
+
+      EWW_BATTERY.BAT1.capacity > 95 ? "󰁹" :
+      EWW_BATTERY.BAT1.capacity > 80 ? "󰂁" :
+      EWW_BATTERY.BAT1.capacity > 60 ? "󰁿" :
+      EWW_BATTERY.BAT1.capacity > 40 ? "󰁽" :
+      EWW_BATTERY.BAT1.capacity > 20 ? "󰁻" :
+      "󰂃"
+      }
+     )
+
+     ;; PERCENT
+     (label
+      :class {
+      EWW_BATTERY.BAT1.capacity < 20 ?
+      "batcent battery-low" :
+      "batcent"
+      }
+      :text "${EWW_BATTERY.BAT1.capacity}"
+     )
+     )
+     )
+     )
