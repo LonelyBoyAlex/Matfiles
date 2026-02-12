@@ -66,15 +66,15 @@
            :class "modules-left" :orientation "h" :space-evenly "false"
            (launcher)
            (clock)
-           (volume)
-           (backlight)
+            (musicplayer)
           )
          )
           (defwidget modulescenter []
            (box :halign "center" :valign "center"
             :class "modules-center" :orientation "h" :space-evenly "false"
+           (volume)
             (workspaces-bar)
-            (musicplayer)
+           (backlight)
            )
           )
            (defwidget modulesright []

@@ -133,22 +133,22 @@ $panebg: darken($primary_container, 2%);
   background: darken($accent, 40%);
   // min-width: 20rem;
   min-height: 12px;
-  border-radius: 60px;
-  padding:0px 12px;
-  margin:6px 0px;
+  border-radius: 4px;
+  padding:0px 4px;
+  margin:4px 0px;
 }
 
 .ws {
   margin: 2px 4px;
-  padding: 0px;
-  min-width: 8px;
+  min-width: 12px;
+  min-height: 4px;
   // border: 2px solid blue;
-  border-radius: 60px;
+  border-radius: 4px;
   background: transparentize($surface,0.5);
   &.active{
-    border-radius: 60px;
-    // padding:0px;
-    //  margin: 2px 4px;
+    border-radius: 4px;
+    padding:0px 18px;
+    margin: 2px 4px;
     // border: 2px solid $on_primary_container;
     // min-width: 24px;
     background: $accent;
@@ -205,4 +205,20 @@ $panebg: darken($primary_container, 2%);
   border:none;
   border-radius: 12px;
   padding: 0px 12px;
+}
+.systemtray menu{
+  background:lighten($on_primary,10%);
+  color: $on_primary_container;
+  border-radius: 8px;
+  padding:8px;
+  border:2px solid darken($on_primary,20%);
+  font-size: 16px;
+  :hover {
+  background:darken($on_primary,10%);
+  color: lighten($on_primary,20%);
+  }
+  :active {
+  background:lighten($on_primary,20%);
+  color: darken($on_primary,10%);
+  }
 }

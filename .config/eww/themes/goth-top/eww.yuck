@@ -108,7 +108,7 @@
           (box :halign "start" :valign "center"
            :class "modules-left" :orientation "h" :space-evenly "false"
            (launcher)
-           (workspaces-bar)
+           (clock)
            (volume)
            (backlight)
           )
@@ -116,15 +116,15 @@
           (defwidget modulescenter []
            (box :halign "center" :valign "center"
             :class "modules-center" :orientation "h" :space-evenly "false"
-            (clock)
-            (traybox)
+            (workspaces-bar)
+            (musicplayer)
            )
           )
            (defwidget modulesright []
             (box :halign "end" :valign "center"
              :class "modules-right" :orientation "h" :space-evenly "false"
-             (musicplayer)
              (battery)
+             (traybox)
              (logout)
             )
            )
@@ -308,7 +308,7 @@
     :onhover "eww update trayisopen='true'"
     :onhoverlost "eww update trayisopen='false'"
     (box :class "systray" :orientation "h" :space-evenly "false"
-     (label :text "󰵼" :class "trayarrow")
+     (label :text "" :class "trayarrow")
      (revealer :reveal trayisopen :transition "slideleft"      
       (systray :orientation "h" :space-evenly "true"
        :icon-size "20" :prepend-new "true"  :spacing "10" :class "systemtray"
@@ -318,47 +318,47 @@
 
    (defvar battery_name "BAT1")
    (defwidget battery []
-    (box :class "batterybox"
-     (label
-      :class {
-      EWW_BATTERY.BAT1.capacity < 20 ? "battery-low" : "battery-normal"
-      }
-      :text {
-      EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 95 ? "󰠠 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 80 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 60 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 40 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 20 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.status == "Charging" ? " ${EWW_BATTERY.BAT1.capacity}%" :
+     (box :class "batterybox"
+      (label
+       :class {
+       EWW_BATTERY.BAT1.capacity < 20 ? "battery-low" : "battery-normal"
+       }
+       :text {
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 95 ? "󰠠 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 80 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 60 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 40 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" && EWW_BATTERY.BAT1.capacity > 20 ? "󱐌 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.status == "Charging" ? " ${EWW_BATTERY.BAT1.capacity}%" :
 
-      EWW_BATTERY.BAT1.capacity > 95 ? "󰁹 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.capacity > 80 ? "󰂁 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.capacity > 60 ? "󰁿 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.capacity > 40 ? "󰁽 ${EWW_BATTERY.BAT1.capacity}%" :
-      EWW_BATTERY.BAT1.capacity > 20 ? "󰁻 ${EWW_BATTERY.BAT1.capacity}%" :
-      "󰂃 ${EWW_BATTERY.BAT1.capacity}%"
-      }
-     )
-     )
-     )
-
-     (deflisten mpris_class
-      "scripts/mpris.sh class"
-     )
-
-     (deflisten mpris_text
-      "scripts/mpris.sh text"
-     )
-
-     (defwidget musicplayer []
-      (box :class "mpris"
-       (button
-        :onclick "playerctl play-pause"
-        :onrightclick "playerctl play-pause"
-        (label
-         :class mpris_class
-         :text  mpris_text
-        )
-       )
+       EWW_BATTERY.BAT1.capacity > 95 ? "󰁹 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 80 ? "󰂁 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 60 ? "󰁿 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 40 ? "󰁽 ${EWW_BATTERY.BAT1.capacity}%" :
+       EWW_BATTERY.BAT1.capacity > 20 ? "󰁻 ${EWW_BATTERY.BAT1.capacity}%" :
+       "󰂃 ${EWW_BATTERY.BAT1.capacity}%"
+       }
       )
-     )
+      )
+      )
+
+(deflisten mpris_class
+  "scripts/mpris.sh class"
+)
+
+(deflisten mpris_text
+  "scripts/mpris.sh text"
+)
+
+(defwidget musicplayer []
+  (box :class "mpris"
+  (button
+    :onclick "playerctl play-pause"
+    :onrightclick "playerctl play-pause"
+    (label
+      :class mpris_class
+      :text  mpris_text
+    )
+    )
+  )
+)

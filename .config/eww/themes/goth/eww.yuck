@@ -8,8 +8,8 @@
    :height "100%"
    ; :height "80%"
    )
- :class "bar"
  (centerbox
+ :class "mainbar"
   :orientation "v"
   (box (modulesleft)
   )
@@ -42,14 +42,13 @@
 
 
     (defwindow paneltop []
-     :stacking "bg"
+     :stacking "fg"
      :monitor "0"
      :exclusive "true"
      :geometry (geometry
        :anchor "center top"
        :width "100%"
        :height "1.25%"
-       ; :height "80%"
        )
      :class "panel"
      (box :space-evenly "true"
@@ -78,14 +77,13 @@
       )
 
       (defwindow panelbot []
-       :stacking "bg"
+       :stacking "fg"
        :monitor "0"
        :exclusive "true"
        :geometry (geometry
          :anchor "bottom center"
          :width "100%"
          :height "1.25%"
-         ; :height "80%"
          )
        :class "panel"
        (box
@@ -93,14 +91,13 @@
        )
       )
        (defwindow panelryt []
-        :stacking "bg"
+        :stacking "fg"
         :monitor "0"
         :exclusive "true"
         :geometry (geometry
           :anchor "center right"
           :width "0.5%"
           :height "100%"
-          ; :height "80%"
           )
         :class "panel"
         (box
@@ -128,7 +125,7 @@
          )
 
 
-          ;;      widgets
+          ;;############  widgets  ################
 
           (defwidget modulesleft []
            (box :valign "start" :halign "center"
@@ -159,16 +156,9 @@
            ;;------------------ modules -----------------
            (defwidget launcher []
             (button :class "launcher"
-             ; :onclick "~/HyprlandScripts/launcher.sh"
              :onclick "scripts/rofilauncher.sh"
              :onrightclick "scripts/rofilauncher.sh"
-             ; (box :class "launcher" :style "background-image: url('./niri.svg');")
-             ;(label :text "")
              (label :text "")
-             ; (image :path "niri.svg"
-               ;    :image-width 50
-               ;    :image-height 50
-               ; )
             )
            )
 
@@ -292,7 +282,7 @@
      (label :text "" :class "trayarrow")
      (revealer :reveal trayisopen :transition "slideup"      
       (systray :orientation "v" :space-evenly "true"
-       :icon-size "18" :prepend-new "true"  :spacing "10" :class "systemtray"
+       :icon-size "24" :prepend-new "true"  :spacing "8" :class "systemtray"
       ))
     ))
   )
@@ -340,10 +330,10 @@
 
   (defwidget logout []
    (eventbox
-    :onhover "eww get ispowermenu | grep true &>/dev/null && (eww close powermenu && eww update isrevealedpower=false) || (eww open powermenu && eww update isrevealedpower=true)"
+    ; :onhover "eww get ispowermenu | grep true &>/dev/null && (eww close powermenu && eww update isrevealedpower=false) || (eww open powermenu && eww update isrevealedpower=true)"
     ; :onhoverlost "(eww close powermenu && eww update isrevealedpower=false)"
     (button :class "logout"
-     :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
+    ;  :onclick "eww get ispowermenu | grep true &>/dev/null && (eww open powermenu && eww update isrevealedpower=true)"
      (label :text "󰤆")
     )
    )

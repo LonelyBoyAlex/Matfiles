@@ -2,19 +2,20 @@
 $fg: $on_primary_container;
 $surf: $primary_container;
 $accent: $primary;
-$icns: 24px;
-$txt: 18px;
-$panebg:lighten($background,2%);
+$icns: 18px;
+$txt: 20px;
+$panebg:darken($primary_container,15%);
+// Define invert-color function
+@function invert-color($color) {
+  @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+}
+
 * {
   all:unset;
   margin:0px;
   padding:0px;
   font-family:"JetBrains Mono Nerd Font Propo";
-}
-
-// Define invert-color function
-@function invert-color($color) {
-  @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+  transition: all 0.4s ease-in;
 }
 
 .barcorner {
@@ -46,61 +47,62 @@ $panebg:lighten($background,2%);
   background: $panebg;
 }
 
-.bar {
-  min-width: 32px;
+.mainbar {
+  min-width: 28px;
   background: $panebg;
   border-radius: 0px 0px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  transition: all 2s ease-in;
+  padding-top: 0.9rem;
+  padding-bottom: 2rem;
 }
 
 .launcher {
   color: $fg;
   font-size: $icns;
-  border-radius: 60px;
-  min-width:12px;
+  border-radius: 8px;
+  //min-width:12px;
   min-height:12px;
   padding:6px;
   margin:4px;
   transition: all 0.5s ease-out;
-  background:none;
+  background:lighten($on_primary,10%);
   &:hover {
-    background: lighten($surf, 10%);
+    background:$surf;
     color: $inverse_surface;
   }
 }
 
-.applauncher {
-  border-radius: 8px;
+// .applauncher {
+//   border-radius: 8px;
 
-  &:hover {
-    background: lighten($surf, 10%);
-    border: 1px solid $accent;
-    color: $inverse_surface;
-  }
-}
+//   &:hover {
+//     background: lighten($surf, 10%);
+//     border: 1px solid $accent;
+//     color: $inverse_surface;
+//   }
+// }
 
 .clock {
-  color: $fg;
+  background:lighten($on_primary,10%);
   font-size: $txt;
   margin: 8px 0px;
   font-weight: 900;
   font-family: "JetBrains Mono Nerd Font", monospace;
-  // border: 8px double $fg;
+  // border: 1px solid $fg;
   border-radius: 6px;
-  padding: 8px 0px;
+  padding: 8px 4px;
 }
 
 .clock_hr {
   padding: 6px 0px;
   margin-bottom: 0.25rem;
-  padding-bottom: 0px;
+  color: darken($on_primary_container,10%);
+  padding: 0px;
 }
 
 .clock_min {
   padding: 6px 0px;
-  padding-top: 0px;
+  padding: 0px;
+  color: darken($on_primary_container,10%);
   margin-top: .25rem;
 }
 
@@ -108,85 +110,48 @@ $panebg:lighten($background,2%);
   color: darken($surf, 25%);
   margin: 0rem;
   padding: 0px;
+  color: darken($on_primary_container,10%);
   font-family: "JetBrains Mono Nerd Font", monospace;
 }
 
 .workspaces-bar {
   border-radius: 8px;
   background: darken($surf, 7.5%);
-  padding: 0px;
-  margin:6px;
+  padding: 4px;
+  margin:8px;
+  min-width:8px;
 }
 
 .ws {
   color: transparentize($background, 0.5);
   background: transparentize($background, 0.5);
-  border-radius: 60px;
+  border-radius: 12px;
   transition: all 0.2s ease-out;
-  // border: 1px solid white;
-  &.one {
-    padding: 0px;
-    min-width: 4px;
-    min-height: 4px;
-    margin: 4px;
-  }
-
-  &.two {
-    padding: 0px;
-    min-width: 4px;
-    min-height: 4px;
-    margin: 4px;
-  }
-
-  &.three {
-    padding: 0px;
-    min-width: 4px;
-    min-height: 4px;
-    margin: 4px;
-  }
-
-  &.four {
-    padding: 0px;
-    min-width: 4px;
-    min-height: 4px;
-    margin: 4px;
-  }
-
-  &.five {
-    padding: 0px;
-    min-width: 4px;
-    min-height: 4px;
-    margin: 4px;
-  }
-
+  padding: 4px 6px;
+  margin: 2px 2px;
+  
   &.active {
     color: invert-color($primary);
-    padding: 12px 0px;
     background: darken($primary,45%);
     border-radius: 80px;
-    min-width: 2px;
-    min-height: 12px;
-    transition: all 0.2s ease-out;
-    margin:4px 4px;
+    // padding: 12px 0px;
+    // margin:4px 4px;
   }
-
+  
   &.inactive {
     color: transparent;
     transition: all 0.2s ease-out;
   }
 }
 
-.wsbtn {
-  padding-left: 2px;
-  padding-right: 2px;
-  min-width: 20px;
-  border-radius: 60px;
-}
+// .wsbtn {
+//   padding: 0px 4px;
+// }
 
-.wstxt {
-  margin: 0px;
-  padding: 0px;
-}
+// .wstxt {
+//   margin: 0px;
+//   padding: 0px;
+// }
 
 .idler {
   font-size: $icns;
@@ -211,59 +176,65 @@ $panebg:lighten($background,2%);
 
 .backlightbox,
 .volumebox {
-  padding: 8px 0px;
+  background:lighten($on_primary,10%);
+  padding: 6px 4px;
+  margin: 4px;
+  border-radius: 8px;
 }
 
 .backlight_bar,
 .volume_bar {
-  border: 2px solid $outline;
+  // border: 2px solid $outline;
   min-height: 80px;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 8px;
-  padding: 8px 0px;
+  padding: 0px;
   transition: all 5s ease-out;
 }
 
 .backlight_bar trough,
 .volume_bar trough {
-  padding: 0px;
-  background: transparent;
-
+  background-color: darken($primary,25%);
+  border-radius: 8px;
+  margin: 0px;
+  padding: 2px 0px;
 }
 
 .backlight_bar highlight,
 .volume_bar highlight {
-  border-top: 4px solid darken($surf, 25%);
+  // border-top: 4px solid darken($primary, 25%);
   background: $primary;
-  padding: 0px;
-  margin: -8px 0px;
-  border-radius: 8px;
-  min-width: 18px;
+  margin:  0px;
+  padding: 2px 10px;
+  border-radius:8px 8px;
 }
 
 .backlight_bar slider,
 .volume_bar slider {
-  background-color: $outline;
-  padding: 4px;
-  border-radius: 8px;
+  // color: $background;
+  background: transparent;
+  // padding: 2px 6px;
+  // margin: 4px 0px;
+  min-width: 1px;
+  min-height: 1px;
+  border-radius: 24px;
 }
 
-.backlight-widget,
-.volume-widget {
-  margin: 0px 0px;
-  padding: 0px;
-}
+// .backlight-widget,
+// .volume-widget {
+//   margin: 0px 0px;
+//   padding: 0px;
+// }
 
-.backlight-widget {
-  border-top: none;
-  border-radius: 0px 0px 24px 24px;
-}
+// .backlight-widget {
+  //   border-radius: 0px 0px 24px 24px;
+  //   border-top: none;
+// }
 
-.volume-widget {
-  border-bottom: none;
-  border-radius: 24px 24px 0px 0px;
-}
+// .volume-widget {
+//   border-bottom: none;
+// }
 
 .volicon,
 .brighticon {
@@ -275,11 +246,12 @@ $panebg:lighten($background,2%);
 .logout {
   color: $fg;
   font-size: $icns;
-  padding: 8px 0px;
-  margin: 8px 0px;
-  border-radius: 8px;
+  font-weight: 900;
   transition: all 0.5s ease-out;
-
+  background:lighten($on_primary,10%);
+  padding: 6px;
+  margin: 4px;
+  border-radius: 8px;
   &:hover {
     background: lighten($surf, 10%);
     color: $inverse_surface;
@@ -287,55 +259,75 @@ $panebg:lighten($background,2%);
 }
 
 .systray {
-  background: darken($primary,45%);
-  border-radius: 24px;
-  padding: 8px 0px;
-  margin: 8px;
-}
-
-.powermenu {
-  background: $surf;
-  border: 2px solid $outline;
-  border-left: none;
-  border-radius: 0px 24px 24px 0px;
-
-  &.btn {
-    border-radius: 60px;
-    border: 2px solid $outline;
-    background: darken($surf, $amount: 60);
-    color: $surf;
-    margin: 10px 18px;
-  }
-}
-
-.powermenu:hover {
-  background: darken($surf, $amount: 30);
-  transition: all .5s ease-out;
-}
-
-.btn1icon {
-  font-size: 3.5rem;
-  font-family: "JetBrains Mono Nerd Font", monospace;
-}
-
-.eventboxnotibtn {
-  padding-left: 360px;
-  padding-right: 360px;
-  border-radius: 8px;
-
-  &:hover {
-    background: lighten($surf, 10%);
-    border: 1px solid $accent;
-    color: $inverse_surface;
-  }
-}
-
-.trayarrow {
+  // background: darken($primary,45%);
+  // border-radius: 24px;
+  // padding: 8px 0px;
+  // margin: 8px;
+  // padding: 10px 0px;
   background: inherit;
+}
+.trayarrow{
   font-size: $icns;
-  padding: 4px 2px 0px 2px;
+  padding:4px;
+  margin:6px 4px;
+}
+.systemtray{
+  background:lighten($on_primary,10%);
+  padding: 4px;
+  margin: 4px;
+  border-radius: 8px;
+  border:1px solid $fg;
 }
 
-.systemtray {
-  padding: 10px 0px;
+.systemtray menu{
+  background:lighten($on_primary,10%);
+  color: $on_primary_container;
+  border-radius: 8px;
+  padding:8px;
+  border:2px solid darken($on_primary,20%);
+  font-size: 16px;
+  :hover {
+  background:darken($on_primary,10%);
+  color: lighten($on_primary,20%);
+  }
+  :active {
+  background:lighten($on_primary,20%);
+  color: darken($on_primary,10%);
+  }
 }
+// .powermenu {
+//   background: $surf;
+//   border: 2px solid $outline;
+//   border-left: none;
+//   border-radius: 0px 24px 24px 0px;
+
+//   &.btn {
+//     border-radius: 60px;
+//     border: 2px solid $outline;
+//     background: darken($surf, $amount: 60);
+//     color: $surf;
+//     margin: 10px 18px;
+//   }
+// }
+
+// .powermenu:hover {
+//   background: darken($surf, $amount: 30);
+//   transition: all .5s ease-out;
+// }
+
+// .btn1icon {
+//   font-size: 3.5rem;
+//   font-family: "JetBrains Mono Nerd Font", monospace;
+// }
+
+// .eventboxnotibtn {
+//   padding-left: 360px;
+//   padding-right: 360px;
+//   border-radius: 8px;
+
+//   &:hover {
+//     background: lighten($surf, 10%);
+//     border: 1px solid $accent;
+//     color: $inverse_surface;
+//   }
+// }

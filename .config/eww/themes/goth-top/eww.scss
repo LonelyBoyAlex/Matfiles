@@ -11,7 +11,7 @@
 $fg: $on_primary_container;
 $surf: $primary_container;
 $accent: $primary;
-$icns: 18px;
+$icns: 20px;
 $txt: 18px;
 $panebg: darken($primary_container, 2%);
 
@@ -53,7 +53,7 @@ $panebg: darken($primary_container, 2%);
 .launcher,
 .logoutbtn {
   background: inherit;
-  font-size: $icns;
+  // font-size: $icns;
   min-width: 24px;
   background: darken($accent, 40%);
   margin: 4px;
@@ -91,7 +91,6 @@ $panebg: darken($primary_container, 2%);
   margin: 4px;
   border-radius: 60px;
   padding: 0px 8px;
-  font-size: $icns;
 }
 
 .backlight_bar,
@@ -163,7 +162,7 @@ $panebg: darken($primary_container, 2%);
 }
 
 .trayarrow{
-  font-size: $icns;
+  font-size: smaller;
   margin-right: 0.5rem;
   font-weight: 900;
 }

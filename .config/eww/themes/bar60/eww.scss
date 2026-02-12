@@ -347,3 +347,19 @@ transition: all 2s ease-in;
 .systemtray {
   padding: 10px 0px;
 }
+.systemtray menu{
+  background:lighten($on_primary,10%);
+  color: $on_primary_container;
+  border-radius: 8px;
+  padding:8px;
+  border:2px solid darken($on_primary,20%);
+  font-size: 16px;
+  :hover {
+  background:darken($on_primary,10%);
+  color: lighten($on_primary,20%);
+  }
+  :active {
+  background:lighten($on_primary,20%);
+  color: darken($on_primary,10%);
+  }
+}
