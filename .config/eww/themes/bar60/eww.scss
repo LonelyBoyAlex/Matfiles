@@ -65,12 +65,15 @@ $txt: 22px;
 .clock {
     color: $fg;
     font-size: $txt;
-    margin: 8px 0px;
     font-weight: 900;
     font-family: "JetBrains Mono Nerd Font", monospace;
-    // border: 8px double $fg;
-    border-radius: 6px;
-    padding: 8px 0px;
+    margin:2px;
+    padding:4px;
+    color: $fg;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    transition: all 0.5s ease-out;
+    border-radius: 12px;
 }
 
 .clock_hr {
@@ -164,19 +167,17 @@ $txt: 22px;
 
 .idler {
     font-size: $icns;
-    margin: 8px 4px;
-    padding: 0px 4px;
-    border-radius: 8px;
-    transition: all 0.1s ease-out;
-    background: inherit;
-    border: none;
     color: $fg;
-    border-radius: 8px;
+    border-radius: 12px;
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    margin: 0px 2px;
+    padding: 4px 8px;
 
     &.disabled {
-        background: lighten($surf, 25%);
+        background: lighten($surf, 15%);
         color: $surf;
-        border: 1px solid $fg;
+        //border: 1px solid $fg;
     }
 
     &:hover {
@@ -187,32 +188,31 @@ $txt: 22px;
 
 .backlightbox,
 .volumebox {
-    padding: 8px 0px;
+    padding: 4px 0px;
+    margin:0px;
 }
 
 .backlight_bar,
 .volume_bar {
-    border: 2px solid $outline;
     min-height: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 8px;
-    padding: 8px 0px;
+    margin: 2px;
+    padding: 0px;
+    border-radius: 12px;
     transition: all 5s ease-out;
+    border:1px solid white;
 }
 
 .backlight_bar trough,
 .volume_bar trough {
     padding: 0px;
-    background: transparent;
+    border: 2px solid $outline;
+    border-radius:12px;
 }
 
 .backlight_bar highlight,
 .volume_bar highlight {
     border-top: 4px solid darken($surf, 25%);
     background: $primary;
-    padding: 0px;
-    margin: -8px 0px;
     border-radius: 8px;
     min-width: 18px;
 }
@@ -220,7 +220,7 @@ $txt: 22px;
 .backlight_bar slider,
 .volume_bar slider {
     background-color: $outline;
-    padding: 4px;
+    padding: 2px 8px;
     border-radius: 8px;
 }
 
@@ -245,7 +245,11 @@ $txt: 22px;
     font-size: $icns;
     //font-size: 16px;
     color: $fg;
-    border-radius: 8px;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    transition: all 0.5s ease-out;
+    padding: 4px 8px;
+    border-radius: 12px;
     margin: 0px 2px;
 }
 
@@ -256,7 +260,6 @@ $txt: 22px;
     transition: all 0.5s ease-out;
     padding: 4px 8px;
     margin: 8px 2px -4px 2px;
-    /*border: 2px solid $fg;*/
     border-radius: 12px;
 
     &:hover {
@@ -266,11 +269,12 @@ $txt: 22px;
 }
 
 .systray {
-    background: darken($surf, 10%);
+    background: lighten($surf, 10%);
     border-radius: 60px;
     border: none;
-    padding: 8px 2px;
-    margin: 8px;
+    padding: 4px 2px;
+    margin: 2px;
+    border-radius:12px;
 }
 
 .powermenu {
@@ -321,7 +325,7 @@ $txt: 22px;
 .systemtray menu {
     background: lighten($on_primary, 10%);
     color: $on_primary_container;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 8px;
     border: 2px solid darken($on_primary, 20%);
     font-size: 16px;
@@ -339,22 +343,31 @@ $txt: 22px;
     font-size: $txt;
     border-radius: 8px 8px 0px 0px;
     padding: 4px 0px;
-    margin: 4px;
+    margin: 2px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     background: $surf;
     color: $fg;
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    border-radius: 12px 12px 0px 0px;
 }
 .batcent {
     font-size: 16px;
     border-radius: 0px 0px 8px 8px;
-    padding: 4px 0px;
-    margin: 4px;
+    padding: 8px 0px;
+    margin: 2px 2px;
     margin-top: 0px;
     padding-top: 0px;
     background: $surf;
     color: $fg;
     font-family: "JetBrains Mono Nerd Font", "monospace";
+
+
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    border-radius: 0px 0px 12px 12px;
+
 }
 
 .battery-low {
