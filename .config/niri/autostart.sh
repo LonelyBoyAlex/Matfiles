@@ -1,5 +1,5 @@
 #!/bin/bash
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ~/.config/niri/scripts/swaync.sh &
 eww-daemon &
 swww-daemon &
@@ -8,7 +8,8 @@ swww img $(readlink ~/.config/themes/active/wallpapers/current) &
 ~/HyprlandScripts/ewwTheme.sh restore &
 swww-daemon -n wallpapes &
 swww img -n wallpapes .cache/wallblurred.png &
-~/.config/niri/scripts/swayidle.sh && notify-send 'swayidle' &
+#~/.config/niri/scripts/swayidle.sh && notify-send 'swayidle' &
+hypridle &
 udiskie --tray &
 nm-applet &
 blueman-applet &

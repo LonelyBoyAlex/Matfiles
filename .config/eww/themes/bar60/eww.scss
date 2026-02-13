@@ -17,41 +17,13 @@ $txt: 22px;
     padding: 0px;
     font-family: "JetBrains Mono Nerd Font Propo", monospace;
 }
-/*.barcorner {
-background: transparent;
-padding: 24px;
-border-radius: 12px;
-
-&.top {
-box-shadow: -24px -24px 0px 0px $surf;
-}
-
-&.bottom {
-box-shadow: -24px 24px 0px 0px $surf;
-}
-
-&.topryt {
-box-shadow: 24px -24px 0px 0px $surf;
-}
-
-&.bottomryt {
-box-shadow: 24px 24px 0px 0px $surf;
-}
-}
-*/
 .panel {
     background: transparent;
 }
 
 .mybar {
     min-width: 42px;
-    //  min-height: $high;
-    /* border: 2px solid $fg;
-border-left:none;
-padding: 2rem 0px;
-border-radius: 12px 60px 60px 12px;
-  border-radius: 0px;
-*/
+    //min-height: $high;
     border-radius: 12px;
     border-left: 3px solid $surf;
     border-top: 1px solid transparentize($fg, 0.5);
@@ -72,7 +44,7 @@ border-radius: 12px 60px 60px 12px;
     /*border: 2px solid $fg;*/
     border-radius: 8px;
     margin: -4px 2px 8px 2px;
-    border-radius: 60px 60px 60px 12px;
+    border-radius: 12px;
 
     &:hover {
         background: lighten($surf, 20%);
@@ -285,7 +257,7 @@ border-radius: 12px 60px 60px 12px;
     padding: 4px 8px;
     margin: 8px 2px -4px 2px;
     /*border: 2px solid $fg;*/
-    border-radius: 12px 60px 60px 60px;
+    border-radius: 12px;
 
     &:hover {
         background: lighten($surf, 10%);

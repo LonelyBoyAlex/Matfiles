@@ -48,7 +48,7 @@ $panebg: darken($primary_container, 15%);
 }
 
 .mainbar {
-    min-width: 28px;
+    min-width: 32px;
     background: $panebg;
     border-radius: 0px 0px;
     padding-top: 0.9rem;
@@ -70,16 +70,6 @@ $panebg: darken($primary_container, 15%);
         color: $inverse_surface;
     }
 }
-
-// .applauncher {
-//   border-radius: 8px;
-
-//   &:hover {
-//     background: lighten($surf, 10%);
-//     border: 1px solid $accent;
-//     color: $inverse_surface;
-//   }
-// }
 
 .clock {
     background: lighten($on_primary, 10%);
@@ -134,8 +124,6 @@ $panebg: darken($primary_container, 15%);
         color: invert-color($primary);
         background: darken($on_primary, 45%);
         border-radius: 8px;
-        // padding: 12px 0px;
-        // margin:4px 4px;
     }
 
     &.inactive {
@@ -184,7 +172,6 @@ $panebg: darken($primary_container, 15%);
 
 .backlight_bar,
 .volume_bar {
-    // border: 2px solid $outline;
     min-height: 80px;
     margin-left: 10px;
     margin-right: 10px;
@@ -203,7 +190,6 @@ $panebg: darken($primary_container, 15%);
 
 .backlight_bar highlight,
 .volume_bar highlight {
-    // border-top: 4px solid darken($primary, 25%);
     background: $primary;
     margin: 0px;
     padding: 2px 10px;
@@ -212,10 +198,7 @@ $panebg: darken($primary_container, 15%);
 
 .backlight_bar slider,
 .volume_bar slider {
-    // color: $background;
     background: transparent;
-    // padding: 2px 6px;
-    // margin: 4px 0px;
     min-width: 1px;
     min-height: 1px;
     border-radius: 24px;
@@ -239,7 +222,6 @@ $panebg: darken($primary_container, 15%);
 .volicon,
 .brighticon {
     font-size: $icns;
-    //font-size: 16px;
     color: $fg;
 }
 
@@ -259,11 +241,6 @@ $panebg: darken($primary_container, 15%);
 }
 
 .systray {
-    // background: darken($primary,45%);
-    // border-radius: 24px;
-    // padding: 8px 0px;
-    // margin: 8px;
-    // padding: 10px 0px;
     background: inherit;
 }
 .trayarrow {
@@ -296,14 +273,10 @@ $panebg: darken($primary_container, 15%);
     }
 }
 
-//.battery-normal {
-//border:1px solid white;
-//}
-
 .baticon {
     font-size: $txt;
     color: $on_primary_container;
-    background: darken($accent, 40%);
+    background: lighten($on_primary, 10%);
     border-radius: 8px 8px 0px 0px;
     padding: 4px 0px;
     margin: 4px;
@@ -313,8 +286,8 @@ $panebg: darken($primary_container, 15%);
 .batcent {
     font-size: 16px;
     color: $on_primary_container;
-    background: darken($accent, 40%);
     border-radius: 0px 0px 8px 8px;
+    background: lighten($on_primary, 10%);
     padding: 4px 0px;
     margin: 4px;
     margin-top: 0px;

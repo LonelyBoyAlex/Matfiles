@@ -112,6 +112,10 @@ post_hook = 'polybar-msg cmd restart'
 input_path = 'templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 
+[templates.swayosd]
+input_path = 'templates/colors.css'
+output_path = '~/.config/swayosd/colors.css'
+
 [templates.pywalfox]
 input_path = './templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'

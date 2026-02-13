@@ -14,7 +14,7 @@ binds {
   SUPER+Shift+Return { spawn "kitty";}
   SUPER+Return { spawn "alacritty";}
   SUPER+E { spawn "nautilus";}
-  SUPER+Shift+E { spawn "thunar";}
+  SUPER+Shift+E { spawn "pcmanfm";}
   SUPER+Shift+B { spawn "brave";}
   SUPER+B { spawn "zen-browser";}
   SUPER+C { spawn "code";}

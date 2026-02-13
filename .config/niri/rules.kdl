@@ -54,6 +54,7 @@ shadow {
 
 layer-rule {
 match namespace="^eww_powermenu$"
+match namespace="^eww$"
 shadow {
 off
 }
@@ -91,4 +92,10 @@ color "#000000aa"
 //geometry-corner-radius 8
 place-within-backdrop true
 }
-
+// Show layer-shell surfaces with 0.5 opacity at niri startup, but not afterwards.
+layer-rule {
+    //match at-startup=true
+    match namespace="^eww$" at-startup=true
+    match namespace="gtk-layer-shell" at-startup=true
+    opacity 0.5
+}
