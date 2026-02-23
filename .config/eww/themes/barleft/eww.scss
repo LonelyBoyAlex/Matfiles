@@ -1,0 +1,380 @@
+@import "./colors.scss";
+
+//@import "./bar.scss";
+//@import "./noti.scss";
+//@import "./anim.scss";
+//
+$fg: $on_primary_container;
+$surf: $primary_container;
+$accent: $primary;
+$icns: 22px;
+$txt: 22px;
+//$high: 1060px;
+
+* {
+    all: unset;
+    margin: 0px;
+    padding: 0px;
+    font-family: "JetBrains Mono Nerd Font Propo", monospace;
+}
+.panel {
+    background: transparent;
+}
+
+.mybar {
+    min-width: 42px;
+    //min-height: $high;
+    border-radius: 0px;
+    //border-left: 3px solid $surf;
+    //border-top: 1px solid transparentize($fg, 0.5);
+    //border-bottom: 1px solid transparentize($fg, 0.5);
+    border-right: 2px solid darken($fg, 5%);
+    padding: 1rem 0px;
+    transition: all 2s ease-in;
+    background: lighten($background,20%);
+}
+
+.launcher {
+    color: $fg;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    padding: 4px 10px;
+    margin: 8px 0px;
+    transition: all 0.5s ease-out;
+    border-radius: 8px;
+    margin: -4px 2px 8px 2px;
+    border-radius: 12px;
+
+    &:hover {
+        background: lighten($surf, 20%);
+        color: $inverse_surface;
+    }
+}
+
+.applauncher {
+    border-radius: 8px;
+
+    &:hover {
+        background: lighten($surf, 10%);
+        border: 1px solid $accent;
+        color: $inverse_surface;
+    }
+}
+
+.clock {
+    color: $fg;
+    font-size: $txt;
+    font-weight: 900;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    margin:2px;
+    padding:4px;
+    color: $fg;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    transition: all 0.5s ease-out;
+    border-radius: 12px;
+}
+
+.clock_hr {
+    padding: 6px 0px;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0px;
+}
+
+.clock_min {
+    padding: 6px 0px;
+    padding-top: 0px;
+    margin-top: 0.25rem;
+}
+
+.clock_mer {
+    color: darken($surf, 25%);
+    margin: 0rem;
+    padding: 0px;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.workspaces-bar {
+    border-radius: 8px;
+    //background: darken($surf, 7.5%);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background: lighten($surf, 10%);
+}
+
+// Define invert-color function
+@function invert-color($color) {
+    @return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+}
+
+.ws {
+    color: transparentize($background, 0.5);
+    background: transparentize($background, 0.5);
+    border-radius: 60px;
+    min-width: 8px;
+    min-height: 4px;
+    margin: 4px;
+    transition: all 0.2s ease-out;
+
+    &.one {
+        padding: 0px 2px;
+    }
+
+    &.two {
+        padding: 0px 2px;
+    }
+
+    &.three {
+        padding: 0px 2px;
+    }
+
+    &.four {
+        padding: 0px 2px;
+    }
+
+    &.five {
+        padding: 0px 2px;
+    }
+
+
+    &.inactive {
+        color: transparent;
+        min-height: 2px;
+        transition: all 0.2s ease-out;
+        border-radius: 60px;
+    }
+    &.active {
+        color: invert-color($primary);
+        background: $accent;
+        border-radius: 8px;
+        min-height: 4px;
+        transition: all 0.2s ease-out;
+        border-radius: 60px;
+    }
+  }
+
+.wsbtn {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 4px;
+    min-height: 2px;
+    border-radius: 8px;
+    margin: 0px 8px;
+}
+
+.wstxt {
+    margin: 0px;
+    padding: 0px;
+    min-height: 2px;
+    min-width:2px;
+}
+
+.idler {
+    font-size: $icns;
+    color: $fg;
+    border-radius: 12px;
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    margin: 0px 2px 16px 2px;
+    padding: 4px 8px;
+
+    &.disabled {
+        background: lighten($surf, 15%);
+        color: $surf;
+        //border: 1px solid $fg;
+    }
+
+    &:hover {
+        background: lighten($surf, 10%);
+        color: $inverse_surface;
+    }
+}
+
+.backlightbox,
+.volumebox {
+    padding: 4px 0px;
+    margin:0px;
+}
+
+.backlight_bar,
+.volume_bar {
+    min-height: 80px;
+    margin: 2px;
+    padding: 0px;
+    border-radius: 12px;
+    transition: all 5s ease-out;
+    border:1px solid white;
+}
+
+.backlight_bar trough,
+.volume_bar trough {
+    padding: 0px;
+    border: 2px solid $outline;
+    border-radius:12px;
+}
+
+.backlight_bar highlight,
+.volume_bar highlight {
+    border-top: 4px solid darken($surf, 25%);
+    background: $primary;
+    border-radius: 8px;
+    min-width: 18px;
+}
+
+.backlight_bar slider,
+.volume_bar slider {
+    background-color: $outline;
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+.backlight-widget,
+.volume-widget {
+    margin: 0px 0px;
+    padding: 0px;
+}
+
+.backlight-widget {
+    border-top: none;
+    border-radius: 0px 0px 24px 24px;
+}
+
+.volume-widget {
+    border-bottom: none;
+    border-radius: 24px 24px 0px 0px;
+}
+
+.volicon,
+.brighticon {
+    font-size: $icns;
+    //font-size: 16px;
+    color: $fg;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    transition: all 0.5s ease-out;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin: 0px 2px;
+}
+
+.logout {
+    color: $fg;
+    background: lighten($surf, 10%);
+    font-size: $icns;
+    transition: all 0.5s ease-out;
+    padding: 4px 8px;
+    margin: 8px 2px -4px 2px;
+    border-radius: 12px;
+
+    &:hover {
+        background: lighten($surf, 10%);
+        color: $inverse_surface;
+    }
+}
+
+.systray {
+    background: lighten($surf, 10%);
+    border-radius: 60px;
+    border: none;
+    padding: 4px 2px;
+    margin: 2px;
+    border-radius:12px;
+}
+
+.powermenu {
+    background: $surf;
+    border: 2px solid $outline;
+    border-left: none;
+    border-radius: 0px 24px 24px 0px;
+
+    &.btn {
+        border-radius: 60px;
+        border: 2px solid $outline;
+        background: darken($surf, $amount: 60);
+        color: $surf;
+        margin: 10px 18px;
+    }
+}
+
+.powermenu:hover {
+    background: darken($surf, $amount: 30);
+    transition: all 0.5s ease-out;
+}
+
+.btn1icon {
+    font-size: 3.5rem;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+}
+
+.eventboxnotibtn {
+    padding-left: 360px;
+    padding-right: 360px;
+    border-radius: 8px;
+
+    &:hover {
+        background: lighten($surf, 10%);
+        border: 1px solid $accent;
+        color: $inverse_surface;
+    }
+}
+
+.trayarrow {
+    background: inherit;
+    font-size: $icns;
+}
+
+.systemtray {
+    padding: 10px 0px;
+}
+.systemtray menu {
+    background: lighten($on_primary, 10%);
+    color: $on_primary_container;
+    border-radius: 12px;
+    padding: 8px;
+    border: 2px solid darken($on_primary, 20%);
+    font-size: 16px;
+    :hover {
+        background: darken($on_primary, 10%);
+        color: lighten($on_primary, 20%);
+    }
+    :active {
+        background: lighten($on_primary, 20%);
+        color: darken($on_primary, 10%);
+    }
+}
+
+.baticon {
+    font-size: $txt;
+    border-radius: 8px 8px 0px 0px;
+    padding: 4px 0px;
+    margin: 2px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background: $surf;
+    color: $fg;
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    border-radius: 12px 12px 0px 0px;
+}
+.batcent {
+    font-size: 16px;
+    border-radius: 0px 0px 8px 8px;
+    padding: 8px 0px;
+    margin: 2px 2px;
+    margin-top: 0px;
+    padding-top: 0px;
+    background: $surf;
+    color: $fg;
+    font-family: "JetBrains Mono Nerd Font", "monospace";
+
+
+    background: lighten($surf, 10%);
+    transition: all 0.5s ease-out;
+    border-radius: 0px 0px 12px 12px;
+
+}
+
+.battery-low {
+    color: $on_error;
+    background: $error;
+}
