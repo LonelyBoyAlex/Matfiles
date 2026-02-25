@@ -142,6 +142,8 @@ if pgrep -x eww >/dev/null; then
   ~/HyprlandScripts/ewwTheme.sh restore
 fi
 
-~/HyprlandScripts/ChromiumPywal/generate-theme.sh
+echo "------blurred wallpaper--------"
+magick "$CURR_WALL" -blur 10x20 ~/.cache/wallblurred.png
+#~/HyprlandScripts/ChromiumPywal/generate-theme.sh
 
 notify-send "🎨 Theme switched to '$CHOICE'"

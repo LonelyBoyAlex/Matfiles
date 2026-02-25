@@ -64,11 +64,11 @@ bar60)
 barfull)
   eww open-many bar barcornertop barcornerbottom barcornertopryt barcornerbottomryt
   ;;
-topgoth)
+goth-top)
   eww open-many bar panelleft panelryt panelbot \
     barcornertop barcornerbottom barcornertopryt barcornerbottomryt
   ;;
-topbar)
+topbar | barleft)
   eww open-many bar
   ;;
 topbargothic)
