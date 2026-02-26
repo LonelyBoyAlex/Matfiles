@@ -89,24 +89,22 @@ border-bottom:1px solid transparentize($fg,0.5);
 .clock {
     color: $fg;
     font-size: $txt;
-    margin: 8px 0px;
+    margin: 0px 0px;
     font-weight: 900;
     font-family: "JetBrains Mono Nerd Font", monospace;
-    // border: 8px double $fg;
-    border-radius: 6px;
-    padding: 8px 0px;
+    padding: 0px 0px;
 }
 
 .clock_hr {
-    padding: 6px 0px;
-    margin-bottom: 0.25rem;
+    padding: 0px 0px;
+    margin-bottom: 0px;
     padding-bottom: 0px;
 }
 
 .clock_min {
-    padding: 6px 0px;
+    padding: 0px 0px;
     padding-top: 0px;
-    margin-top: 0.25rem;
+    margin-top: 0px;
 }
 
 .clock_mer {
@@ -115,12 +113,18 @@ border-bottom:1px solid transparentize($fg,0.5);
     padding: 0px;
     font-family: "JetBrains Mono Nerd Font", monospace;
 }
+.clock_sep {
+  margin:0px;
+  padding:0px;
+}
 
 .workspaces-bar {
-    border-radius: 8px;
+    border-radius: 60px;
     background: darken($surf, 7.5%);
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
+    margin:0.5rem 0px;
+    border:1px solid $primary;
 }
 
 // Define invert-color function
@@ -198,9 +202,9 @@ border-bottom:1px solid transparentize($fg,0.5);
     border-radius: 8px;
 
     &.disabled {
-        background: lighten($surf, 25%);
-        color: $surf;
-        border: 1px solid $fg;
+        //background: lighten($surf, 25%);
+        color: $accent;
+        //border: 1px solid $fg;
     }
 
     &:hover {
@@ -383,4 +387,31 @@ border-bottom:1px solid transparentize($fg,0.5);
 .battery-low {
     color: $on_error;
     background: $error;
+}
+
+.musicplayerwidget {
+  //min-width: 12px;
+  min-height: 30px;
+  padding: 0px;
+  margin:0px;
+  border-radius:12px;
+}
+
+.prog {
+  background:darken($on_primary_container,50%);
+  color:$primary;
+  padding:0px;
+}
+
+.playericon { 
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 16px;
+  padding:0px;
+  margin: 0px;
+  color:$primary;
+  border-radius:12px;
+}
+
+.playpausebtn {
+  margin-top: .1rem;
 }

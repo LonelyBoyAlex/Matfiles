@@ -62,7 +62,7 @@
         :class "modules-left" :orientation "v"
         :space-evenly "false"
     (launcher)
-    (workspaces-bar)
+    (clock)
   )
 )
 
@@ -71,7 +71,8 @@
         :class "modules-center" :orientation "v"
         :space-evenly "false"
     (idle_inhibitor)
-    (clock)
+    (workspaces-bar)
+    (player)
   )
 )
 
@@ -153,16 +154,16 @@
 
 (defpoll clock_hr :interval "1s" "date +%I" )
 (defpoll clock_min :interval "1s" "date +%M" )
-(defpoll clock_sec :interval "1s" "date +%S" )
+;;(defpoll clock_sec :interval "1s" "date +%S" )
 (defpoll clock_mer :interval "1s" "date +%p")
 
 (defwidget clock []
     (box :orientation "v" :class "clock"
         :valign "center" :halign "center"
-        ; (label :text clock_mer :class "clock_mer")
+        :space-evenly "false"
         (label :text clock_hr :class "clock_hr")
+        (label :text "-" :class "clock_sep")
         (label :text clock_min :class "clock_min")
-        (label :text clock_sec :class "clock_min")
     )
 )
 
@@ -304,3 +305,39 @@
      )
      )
      )
+
+
+      ;; music module
+      ;;(defpoll music_art :interval "2s" "~/.config/eww/scripts/art.sh")
+      (defpoll music_icon :interval "1s" "~/.config/eww/scripts/playericon.sh")
+      (defpoll music_progress :interval "1s" "~/.config/eww/scripts/musicprogress.sh")
+
+      (defwidget player []
+       (button :class "playpausebtn"
+        :onclick "playerctl play-pause"
+        :onrightclick "playerctl next"
+        :onmiddleclick "playerctl previous"
+       (overlay
+        (box :class "musicplayerwidget"
+         (circular-progress
+          :class "prog"
+          :value music_progress
+          :thickness "4"
+          :clockwise "true"
+         )
+        )
+        (label
+            :class "playericon"
+            :text music_icon
+        )
+        ;;   (box :class "musicart"
+          ;;    (image 
+            ;;     :class "art"
+            ;;     :path music_art
+            ;;     :image-width 42
+            ;;     :image-height 42
+            ;;     :clip true
+            ;;   )
+          ;;  )
+       )
+       ))

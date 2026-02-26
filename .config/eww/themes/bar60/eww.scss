@@ -374,3 +374,32 @@ $txt: 22px;
     color: $on_error;
     background: $error;
 }
+
+
+.musicplayerwidget {
+  min-width: 16px;
+  min-height: 32px;
+  padding: 2px;
+  margin:2px;
+  border-radius:12px;
+  background: lighten($surf, 10%);
+}
+
+.prog {
+  background:$primary_container;
+  color:$on_primary_container;
+  padding:8px;
+}
+
+.playericon { 
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 16px;
+  padding:2px;
+  margin: 2px;
+  color:$fg;
+  border-radius:12px;
+}
+
+.playpausebtn {
+  margin-top: 1rem;
+}

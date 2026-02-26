@@ -33,6 +33,7 @@
         :space-evenly "false"
     (idle_inhibitor)
     (clock)
+    (player)
   )
 )
 
@@ -271,3 +272,40 @@
      )
      )
      )
+
+
+
+      ;; music module
+      ;;(defpoll music_art :interval "2s" "~/.config/eww/scripts/art.sh")
+      (defpoll music_icon :interval "1s" "~/.config/eww/scripts/playericon.sh")
+      (defpoll music_progress :interval "1s" "~/.config/eww/scripts/musicprogress.sh")
+
+      (defwidget player []
+       (button 
+        :onclick "playerctl play-pause"
+        :onrightclick "playerctl next"
+        :onmiddleclick "playerctl previous"
+       (overlay
+        (box :class "musicplayerwidget"
+         (circular-progress
+          :class "prog"
+          :value music_progress
+          :thickness "4"
+          :clockwise "true"
+         )
+        )
+        (label
+            :class "playericon"
+            :text music_icon
+        )
+        ;;   (box :class "musicart"
+          ;;    (image 
+            ;;     :class "art"
+            ;;     :path music_art
+            ;;     :image-width 42
+            ;;     :image-height 42
+            ;;     :clip true
+            ;;   )
+          ;;  )
+       )
+       ))
