@@ -56,12 +56,20 @@
   :namespace "eww"
   (box :class "barcorner bottomryt")
 )
+
+
+
+
+;; ------------------------------------
 ;; --------- widget defn -----------
+;; ------------------------------------
+
 (defwidget modulesleft []
   (box :valign "start" :halign "center"
         :class "modules-left" :orientation "v"
         :space-evenly "false"
     (launcher)
+    (idle_inhibitor)
     (clock)
   )
 )
@@ -70,9 +78,8 @@
   (box :valign "center" :halign "center"
         :class "modules-center" :orientation "v"
         :space-evenly "false"
-    (idle_inhibitor)
-    (workspaces-bar)
     (player)
+    (workspaces-bar)
   )
 )
 
@@ -150,7 +157,10 @@
 (defwidget idle_inhibitor []
   (button :class "idler ${isidle == '󰒲' ? 'enabled' : 'disabled'}"
           :onclick "~/.config/eww/scripts/idlecontrol.sh toggle"
-    (label :text isidle)))
+    (label :class "idlebtn" :text "${isidle == '󰒲' ? '󰥔' : ''}"
+    )
+  )
+)
 
 (defpoll clock_hr :interval "1s" "date +%I" )
 (defpoll clock_min :interval "1s" "date +%M" )
