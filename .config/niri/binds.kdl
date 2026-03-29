@@ -11,7 +11,7 @@ binds {
   Mod+Shift+U repeat=false {spawn "~/HyprlandScripts/ewwTheme.sh" "restore";}
   //Mod+Comma repeat=false{spawn-sh "~/HyprlandScripts/pywalbitheme.sh";}
   Mod+Period repeat=false {spawn-sh "~/HyprlandScripts/fuzzel-emoji.sh";}
-  SUPER+Shift+Return { spawn "kitty";}
+  SUPER+Shift+Return { spawn "ghostty";}
   SUPER+Return { spawn "alacritty";}
   SUPER+E { spawn "nautilus";}
   SUPER+Shift+E { spawn "pcmanfm";}
@@ -21,7 +21,8 @@ binds {
   SUPER+G { spawn "github-desktop";}
   //Mod+Space { spawn-sh "pkill rofi || rofi -show drun -config ~/HyprlandScripts/style-12.rasi" ;}
   Alt+Backslash { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
-  Alt+Space { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
+  //Alt+Space { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini";}
+  Alt+Space { spawn "fuzzel" "--config" ".config/fuzzel/fuzzelniri.ini" "--anchor" "top";}
   Mod+Alt+H {spawn-sh "alacritty -e nvim ~/.config/niri/config.kdl";}
   Mod+Q repeat=false { close-window; }
   Alt+F4 repeat=false { close-window;}

@@ -1,67 +1,74 @@
 include "colors.kdl"
 //    monitors
 output "eDP-1" {
-  mode "1920x1080@60"
-  position x=0 y=0
-  scale 1.0
-  //scale 1.25
+	mode "1920x1080@60"
+	position x=0 y=0
+	scale 1.0
+	//scale 1.25
 }
 
 // setting layout
 layout {
-  empty-workspace-above-first
-  gaps 8
-  center-focused-column "never" // on-overflow,,always
-  always-center-single-column
-  default-column-display "normal" //"tabbed"
-  preset-column-widths {
-  proportion 0.5
-  proportion 0.66667
-  proportion 0.75
-  proportion 1.0
-  }
-  default-column-width { proportion 0.85; }
-  focus-ring {
-	 //off
-    width 2
-//    active-color "#ffffff33"
-//		inactive-color "#505050ff"
-  }
-  border {
-	  off
-    width 4  //3
-//    active-color "#c4c7ca"
-//    inactive-color "#202020"
-//    urgent-color "#9b0000"
-  }
-  shadow {
-    on
-    draw-behind-window true
-    offset x=0 y=0
-  //  color "#808080"
-    softness 60
-    spread 2
-  }
-  tab-indicator {
-    on
-    width 2
-    gap 5
-    gaps-between-tabs 5
-    corner-radius 10
- //   active-color "#fff"
- //   inactive-color "#ffffff55"
-  }
-  insert-hint {
-//    color "#00000022"
-  }
+	//empty-workspace-above-first
+	gaps 0 //8
+	center-focused-column "never" // on-overflow,,always
+	always-center-single-column
+	default-column-display "normal" //"tabbed"
+	preset-column-widths {
+		proportion 0.5
+		proportion 0.66667
+		proportion 0.75
+		proportion 1.0
+	}
+	default-column-width { proportion 1.0; }
+	focus-ring {
+		off
+		width 2
+		//    active-color "#ffffff33"
+		//		inactive-color "#505050ff"
+	}
+	border {
+		//off
+		width 3 //4  //3
+		//    active-color "#c4c7ca"
+		//    inactive-color "#202020"
+		//    urgent-color "#9b0000"
+	}
+	shadow {
+		on
+		draw-behind-window false
+		offset x=0 y=0
+		//  color "#808080"
+		softness 60
+		spread 2
+	}
+	tab-indicator {
+		on
+		width 2
+		gap 5
+		gaps-between-tabs 5
+		corner-radius 10
+		//   active-color "#fff"
+		//   inactive-color "#ffffff55"
+	}
+	insert-hint {
+		//    color "#00000022"
+	}
 }
 prefer-no-csd
 hotkey-overlay {
-  skip-at-startup
+	skip-at-startup
 }
+//blur {
+	// off
+//	passes 4
+//	offset 6
+//	noise 0.02
+//	saturation 1.5
+//}
 overview {
-  backdrop-color "transparent"
-  zoom 0.4
+	backdrop-color "transparent"
+	zoom 0.4
 }
 
 //  autostart
@@ -74,23 +81,20 @@ spawn-at-startup "~/.config/niri/autostart.sh"
 
 //  input 
 input {
-  keyboard {
-    xkb {
-      layout "us"
-      options "caps:escape"
-    }
-    numlock
-  }
-  touchpad {
-    tap
-    natural-scroll
-    //disable-while-typing
-    //click-method clickfinger
-  }
+	keyboard {
+		xkb {
+			layout "us"
+			options "caps:escape"
+		}
+		numlock
+	}
+	touchpad {
+		tap
+		natural-scroll
+		//disable-while-typing
+		//click-method clickfinger
+	}
 }
-
-
-
 
 include "env.kdl"
 include "animations.kdl"
