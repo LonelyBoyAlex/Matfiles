@@ -10,20 +10,20 @@ ACCENT= "#787878"
 FG = "#fafafa"
 
 # Base 16 colors
-COLOR0  = "#1F1B2E"     # bg
-COLOR1  = "#FF7EB6"     # hot pink (alerts)
-COLOR2  = "#F0729A"     # glow pink
-COLOR3  = "#CDB4F6"     # lavender
-COLOR4  = "#6B5CAD"     # deep purple
-COLOR5  = "#D67AD2"     # pink-violet
-COLOR6  = "#9CCFD8"     # cool contrast (optional)
-COLOR7  = "#E6E1F7"     # fg
+COLOR0  = "#0F0F0F"     # bg
+COLOR1  = "#2A2A2A"     # alerts
+COLOR2  = "#333333"     # glow
+COLOR3  = "#4A4A4A"     # soft highlight
+COLOR4  = "#555555"     # mid dark
+COLOR5  = "#666666"     # accent grey
+COLOR6  = "#777777"     # contrast
+COLOR7  = "#DADADA"     # fg
 
-COLOR8  = "#26233A"     # surface
-COLOR9  = "#FF94C2"
-COLOR10 = "#F38FB2"
-COLOR11 = "#DAC8FF"
-COLOR12 = "#7A6BC9"
-COLOR13 = "#E09AE3"
-COLOR14 = "#B6E3EE"
-COLOR15 = "#F8F6FF"
+COLOR8  = "#1A1A1A"     # surface
+COLOR9  = "#3A3A3A"
+COLOR10 = "#444444"
+COLOR11 = "#5A5A5A"
+COLOR12 = "#6A6A6A"
+COLOR13 = "#7A7A7A"
+COLOR14 = "#9A9A9A"
+COLOR15 = "#F5F5F5"

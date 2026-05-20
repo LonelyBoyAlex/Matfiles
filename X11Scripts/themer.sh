@@ -64,7 +64,7 @@ fi
 
 # --- 4.2 qtile CONFIG SYMLINK ---
 if [[ "${XDG_SESSION_DESKTOP,,}" == "qtile" ]]; then
-  mkdir -p "$HOME/.config/qtile"
+#  mkdir -p "$HOME/.config/qtile"
 
   if [ -f "$theme_dir/$theme/colors/colors.py" ]; then
     ln -sf "$dir/colors/colors.py" "$HOME/.config/qtile/colors.py"
@@ -102,6 +102,10 @@ case "$theme" in
   bspc config normal_border_color "#32302f"
   bspc config focused_border_color "#b57614"
   ;;
+"CozyRose")
+  bspc config normal_border_color "#1f1d2e"
+  bspc config focused_border_color "#7676b2"
+  ;;
 *)
   #        notify-send "No wal theme mapped for '$theme'" && exit 1
   ;;
@@ -114,7 +118,7 @@ esac
 $HOME/X11Scripts/wallpaper.sh random
 
 polybar-msg cmd restart
-qtile cmd-obj -o cmd -f reload_config
+# qtile cmd-obj -o cmd -f reload_config
 
 notify-send "Theme '$theme' applied!"
 echo "$theme" >"$dir/current_theme"

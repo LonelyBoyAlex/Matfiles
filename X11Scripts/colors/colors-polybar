@@ -1,8 +1,7 @@
-background = #282828
-background-alt = #3c3836
-foreground = #ebdbb2
-foreground-alt = #bdae93
-primary = #d79921
-secondary = #d65d0e
-alert = #cc241d
-disabled = #362b09
+background = #24363b
+background-alt = #24283b
+foreground= #e5e9f0
+primary = #88c0d0
+secondary = #000000
+alert = #f7768e
+disabled = #4c566a
