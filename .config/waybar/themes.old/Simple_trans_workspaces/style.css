@@ -1,0 +1,224 @@
+@import url("colors.css");
+/*@import url("colors-waybar.css");
+*font-family: "Hurmit Nerd Font Propo";
+*font-family: "JetBrains Mono Nerd Font Propo";
+* */
+
+* {
+    font-family: "Hurmit Nerd Font Propo";
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+    transition: all 0.2s ease-out;
+}
+
+window#waybar {
+    background: alpha(@background, 0.5);
+    border-radius: 4px 4px 24px 24px;
+    border-bottom: 2px solid;
+    /*border-color: @primary_container;*/
+    border-color: @primary;
+}
+
+tooltip {
+    background: @background;
+    color: @on_primary;
+    font-size: 12px;
+    border-radius: 12px;
+    border: 1px solid @primary;
+    /* border:none; */
+    padding: 12px;
+}
+
+#custom-appmenu,
+#custom-logout {
+    font-size: 22px;
+    color: @background;
+    background: alpha(@on_secondary_container, .25);
+    padding: 4px 16px;
+    margin: 2px 4px;
+}
+#custom-appmenu {
+    border-radius: 4px 4px 4px 24px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#custom-logout {
+    border-radius: 4px 4px 24px 4px;
+    margin-right: 0px;
+}
+
+#clock {
+    color: @on_primary_container;
+    margin: 2px 14px;
+}
+
+#idle_inhibitor,
+#custom-notification,
+#network,
+#backlight,
+#pulseaudio,
+#battery,
+#upower {
+    color: @on_primary_container;
+    background: inherit;
+    margin: 2px 8px;
+    font-size: 18px;
+}
+
+#custom-empty_workspace,
+#custom-closer,
+#custom-nettext,
+#custom-pulseaudiotxt,
+#custom-backlighttxt,
+#custom-battxt {
+    color: @on_primary_container;
+    background: none;
+    margin: 2px;
+    font-size: inherit;
+}
+
+/*#workspaces button {
+    color:alpha(@on_primary,0.5);
+    background: transparent;
+    border:none;
+}
+#workspaces{
+    color: @on_primary;
+    background: transparent;
+    border:none;
+    padding: 2px 6px;
+    font-size: inherit;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#workspaces button:not(.empty) {
+    color:alpha(@on_primary,1);
+}
+
+#workspaces button.active {
+    color: @primary;
+    border-radius: 2px;
+    margin: 4px;
+}*/
+
+#workspaces {
+    padding: 0px 12px;
+    margin: 2px 8px;
+    margin-left: 0px;
+    background-color: alpha(@primary_container, .1);
+    border-radius: 4px;
+    /*transition: all 0.2s ease-out;*/
+}
+
+#workspaces button {
+    color: @background;
+    background-color: alpha(@primary_container, .51);
+    min-width: 2px;
+    padding: 0px 2px;
+    margin: 8px 4px;
+}
+
+#workspaces button:not(.empty) {
+    background-color: alpha(@tertiary, 1);
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background: @primary;
+    /*padding: 0px 12px;*/
+    border-radius: 60px;
+    /*transition: all 0.2s ease-out;*/
+}
+
+#backlight-slider,
+#pulseaudio-slider {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    /* background-image: radial-gradient(ellipse at center,@on_primary 0%, @primary 100%); */
+    background: @primary;
+    border-radius: 50px;
+    border: none;
+    min-width: 8px;
+    min-height: 10px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 5em;
+    min-height: 4px;
+    border-radius: 50px;
+    background: @primary_container;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 50px 0px 0px 50px;
+    background-color: @primary;
+    min-height: 4px;
+}
+
+#window {
+    font-size: inherit;
+    /*background: transparent;*/
+    background: alpha(@primary_container, 1);
+    color: @on_primary_container;
+    padding: 0px 12px;
+    margin: 8px 24px;
+    border-radius: 4px;
+    /* border-left:1px solid; */
+    /* border-right:1px solid; */
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+#battery.critical {
+    color: @error;
+}
+/*
+#custom-appmenu {
+    margin-left: 20px;
+}
+
+#custom-logout {
+    margin-right: 20px;
+}*/
+
+#expand-3,
+#expand-2 {
+    margin-left: -2px;
+    margin-right: 4px;
+}
+
+#pulseaudio {
+    margin-left: 0px;
+}
+
+#idle_inhibitor {
+    font-size: 16px;
+}
+
+#idle_inhibitor.activated {
+    color: @primary;
+}
+
+#mpris {
+    color: @on_primary;
+    background: alpha(@primary_container, 1);
+    padding: 0px 12px;
+    margin: 10px 4px;
+    border-radius: 60px;
+}

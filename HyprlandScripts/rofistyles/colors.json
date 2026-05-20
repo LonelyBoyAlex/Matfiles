@@ -1,8 +1,8 @@
 {
-  "wallpaper": "/home/daddy/.config/themes/active/wallpapers/coffeecafe.jpg",
+  "wallpaper": "/home/papa/.config/themes/Rose/wallpapers/delorean.png",
   "alpha": "100",
   "colors": {
-    "color0": "#16130b",
+    "color0": "#171217",
     "color1": "",
     "color2": "",
     "color3": "",
@@ -12,11 +12,11 @@
     "color7": "",
     "color8": "",
     "color9": "",
-    "color10": "#dfc56d",
+    "color10": "#ebb5ed",
     "color11": "",
     "color12": "",
-    "color13": "#3d392f",
+    "color13": "#3e373d",
     "color14": "",
-    "color15": "#e9e2d4"
+    "color15": "#eadfe6"
   }
 }

@@ -1,0 +1,273 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font Propo";
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+window#waybar {
+    background:transparent;
+}
+
+tooltip {
+    background: @background; 
+    color: @foreground; 
+    font-size: 13px;
+    border-radius: 12px;
+    border: 2px solid @color6;
+    margin: 6px;
+
+}
+
+#tray menu * {
+    min-height: 16px;
+    font-weight: bold;
+    font-size: 13px;
+    color: @foreground; 
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+
+#custom-spacer {
+    opacity: 0.8;
+}
+
+#custom-smallspacer {
+    opacity: 0.8;
+}
+
+#custom-power {
+    font-size: 15px;
+    color: @foreground; 
+    background: rgba(40, 40, 40, 0.9);
+    margin: 6px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#mpris {
+    color: @foreground; 
+    background: alpha(@background,0.5);
+    border-radius: 50px;
+    padding:0px 12px;
+    margin:8px 2px;
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+ @keyframes blink {
+    to {
+        color: @color9;
+    }
+}
+
+
+#network {
+    color: @foreground; 
+    font-weight: normal;
+    font-size: 19px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+#tray,
+#custom-updates,
+#custom-wallchange,
+#custom-wbar,
+#window {
+    color: @foreground; 
+    /* font-family: "Martian Mono"; */
+}
+
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#cava,
+#upower#headset
+{    color: @color5; 
+}
+#custom-rr_end {
+    font-weight: normal;
+    color: @foreground; 
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: inherit; 
+    margin: 0px;
+    border:none;
+    border-radius:60px;
+    min-width:0px;
+    min-height:6px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 24px;
+    border-radius: 60px;
+    background: @color0; 
+    padding-right:2px;
+    padding-left:2px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background-color: @color6; 
+}
+/*
+#battery.charging,
+#battery.plugged {
+    color: @foreground; 
+}
+
+#battery.critical:not(.charging) {
+    color: @color9; }*/
+
+
+#taskbar {
+    padding: 1px;
+}
+
+#custom-r_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-l_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-rr_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
+}
+
+#custom-expand {
+    min-width: 25px;
+    color: @foreground; 
+    font-size: 16px;
+}
+
+#group-minimized {
+    border-left: solid;
+    border-left-width: 0.5px;
+}
+
+/*
+#custom-wallchange{
+    font-family: "Hurmit Nerd Font";
+    font-weight: bold;
+    font-size: 18px;
+    color: @color4; 
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 12px;
+}
+*/
+#custom-appmenu {
+    color: @color0;
+    /*background: alpha(@color3,0.25);*/
+    background-image: linear-gradient(to right, @color1, @color6);
+    font-size: 23px;
+    padding-left: 12px;
+    padding-right: 4px;
+    margin-top:8px;
+    margin-bottom:8px;
+    border-radius:50px;
+}
+#window,#idle_inhibitor,#network,#backlight,#pulseaudio,#battery,#custom-notification {
+    color: @color0; 
+    /*background: alpha(@color1, 0.5);*/
+    background-image: radial-gradient(circle farthest-side at left center, @color1, @color6 50px, @color3);/*linear-gradient(to right, @color1, @color0);*/
+    border-radius:50px 2px 2px 50px;
+    font-weight: normal;
+    font-size: 19px;
+    margin: 8px 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+#custom-empty_workspace,#custom-closer,#clock,#custom-nettext,#custom-pulseaudiotxt,#custom-backlighttxt,#custom-battxt,#custom-logout{
+    color: @foreground;
+    background: alpha(@background, 0.5);
+    border-radius:2px 50px 50px 2px;
+    margin: 8px 0px;
+    padding-left: 10px;
+    padding-right: 10px;}
+
+#workspaces button.active {
+    background: alpha(@foreground,0.25);
+    color: @color6; 
+    transition: all 0.3s ease;
+    margin: 4px 0px;
+    padding: 0px 10px 0px 8px;
+    border-radius: 50px;
+}
+#workspaces{
+    color: @foreground; 
+    background: alpha(@background, 0.25);
+    border-radius:50px 0px 0px 50px;
+    margin:8px 0px;
+    padding:0px 6px;
+}
+#window{
+  color: @background;
+  background-image: linear-gradient(to right, @color1 3em, @color6);
+  padding: 0px 8px 0px 8px;
+}
+#custom-logout,#custom-notification{
+  font-size: 20px;
+}
+/*
+#rightpill{
+  background: alpha(@color4,1);
+  padding: 6px 10px;
+  margin: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  color: #ffffff;
+}
+*/
+window#waybar.empty #window{
+    background: transparent;
+}

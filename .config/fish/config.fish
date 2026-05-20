@@ -49,3 +49,11 @@ alias cby 'cowsay bye'
 #   set_color green; echo '> '
 # end
 zoxide init fish | source
+
+
+# Auto-start X11 on TTY1 login
+if status is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        exec startx
+    end
+end

@@ -2,12 +2,12 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ~/.config/niri/scripts/swaync.sh &
 eww-daemon &
-swww-daemon &
-swww img $(readlink ~/.config/themes/active/wallpapers/current) &
+awww-daemon &
+awww img $(readlink ~/.config/themes/active/wallpapers/current) &
 #~/HyprlandScripts/ewwStarter.sh goth &
 ~/HyprlandScripts/ewwTheme.sh restore &
-swww-daemon -n wallpapes &
-swww img -n wallpapes .cache/wallblurred.png &
+awww-daemon -n "wallpapes" &
+awww img -n "wallpapes" .cache/wallblurred.png &
 #~/.config/niri/scripts/swayidle.sh && notify-send 'swayidle' &
 hypridle &
 udiskie --tray &

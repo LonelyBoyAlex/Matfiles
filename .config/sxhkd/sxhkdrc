@@ -11,7 +11,7 @@ super + {_,shift + }Return
 
 # program launcher
 alt + @space
-	rofi -show drun -theme ~/HyprlandScripts/rofistyles/bspapps.rasi -font 'Iosevka Nerd Font Mono 18'
+	rofi -show drun -theme ~/HyprlandScripts/rofistyles/bspapps.rasi -font 'Iosevka Nerd Font Mono 14'
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -140,20 +140,20 @@ super + {_,shift + }{Left,Down,Up,Right}
 XF86AudioPlay
 	playerctl play-pause
 
-XF86AudioNext   
+XF86AudioNext
 	playerctl next
-XF86AudioPrev   
+XF86AudioPrev
 	playerctl previous
 XF86AudioRaiseVolume
-   pactl set-sink-volume @DEFAULT_SINK@ +5%  
+   pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume
-   pactl set-sink-volume @DEFAULT_SINK@ -5%  
+   pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
-   pactl set-sink-mute @DEFAULT_SINK@ toggle  
+   pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioMicMute
-   pactl set-source-mute @DEFAULT_SOURCE@ toggle  
+   pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-#custom apps 
+#custom apps
 ctrl + alt + w
 	~/X11Scripts/wallpaper.sh switcher
 ctrl + alt + t

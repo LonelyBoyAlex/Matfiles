@@ -55,7 +55,7 @@
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
   border-radius: 8px;
-  background-color: @primary_container ;
+  background-color: @background-alt ;
   margin: 6px;
   border: 1px solid transparent;
 }

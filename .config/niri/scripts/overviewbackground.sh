@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-swww-daemon -n wallpapes &
-swww img -n wallpapes .cache/wallblurred.png
+awww-daemon -n "wallpapes" &
+awww img -n "wallpapes" .cache/wallblurred.png

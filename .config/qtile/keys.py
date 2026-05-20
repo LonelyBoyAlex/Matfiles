@@ -265,5 +265,8 @@ keys = [
         "s",
         lazy.spawn("sh -c 'X11Scripts/scripts/scrnsht.sh'")
     ),
+ # Workspace navigation
+    Key([mod], "bracketleft", lazy.screen.prev_group()),
+    Key([mod], "bracketright", lazy.screen.next_group()),
 ]
 

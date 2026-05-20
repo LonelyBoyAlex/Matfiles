@@ -16,6 +16,7 @@ if [ "$1" = "restore" ]; then
     echo "No saved EWW state to restore"
     exit 0
   fi
+  killall eww 2>/dev/null || true
   THEME="$(cat "$STATE_FILE")"
 
 elif [ -n "$1" ]; then
@@ -48,7 +49,7 @@ echo "######### LINKING ########"
 ln -sf "$SELECTED_THEME"/* "$EWW_DIR/"
 
 # Restart eww cleanly
-killall eww 2>/dev/null || true
+#killall eww 2>/dev/null || true
 
 echo "######### OPENING ########"
 

@@ -1,0 +1,97 @@
+
+/* Import the Wal colors file */
+/* import url("/home/papa/.cache/wal/colors-waybar.css"); */
+
+* {
+    background-color: transparent;
+    background-image: none;
+    font-size: 16px; /* Set a default font size */
+}
+
+/* Define keyframe animations without transform */
+@keyframes fadeIn {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0.6; /* Slight scale effect using opacity instead */
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+button {
+    color: #ffffff; /* Replace ${BtnCol} with a default color for testing */
+    background: linear-gradient(90deg, #ffffff, #000000); /* Replace with valid colors for testing */
+    outline-style: none;
+    border: 2px solid white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 10px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: fadeIn 0.5s ease-out; /* Apply fade-in animation */
+}
+
+button:focus {
+    background-color: #101010; /* Replace @wb-act-bg with a default color for testing */
+    background-size: 32%;
+    background-position: center;
+    animation: scaleUp 0.3s ease; /* Change to opacity scale */
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682);
+}
+
+button:hover {
+    background-color: #101010; /* Replace @wb-act-bg with a default color for testing */
+    /*background: linear-gradient(90deg, #eeeeee, #Bbbbbb);  Replace with valid colors for testing */
+    background: rgba(55,55,55,10);
+    background-size: 32%;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682);
+    background-position: center;
+}
+
+
+/* Background images and specific styles for each button */
+#lock {
+    background-image: image(url("$HOME/.config/wlogout/icons/lock_#B0B4E7.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    border-radius: 50px 50px; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}
+
+#logout {
+    background-image: image(url("$HOME/.config/wlogout/icons/logout_#B0B4E7.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    border-radius: 50px 50px ; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}
+
+#suspend {
+    background-image: image(url("$HOME/.config/wlogout/icons/suspend_#B0B4E7.png"), url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    border-radius: 50px 50px ; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}
+
+#shutdown {
+    background-image: image(url("$HOME/.config/wlogout/icons/shutdown_#B0B4E7.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    border-radius: 50px 50px ; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}
+
+#hibernate {
+    background-image: image(url("$HOME/.config/wlogout/icons/hibernate_#B0B4E7.png"), url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    border-radius: 50px 50px; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}
+
+#reboot {
+    background-image: image(url("$HOME/.config/wlogout/icons/reboot_#B0B4E7.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    border-radius:  50px 50px; /* Replace with a default */
+    margin: 14px; /* Replace dynamic margin with a default */
+}

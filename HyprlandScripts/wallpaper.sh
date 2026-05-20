@@ -40,16 +40,16 @@ right)
   ;;
 esac
 
-# Set wallpaper via swww
-swww img "$WALLPAPER" --resize crop \
+# Set wallpaper via awww
+awww img "$WALLPAPER" --resize crop \
   --transition-type outer \
   --transition-duration 2.5 \
   --transition-fps 60 \
   --transition-pos "$TRANS_POS"
 
 # Set dark mode and generate colors
-wal -i "$WALLPAPER" -n
-matugen image "$WALLPAPER"
+#wal -i "$WALLPAPER" -n
+matugen image "$WALLPAPER" --source-color-index 0
 #gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 #gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 #echo "Dark" > "$MODE_CACHE"
@@ -92,10 +92,9 @@ if [[ -f "$WALLPAPER" ]]; then
   echo "🖼️ Generated preview: $PREVIEW_PATH"
 fi
 
-if pgrep -x eww >/dev/null; then
-  #~/HyprlandScripts/ewwStarter.sh reload
-  ~/HyprlandScripts/ewwTheme.sh restore
-fi
+### if pgrep -x eww >/dev/null; then
+###    ~/HyprlandScripts/ewwTheme.sh restore
+### fi
 
 echo "------blurred wallpaper--------"
 magick "$WALLPAPER" -blur 10x20 ~/.cache/wallblurred.png

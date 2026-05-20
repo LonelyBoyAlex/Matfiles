@@ -1,0 +1,153 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font";
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+window#waybar {
+    background: alpha(@background,0.1);
+    border: 2px solid @color3; 
+    border-radius: 2px;
+}
+
+#custom-appmenu, #custom-logout, #window, #clock, #mpris {
+    color: @foreground;
+    background: alpha(@background,0.50);
+    border:none;
+    border-radius:2px;
+    padding: 0px 0.8em;
+    margin: 4px 0px;
+}
+
+/*-----icons-----*/
+#custom-appmenu, #custom-logout, #custom-empty_workspace, #idle_inhibitor, #custom-notification, #network, #pulseaudio, #backlight, #memory, #cpu, #battery, #upower {
+    font-size: 20px;
+    color: @color7;
+    margin: 2px;
+    padding:2px 4px;
+}
+
+#workspaces {
+    color: @foreground;
+    background:alpha(@background,1);
+    border-radius:12px;
+    margin:2px 0.2em;
+}
+
+#workspaces button{
+    background-color: inherit;
+    color: @foreground;
+    transition: 0.2s ease;
+}
+
+#workspaces button.active{
+    color: @color3;
+    border-bottom:2px solid @color3;
+    border-top:2px solid @color3;
+    border-radius:0px;
+    padding:inherit;
+    /*padding: 0px 0px 0px 0px;*/
+    transition: all 0.3s ease;
+}
+/* 
+#workspaces button:hover{
+    color:@color6;
+    background:none;
+    box-shadow:none;
+} */
+
+#tray menu * {
+    font-size: 28px;
+    color: @foreground;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    /*box-shadow: none;
+    margin-right: 7px; */
+    /* background: @foreground; */
+    background: transparent;
+    border:none;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin-top: -3px;
+    min-width: 80px;
+    min-height: 14px;
+    margin-bottom: -4px;
+    border-radius: 1em;
+    background: @color0;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 8px;
+    background-color: @color6;
+}
+
+/*-----custom colors-----*/
+#cpu{
+    color: @color5;
+    background:alpha(@color1,0.5);
+}
+
+#memory{
+    color: @color5;
+    background:alpha(@color8,0.25);
+}
+
+#network{
+    color: @color5;
+    background:alpha(@color1,0.25);
+}
+
+#custom-nettext{
+    color:@foreground;
+    background:alpha(@background,0.5);
+    margin:2px 0px;
+    padding-left:8px;
+    padding-right:8px;
+}
+
+#battery,#upower,#upower-headset{
+    color: @color5;
+    background:alpha(@color8,0.25);
+}
+
+#custom-empty_workspace{
+    color: @foreground;
+    background:alpha(@color1,0.5);
+}
+
+/*-----custom paddings and margins ------*/
+#custom-appmenu, #custom-logout{
+        padding-left: 10px;
+        padding-right: 14px;
+        margin-left: 4px;
+        margin-right: 4px;
+}
+
+#cpu,#memory,#network{
+        padding-left: 12px;
+}
+
+#battery{
+        margin-right: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#upower{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#custom-empty_workspace{
+    padding-left:10px;
+    padding-right:6px;
+}

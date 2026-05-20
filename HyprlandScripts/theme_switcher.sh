@@ -102,7 +102,7 @@ if [[ -n "$CURR_WALL" && -f "$CURR_WALL" ]]; then
     feh --bg-fill "$CURR_WALL"
   else
     {
-      swww img "$CURR_WALL" --resize crop \
+      awww img "$CURR_WALL" --resize crop \
         --transition-type wipe \
         --transition-duration 2.5 \
         --transition-fps 60 \
@@ -114,11 +114,11 @@ if [[ -n "$CURR_WALL" && -f "$CURR_WALL" ]]; then
 
   case "$CHOICE_LOWER" in
   mono)
-    matugen image "$(readlink .config/themes/active/wallpapers/current)" -t scheme-monochrome
+    matugen image "$(readlink .config/themes/active/wallpapers/current)" -t scheme-monochrome --source-color-index 0
     ;;
   # Add more lowercase theme keys here in the future
   *)
-    matugen image "$(readlink .config/themes/active/wallpapers/current)"
+    matugen image "$(readlink .config/themes/active/wallpapers/current)" --source-color-index 0
     ;;
   esac
 
@@ -137,10 +137,9 @@ if [[ $WINDOWMAN == "Hyprland" ]]; then
   hyprctl reload
 fi
 
-if pgrep -x eww >/dev/null; then
-  #~/HyprlandScripts/ewwStarter.sh reload
-  ~/HyprlandScripts/ewwTheme.sh restore
-fi
+### if pgrep -x eww >/dev/null; then
+###    ~/HyprlandScripts/ewwTheme.sh restore
+### fi
 
 echo "------blurred wallpaper--------"
 magick "$CURR_WALL" -blur 10x20 ~/.cache/wallblurred.png

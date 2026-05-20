@@ -3,4 +3,4 @@
 user=$(whoami)
 host=$(hostname)
 
-echo "󰌾 $user @ $host"
+echo "  $user  󰍹  $host"

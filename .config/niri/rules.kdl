@@ -2,10 +2,10 @@
 window-rule {
   //sets 0px radius on all windows
   geometry-corner-radius 20
-  clip-to-geometry true 
-//  background-effect {
- //   blur true
- // }
+  clip-to-geometry true
+  background-effect {
+    blur true
+  }
 }
 
 window-rule {
@@ -94,14 +94,14 @@ layer-rule {
   }
   //geometry-corner-radius 8
   place-within-backdrop true
- // background-effect {
- //   blur true
- // }
+  // background-effect {
+  //   blur true
+  // }
 }
 // Show layer-shell surfaces with 0.5 opacity at niri startup, but not afterwards.
 layer-rule {
-  match namespace="^eww$" 
-  match namespace="gtk-layer-shell" 
+  match namespace="^eww$"
+  match namespace="gtk-layer-shell"
   opacity 1.0
 }
 layer-rule {
@@ -109,14 +109,20 @@ layer-rule {
   match namespace="^swaync-control-center$"
   opacity 1.0
   shadow {
-    on
-    softness 10
-    spread 5
-    offset x=0 y=0
-    draw-behind-window true
-    color "#000000aa"
+    off
+  //  softness 10
+   // spread 5
+    //offset x=0 y=0
+  //  draw-behind-window true
+  //  color "#000000aa"
   }
- // background-effect {
- //   blur true
- // }
+  // background-effect {
+  //   blur true
+  // }
+}
+
+
+window-rule {
+  match app-id="firefox"
+  open-maximized true
 }

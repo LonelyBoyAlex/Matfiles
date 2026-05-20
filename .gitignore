@@ -124,3 +124,7 @@ HyprlandScripts/rofistyles/colors.json
 .config/eww/colors.scss
 .config/eww/eww.scss
 .config/eww/eww.yuck
+.config/dunst/dunstrc.d/zzz.conf
+.config/eww/colors.scss
+.config/hypr/colors.conf
+.config/hypr/colorshypr.conf

@@ -127,6 +127,7 @@ screens = [
                 ),
                 # widget.Spacer(background=BG),
                 widget.Clock(
+                    # timezone='Asia/Kolkata',
                     format="   %a %d%b  <span weight='heavy' size='120%'> %H:%M</span>  ", #   
                     padding=10,
                     fontsize=16,
@@ -196,6 +197,10 @@ screens = [
                 ),
                 widget.Volume(
                     fmt=" 󱄠 {} ",
+                    get_volume_command='pamixer --get-volume-human',
+                    mute_command="pamixer --toggle-mute",
+                    volume_up_command="pamixer -i 5",
+                    volume_down_command="pamixer -d 5",
                     background=BG,
                     foreground=MID,
                     fontsize=16,

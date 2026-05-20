@@ -8,10 +8,10 @@
   //-- positions ---
   "modules-left": [
     "custom/appmenu",
-    "idle_inhibitor",
     //"group/musicplayer"
+    "hyprland/workspaces",
+    "idle_inhibitor",
     "group/clockey",
-    "mpris",
   ],
   "modules-center": [
     "backlight",
@@ -22,10 +22,10 @@
     "group/audio"
   ],
   "modules-right": [
+    "mpris",
     "group/systray",
     "group/betteryy",
     //"group/net",
-    "hyprland/workspaces",
     "custom/logout",
   ],
   //----------declarations----------------
@@ -226,7 +226,7 @@
   },
   "upower": {
   "format": "{percentage}",
-  "format-alt": "{percentage}% [{time}]",
+  //"format-alt": "{percentage} [{time}]",
   "tooltip": false,
   "show-icon": false,
   "rotate": 0,

@@ -1,0 +1,237 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font Propo";
+    font-weight: bold; 
+    font-size: 14px;
+    transition: 0.5s all ease-out;
+}
+
+window#waybar {
+    background:transparent;
+    background:alpha(@color2,0.01);
+}
+
+tooltip {
+    background: @background; 
+    color: @foreground; 
+    font-size: 13px;
+    border-radius: 24px;
+    border: 2px solid @color6;
+    margin: 6px;
+}
+
+#midsub {
+    background: alpha(@color5,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding : 0.4rem;
+    padding-right:1rem;
+}
+
+#idle_inhibitor.activated { 
+    color:@color3;
+}
+
+#netsub {
+    background: alpha(@color4,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding : 0.4rem;
+    padding-right:1rem;
+}
+
+#batsub {
+    background: alpha(@color7,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding : 0.4rem;
+    padding-right:1rem;
+}
+
+#custom-appmenu { 
+    background: alpha(@background,0.25);
+    font-size: 24px;
+    border-radius:50px;
+    border:2px solid @color3;
+    padding: 0rem 1.05rem;
+    margin: 0.45rem 0px;
+}
+
+#windowsub {
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+}
+
+#workspacesub {
+    border-radius:50px;
+    background: alpha(@background, 0.25);
+    margin: 0.45rem 1rem;
+    padding-left:.2rem;
+    padding-right:.2rem; 
+}
+
+#window,#custom-closer{
+    color: @color3;
+    background:alpha(@color8,0.5);
+    border-radius:50px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+#custom-closer{
+    color:@color5;
+    margin-left:0px;
+    padding-left: 0.5em;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+/*#window{
+    margin-right:0px;
+    padding-left:1rem;
+    padding-right:0.5em;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}*/
+
+#window {
+    margin: .5rem 10px;
+    margin-right: 0px;
+    padding: 0px 1em;
+    color: @color3;
+    background: alpha(@color3,0.25);
+}
+
+window#waybar.empty #window{
+    background: transparent;
+    margin:-2rem;
+    padding:0px;
+}
+
+#workspaces{
+   /* color: @foreground;
+     background:@background; */
+    border-radius:50px 0px 0px 50px;
+}
+
+#workspaces button,#custom-empty_workspace{
+    border-radius: 50px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color : alpha(@color12,0.8);
+}
+
+#workspaces button:not(.empty) {
+    background : alpha(@color12,0.15);
+    margin: 4px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+#workspaces button.active {
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+    border:none;
+    background:alpha(@color5,0.5);
+    color:@foreground;
+    margin:4px;
+}
+
+#mpris {
+    color: @color7; 
+    background:alpha(@color8,0.5);
+    border-radius: 50px;
+    margin: 0.45rem 1rem;
+    padding : 0.4rem;
+    padding-right:1rem;
+}
+
+#expand {
+    background: alpha(@color8,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding:0rem 0.5rem 0rem 0.7rem;
+    padding-right:1rem;
+}
+
+#backlight-slider,
+#pulseaudio-slider {
+    padding:0px;
+    margin-left: 1rem;
+    margin-right: .4rem;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: transparent;
+    color: transparent;
+    min-width:1px;
+    min-height:18px;
+    border:none;
+    border-radius: 60px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 18px;
+    border-radius: 60px;
+    background: @color0; 
+}
+
+#backlight-slider highlight {
+    border-radius: 60px;
+    background-color: @color3; 
+}
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background-color: @color6; 
+}
+
+#audiosub {
+    background: alpha(@color7,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding:0rem 0.5rem;
+    padding-right:1rem;
+}
+
+#lightsub {
+    background: alpha(@color4,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding:0rem 0.5rem;
+    padding-right:1rem;
+}
+
+#outsub {
+    background: alpha(@color5,0.5);
+    border-radius:50px;
+    margin: 0.45rem 1rem;
+    padding:0rem 0.5rem;
+    padding-right:1rem;
+}
+  
+#custom-notification{
+    padding:0rem;
+}
+
+#custom-logout{
+    padding:0rem 0.5rem;
+    padding-right: 0rem;
+}
+
+#custom-blankd{
+    padding:1rem;
+    color: transparent;
+    background: red;
+    border: 2px solid blue;
+}
+
+#idle_inhibitor,#network,#battery,
+#custom-menu,#pulseaudio,#backlight,
+#custom-logout,#custom-notification{
+  font-size: 18px;
+}

@@ -79,7 +79,7 @@ case "$XDG_CURRENT_DESKTOP" in
   CHOICE=$(printf "  Fullscreen\x00icon\x1f$ICON_DIR/recolored/fullscreen.svg\n  Region\x00icon\x1f$ICON_DIR/recolored/region.svg\n  Clipboard\x00icon\x1f$ICON_DIR/recolored/clipboard.svg\n  Window\x00icon\x1f$ICON_DIR/recolored/window.svg\n" |
     rofi -dmenu -config "$ROFI_CONFIG" -p "Screenshot:" -show-icons)
   ;;
-"niri" | "mangowc")
+"niri" | "mango")
   CHOICE=$(printf "    Fullscreen\n    Region\n    Clipboard\n    Window\n" |
     fuzzel --config "$FUZZEL_CONFIG" --dmenu -p "Screenshot:  " --placeholder "   " --auto-select -w 20)
   ;;

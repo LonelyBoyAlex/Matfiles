@@ -4,6 +4,7 @@ expr_prefix = "{{"
 expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
+source-color-index = "0"
 
 [config.wallpaper]
 set = false ## true

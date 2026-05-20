@@ -1,0 +1,222 @@
+@import url("/home/papa/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font";
+    font-weight: bold; 
+    font-size: 14px;
+}
+
+window#waybar {
+    background:alpha(@background,0);
+    border-radius: 60px;
+    min-width:32px;
+}
+
+tooltip {
+    background: @background; 
+    color: @foreground; 
+    font-size: 13px;
+    border-radius: 12px;
+    border: 2px solid @color6;
+
+}
+/*
+#tray menu * {
+    min-height: 16px;
+    font-weight: bold;
+    font-size: 13px;
+    color: @foreground; 
+}
+
+#tray menu separator {
+    min-height: 10px;
+}
+*/
+#custom-spacer {
+    opacity: 0.8;
+}
+
+#custom-smallspacer {
+    opacity: 0.8;
+}
+
+#custom-power {
+    font-size: 15px;
+    color: @foreground; 
+    background: rgba(40, 40, 40, 0.9);
+}
+
+#mpris {
+    color: @foreground; 
+    background: alpha(@background,0.5);
+    font-weight: bold;
+    border-radius:60px;
+    border:2px solid @color3;
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+ @keyframes blink {
+    to {
+        color: @color9;
+    }
+}
+
+
+#network {
+    color: @foreground; 
+    font-weight: normal;
+    font-size: 19px;
+}
+
+#tray {
+    color: @foreground; 
+}
+
+#upower#headset
+{    color: @color5; 
+}
+
+#custom-rr_end {
+    font-weight: normal;
+    color: @foreground; 
+    background: rgba(40, 40, 40, 0.0);
+    opacity: 1;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background-color: transparent;
+    border:none;
+    box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 24px;
+    border-radius: 60px;
+    background: alpha(@background,0.5); 
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background-image: radial-gradient(circle farthest-side at left center, @color1, @color6 60px, @color3);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @background; 
+}
+
+#battery.critical:not(.charging) {
+    color: @color9; }
+
+#custom-r_end {
+    border-radius: 60px;
+}
+
+#custom-l_end {
+    border-radius: 60px;
+}
+
+#custom-sr_end {
+    border-radius: 0px;
+}
+
+#custom-sl_end {
+    border-radius: 0px;
+}
+
+#custom-rr_end {
+    border-radius: 60px;
+}
+
+#custom-expand {
+    min-width: 25px;
+    color: @foreground; 
+    font-size: 16px;
+}
+
+#group-minimized {
+    border-left: solid;
+    border-left-width: 0.5px;
+}
+
+#custom-appmenu {
+    color: alpha(@background,1);
+    background: alpha(@color6,0.75);
+    /* background-image: linear-gradient(to left, @color1, @color6); */
+    font-size: 24px;
+    border-radius:60px ;
+}
+
+#window,#idle_inhibitor,#network,#backlight,#pulseaudio,#battery,#custom-notification {
+    color: @color0; 
+    background:alpha(@color6,0.75);
+    border-radius:60px 2px 2px 60px;
+    border:none;
+    font-weight: normal;
+    font-size: 19px;
+    margin: 10px 0px 10px 0px;
+    padding:4px 0px;
+}
+
+#custom-empty_workspace,#custom-closer,#clock,#custom-nettext,#custom-pulseaudiotxt,#custom-backlighttxt,#custom-battxt,#custom-logout{
+    color: @background;
+    /*background: alpha(@background, 0.25);*/
+    /* background-image: linear-gradient(to right, @color3, @color6); */
+    background:alpha(@color6,0.6);
+    border-radius:60px;
+    /* border:2px solid @background; */
+    border:none;
+}
+#workspaces button.active {
+    background: alpha(@foreground,0);
+    color: @color6; 
+    transition: all 0.3s ease;
+    border-radius: 60px;
+}
+#workspaces{
+    color: @foreground; 
+    background: alpha(@background, 0.25);
+    border-radius:60px;
+    border:none;
+}
+#window,#custom-closer{
+  color: @color6;
+  background:transparent;
+  border:4px double @color3;
+  /* background-image: linear-gradient(to right, @color1 3em, @color6); */
+}
+#custom-logout,#custom-notification{
+  font-size: 20px;
+}
+#custom-empty_workspace{
+    border-left:none;
+    font-size:18px;
+}
+
+/*.modules-left, .modules-right, .modules-center{*/
+.modules-center{
+  background: alpha(@color0,0.35);
+  border-radius: 60px;
+  border: 3px solid alpha(@color3,1);
+}
+
+#idle_inhibitor,#clock{
+    color: @foreground;
+    background: alpha(@background, 0.75);
+    border:none;
+}
+#custom-closer{
+    border-left:none;
+}
+#window{
+    border-right:none;
+}

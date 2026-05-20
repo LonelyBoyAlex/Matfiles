@@ -1,0 +1,128 @@
+{
+    "layer": "top",
+    "position": "left",
+    "mod": "dock",
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-top": 10,
+    "margin-bottom": 10,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+
+
+        // positions generated based on config.ctl //
+        "modules-left": [
+            "custom/smallspacer",
+            "custom/appmenu",
+            "hyprland/workspaces",
+            "custom/empty_workspace",
+            "custom/spacer",
+            "hyprland/window",
+            "custom/spacer",
+            "mpris",
+            "custom/padd",
+          ],
+          "modules-center": ["idle_inhibitor","clock","custom/notification",],
+          "modules-right": [
+            "custom/padd",
+            "custom/l_end",
+            "group/expand",
+            "custom/padd",
+            "custom/smallspacer",
+            "network",
+            "custom/nettext",
+            "custom/smallspacer",
+            "pulseaudio",
+            "group/expand-3",
+            "backlight",
+            "group/expand-2",
+            "group/expand-4",
+            "custom/smallspacer",
+            "custom/logout",
+          ],
+
+          
+          "custom/appmenu": {
+            "format":"󰣇",
+            "orientation":"horizontal",
+            "rotate":90,
+            "on-click": "pidof rofi >/dev/null && killall rofi || $HOME/HyprlandScripts/launcher.sh",
+            "tooltip": false,
+          },
+
+
+          "hyprland/workspaces": {
+            "format": "{icon}",
+            "orientation":"horizontal",
+            "rotate":90,
+            "format-icons": {
+              "default": "",
+              "active": "",
+            },
+          },
+
+          "hyprland/window": {
+            "format": "<span  weight='bold'>{icon}</span>",
+            "max-length": 120,
+            "icon": true,
+            "icon-size": 13,
+            "tooltip":true,
+            "tooltip-format":"right click to close",
+            "on-click-right": "hyprctl dispatch killactive",
+          },
+
+          "mpris": {
+            "format": "{player_icon} {dynamic}",
+            "orientation": "vertical",
+            "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+            "max-length": 30,
+            "player-icons": {
+              "default": "⏸ ",
+              "mpv": "🎵 ",
+            },
+            "status-icons": {
+              "paused": "▶ ",
+            },
+            // "ignored-players": ["firefox"]
+          },
+
+          "idle_inhibitor": {
+            "format": "{icon}",
+            "rotate": 0,
+            "format-icons": {
+              "activated": "󰥔 ",
+              "deactivated": " ",
+            },
+          },
+
+          "clock": {
+            "format": "{:%I:%M %p}",
+            "orientation":"vertical",
+            "rotate": 90,
+            "on-click": "gnome-clocks",
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+              "mode": "month",
+              "mode-mon-col": 3,
+              "on-scroll": 1,
+              "on-click-right": "mode",
+              "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>",
+              },
+            },
+            "actions": {
+              "on-click-right": "mode",
+              "on-click-forward": "tz_up",
+              "on-click-backward": "tz_down",
+              "on-scroll-up": "shift_up",
+              "on-scroll-down": "shift_down",
+            },
+          },
+//---------------------------------------------------------------
+        
+        
+}

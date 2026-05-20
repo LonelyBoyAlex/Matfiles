@@ -7,7 +7,7 @@ import = ["./colors.toml"]
 #dynamic_padding = true
 #padding.x = 32
 #padding.y = 32
-opacity = 0.99
+opacity = 0.80
 dynamic_padding = true
 padding.x = 16
 padding.y = 32
@@ -25,7 +25,7 @@ bold_italic.family = "JetBrains Mono Nerd Font"
 normal.style = "Regular"
 bold.style = "Bold"
 italic.style = "Italic"
-bold_italic.style = "Bold Italic" 
+bold_italic.style = "Bold Italic"
 size = 14
 
 # $HOME/.config/alacritty/alacritty.toml
@@ -44,11 +44,11 @@ size = 14
 # for variables with multiple values, use "dotted keys". Like setting `padding.x = 5` under [window].
 # This is simple. If not clear, do several trials and errors.
 
-# Below is my initial set-up. The TOML homepage (https://toml.io/en/v1.0.0) was very helpful in figuring this out. 
+# Below is my initial set-up. The TOML homepage (https://toml.io/en/v1.0.0) was very helpful in figuring this out.
 # I put the file alacritty.toml in $HOME/.config/alacritty. However it can be kept anywhere among the places mentioned in
 # https://github.com/alacritty/alacritty/tree/master#configuration
 # Tip: for inspiration, look for values in the source code files of your favorite VS Code themes, and use the color picker in
-# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a 
+# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a
 # small box when a HEX is detected by the editor.
 [cursor]
 				smooth_motion = true       # Enable smooth motion

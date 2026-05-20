@@ -1,0 +1,41 @@
+(defwindow music_flyout []
+  :stacking "fg"
+  :monitor "0"
+  :exclusive "false"
+  :geometry ( geometry
+    :anchor "left center" ;;change this to variable and write a script for getting theme
+    ;;:width "24%" :height "35%"
+  )
+  (music_flyout)
+)
+
+(defwidget music_flyout []
+ (box :class "flyoutContainer" 
+  :orientation "v" :space-evenly "false"
+  (box :class "row1"
+   :orientation "h" :space-evenly "false"
+
+   (box :class "albumart" 
+    :orientation "h" :space-evenly "false")
+
+   (box :class "metadata" 
+    :orientation "h" :space-evenly "false")
+  )
+
+  (box :class "row2"
+   :orientation "v" :space-evenly "false"
+
+   (box :class "progressbarmc" 
+    :orientation "h" :space-evenly "false")
+
+   (box :class "playerbuttons" 
+    :orientation "h" :space-evenly "true"
+    (label :text "Shf")
+    (label :text "Pre")
+    (label :text "pau")
+    (label :text "Nex")
+    (label :text "Rep")
+    )
+  )
+   )
+    )

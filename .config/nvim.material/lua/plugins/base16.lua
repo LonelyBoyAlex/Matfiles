@@ -1,0 +1,21 @@
+return {
+  "RRethy/base16-nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.opt.termguicolors = true
+    --vim.cmd.colorscheme("base16-colorscheme")
+
+    transparent_background = true,   -- matches dwm gaps/transparency
+    -- Your matugen file already calls setup() - just source it
+    require("matugen.base16") -- Runs the setup + custom highlights
+
+    -- Configure plugin integrations
+    require("base16-colorscheme").with_config({
+      telescope = true,
+      indentblankline = true,
+      cmp = true,
+      lualine = true,
+    })
+  end,
+}

@@ -305,3 +305,5 @@
           ;;  )
        )
        ))
+
+(include "./modules/music_flyout.yuck")

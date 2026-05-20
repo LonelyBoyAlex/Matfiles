@@ -59,9 +59,7 @@
         "image-radius": 0
       },
       "backlight": {
-        "label": "󰃟",
-        "device": "amdgpu_bl2",
-        "subsystem": "backlight"
+        "label": "󰃟"
       },
       "volume": {
         "label": "󰕾"

@@ -1,0 +1,467 @@
+{
+    "layer": "top",
+    "position": "left",
+    "mod": "dock",
+    "margin-left": 2,
+    "margin-right": 2,
+    "margin-top": 40,
+    "margin-bottom": 40,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+
+
+    // positions generated based on config.ctl //
+    "modules-center": [
+ //     "custom/padd",
+      "custom/spacer",
+      //    "group/appmenupill",
+      "custom/appmenu",
+      "hyprland/workspaces",
+      "hyprland/window",
+      "idle_inhibitor",
+      "group/clockey",
+      "custom/notification",
+      "mpris",
+      "group/expand",
+      "network",
+      "group/expand-3",
+      "group/expand-2",
+      "group/expand-4",
+      "custom/logout",
+      "custom/spacer"
+    ],
+    // sourced from modules based on config.ctl //
+    "upower": {
+      // "icon-size": 24,
+      "format": "{percentage}",
+      // "format": "<span>{}</span>",
+      "format-alt": "{percentage}<span color='white'>[{time}]</span>",
+      "tooltip": false,
+      "rotate":90,
+      "tooltip-spacing": 20,
+      "show-icon": false,
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      // "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+    },
+//     "upower": {
+//   "format": "{percentage}",
+//   "format-alt": "{percentage}% [{time}]",
+//   "orientation": "vertical",
+//   "rotate": 90,
+//   "tooltip": false,
+//   "show-icon": false,
+//   "tooltip-spacing": 20,
+//   "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+// },
+    "upower#headset": {
+      "format": " {percentage}",
+      "native-path": "/org/freedesktop/UPower/devices/headset_dev_A6_98_9A_0D_D3_49",
+      "show-icon": true,
+      "tooltip": false,
+    },
+    "group/expand-4": {
+      "orientation": "vertical",
+      "drawer": {
+        "transition-duration": 600,
+        "children-class": "not-power",
+        // "click-to-reveal": true,
+      },
+      "modules": ["battery","upower", "upower/headset"],
+      //"modules": ["battery", "upower/headset"],
+    },
+    "custom/smallspacer": {
+      "format": "=",
+    },
+    "memory": {
+      "interval": 1,
+      // "rotate": 270,
+      "format": "{icon}",
+      "format-icons": ["󰝦 ", "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 "],
+      "max-length": 10,
+    },
+    "cpu": {
+      "interval": 1,
+      "format": "{icon}",
+     // "rotate": 270,
+      "format-icons": ["󰝦 ", "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 "],
+    },
+    "mpris": {
+      "format": "{player_icon} {dynamic}",
+      "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+      "max-length": 20,
+      "player-icons": {
+        "default": "⏸ ",
+        "mpv": "🎵 ",
+      },
+      "status-icons": {
+        "paused": "▶ ",
+      },
+      "rotate":90
+      // "ignored-players": ["firefox"]
+    },
+    "tray": {
+      "icon-size": 24,
+      "rotate": 0,
+      "spacing": 12,
+    },
+    "group/expand": {
+      "orientation": "vertical",
+      "drawer": {
+        "transition-duration": 600,
+        "children-class": "not-power",
+        "transition-to-left": true,
+        //  "click-to-reveal": true
+      },
+      "modules": ["custom/menu", "tray"],
+    },
+    "custom/menu": {
+      "format": "󰅃",
+      "rotate": 0,
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "󰅸",
+        "none": "󰂜",
+        "dnd-notification": "󰅸",
+        "dnd-none": "󱏨",
+        "inhibited-notification": "󰅸",
+        "inhibited-none": "󰂜",
+        "dnd-inhibited-notification": "󰅸",
+        "dnd-inhibited-none": "󱏨",
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click-right": "swaync-client -d -sw",
+      "on-click": "swaync-client -t -sw",
+      "escape": true,
+    },
+    "hyprland/window": {
+      //"format": "<span  weight='bold'>{class}</span>",
+      "format": "{class}",
+      "orientation":"vertical",
+      "rotate":90,
+      "max-length": 120,
+      "icon": false,
+      "icon-size": 12,
+      "tooltip":true,
+      "tooltip-format":"right click to close",
+      "on-click-right": "hyprctl dispatch killactive",
+    },
+    "custom/power": {
+      "format": "@{}",
+      "rotate": 90,
+      "tooltip": true,
+    },
+    "custom/spacer": {
+      "format": " - ",
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-window-separator":"{||}",
+      "show-special":"true",
+      "format-icons": {
+        "default": "",
+        //"default": "",
+        //"active": "",
+        "active": "",
+        "special": "󰺕",
+      },
+    "window-rewrite": {
+        "title<.*youtube.*>": "<U+F16A>", // Windows whose titles contain "youtube"
+        "class<zen>": "<U+F269>", // Windows whose classes are "firefox"
+        "class<zen> title<.*github.*>": "<U+F113>", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+        "kitty": "<U+E795>", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+        "code": "<U+F0A1E>",
+        "title<.* - (.*) - code>": "code $1"  // captures part of the window title and formats it into output
+                }
+    },
+    "custom/muter": {
+      "on-click": "~/HyprlandScripts/volume_changer.sh toggle",
+      "format": " ",
+    },
+    "custom/wallchange": {
+      "format": "{}",
+      "rotate": 0,
+      "icon-size":20,
+      "tooltip-format":" 󰆊 switch wallpaper",
+      "on-click":"~/HyprlandScripts/change_wallpaper_4.sh",
+      "tooltip": true,
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "rotate": 0,
+      "format-icons": {
+        "activated": "󰥔",
+        "deactivated": "",
+      },
+    },
+
+  "custom/clockH": {
+    //"exec": "date '+%I \n %M \n %p'",
+    "exec": "date '+%I'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+
+  "custom/clockM": {
+    //"exec": "date '+%I \n %M \n %p'",
+    "exec": "date '+%M'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+
+  "custom/clockD": {
+    //"exec": "date '+%I \n %M \n %p'",
+    "exec": "date '+%p'",
+    "interval": 60,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-clocks",
+    "format": "{}"
+  },
+  "custom/colon":{
+    //"format":"",
+    "format":":",
+    "on-click":"gnome-clocks",
+    "rotate":90
+  },
+  "group/clockey":{
+      "orientation": "vertical",
+      //"drawer": {
+        //"transition-duration": 600,
+        //"transition-to-left": true,
+      //},
+      "modules": [
+      "custom/clockH",
+      "custom/clockM",
+      //"custom/colon",
+      "custom/clockD",
+    ],
+    },
+
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 20,
+      },
+      //"format": "{icon}{capacity}%",
+      "format": "{icon}",
+     // "rotate": 90,
+      "rotate":0,
+      //"format-charging": "<span color='#ffffff'>󱐋{capacity}%</span>",
+      "format-charging": "",
+      //"format-plugged": "󰂄",
+      "format-plugged": "",
+      //"format-alt": "<<span weight='bold' color='#c2864a'>{time} <span weight='bold' color='white'>| <span weight='bold' color='#82d457'>{capacity}%</span></span></span>",
+      //"format-icons": ["󰝦 ", "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 "],
+      // "format-icons": [" ", " ", " ", " ", " ", " ", " ", " "],
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      //"on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+      //  "format-icons": [<i class='fa-solid fa-wifi-slash'></i>],
+    "interval":10,
+    },
+    "backlight": {
+      "device": "amdgpu_bl1",
+      "rotate": 0,
+      "format": "{icon}",
+      "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+      "scroll-step": 1,
+      "min-length": 2,
+    },
+    "group/expand-2": {
+      "orientation": "vertical",
+      "drawer": {
+        "transition-duration": 600,
+        "children-class": "not-power",
+        // "transition-to-left": true,
+        //"click-to-reveal": true,
+      },
+      "modules": ["backlight", "backlight/slider"],
+    },
+    "group/expand-3": {
+      "orientation": "vertical",
+      "rotate":90,
+      "drawer": {
+        "transition-duration": 600,
+        "children-class": "not-power",
+        // "transition-to-left": true,
+       // "click-to-reveal": true,
+      },
+      "modules": ["pulseaudio", "pulseaudio/slider"],
+    },
+    "network": {
+      "tooltip": true,
+      "format-wifi": "{icon}",
+      "format-icons": ["󰤟", "󰤢", "󰤥"],
+      //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
+      "rotate": 0,
+      "format-ethernet": "󰈀",
+      "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>",
+      "format-linked": "󰈀 {ifname} (No IP)",
+      "format-disconnected": "",
+      "tooltip-format-disconnected": "Disconnected",
+      "on-click": "/usr/local/bin/ags -t ControlPanel",
+      "interval": 2,
+    },
+    "pulseaudio": {
+      "format": "{icon}",
+      "rotate": 0,
+      "format-muted": "󰸈",
+      "tooltip-format": "{icon} {desc} // {volume}%",
+      "scroll-step": 5,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", "", "󱄠"],
+      },
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "rotate": 0,
+      "format-source": "",
+      "format-source-muted": " ",
+      "on-click": "pavucontrol -t 4",
+      "on-click-middle": "volumecontrol.sh -i m",
+      "on-scroll-up": "volumecontrol.sh -i i",
+      "on-scroll-down": "volumecontrol.sh -i d",
+      "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+      "scroll-step": 5,
+    },
+    "custom/notifications": {
+      "tooltip": false,
+      "format": "{icon} {}",
+      "rotate": 0,
+      "format-icons": {
+        "email-notification": " <span foreground='white'><sup></sup></span>",
+        "chat-notification": "󱋊 <span foreground='white'><sup></sup></span>",
+        "warning-notification": "󱨪 <span foreground='yellow'><sup></sup></span>",
+        "error-notification": "󱨪 <span foreground='red'><sup></sup></span>",
+        "network-notification": "󱂇 <span foreground='white'><sup></sup></span>",
+        "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+        "update-notification": "󰚰 <span foreground='white'><sup></sup></span>",
+        "music-notification": "󰝚 <span foreground='white'><sup></sup></span>",
+        "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+        "notification": " <span foreground='white'><sup></sup></span>",
+        "none": " ",
+      },
+      "return-type": "json",
+      "exec-if": "which dunstctl",
+      "exec": "notifications.py",
+      "on-click": "sleep 0.1 && dunstctl history-pop",
+      "on-click-middle": "dunstctl history-clear",
+      "on-click-right": "dunstctl close-all",
+      "interval": 1,
+      "tooltip": true,
+      "escape": true,
+    },
+    // modules for padding //
+    "custom/uend": {
+      "format": " {}",
+      "rotate":90,
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/bend": {
+      "format": " {}",
+      "rotate":270,
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/sl_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/sr_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/rl_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/rr_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false,
+    },
+    "custom/padd": {
+      "format": "  ",
+      "interval": "once",
+      "tooltip": false,
+    },
+    "backlight/slider": {
+      "min": 5,
+      "max": 100,
+      "orientation":"vertical",
+      "rotate": 0,
+      "device": "amdgpu_bl1",
+      "scroll-step": 1,
+    },
+    "pulseaudio/slider": {
+      "min": 5,
+      "max": 100,
+      "orientation":"vertical",
+      "rotate": 0,
+      "device": "pulseaudio",
+      "scroll-step": 1,
+    },
+    "custom/logout": {
+      "format": "󰗽",
+      "on-click": "wlogout --buttons-per-row 6 -C .config/wlogout/styletry.css",
+      "tooltip": false,
+      "tooltip-format": "Logout",
+    },
+    "custom/appmenu": {
+    "format":"󰣇",
+    "on-click": "pidof rofi >/dev/null && killall rofi || $HOME/HyprlandScripts/launcher.sh",
+    "tooltip": false,
+  },
+  "custom/empty_workspace": {
+    "format": "{}",  
+    "exec": "WS=$(hyprctl activeworkspace | awk 'NR==1 {print $3}'); if hyprctl clients | awk '$1 == \"workspace:\" {print $2+0}' | grep -qx \"$WS\"; then echo '󰐗'; else echo ''; fi",
+    "on-click": "hyprctl dispatch workspace empty",
+    "tooltip": false,
+    "interval": 1
+  },
+
+"group/window": {
+  "orientation": "vertical",
+  "drawer": {
+    "transition-duration": 400,
+    "children-class": "window-expand"
+  },
+  "modules": ["hyprland/window", "custom/closer"]
+},
+
+"group/appmenupill": {
+  "orientation": "vertical",
+  "modules": [
+      "custom/appmenu",
+      "custom/empty_workspace","custom/smallspacer"
+      ]
+},
+    
+"custom/closer": {
+  "format": "×",
+  "on-click": "hyprctl dispatch killactive",
+  "tooltip": false
+},
+
+}
+  

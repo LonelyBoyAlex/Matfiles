@@ -5,7 +5,7 @@ import colors
 # Base theme (safe for ALL layouts)
 # ─────────────────────────────
 base = dict(
-    border_width=4,
+    border_width=2,
     margin=10,
     border_focus=colors.BOR_FOC,
     border_normal=colors.BOR_NOR,

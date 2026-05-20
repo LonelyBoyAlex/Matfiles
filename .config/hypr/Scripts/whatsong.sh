@@ -12,15 +12,15 @@ title=$(playerctl metadata title 2>/dev/null)
 artist=$(playerctl metadata artist 2>/dev/null)
 
 case "$status" in
-Playing) icon="" ;;
-Paused) icon="" ;;
-*) icon="󰽶" ;;
+Playing) icon="󱑽  " ;;
+Paused) icon="󰎋  " ;;
+*) icon="󰽶  " ;;
 esac
 
 text="$icon $title — $artist"
 
 if [ ${#text} -gt $max ]; then
-  echo "${text:0:$((max - 1))}…"
+  echo "${text:0:$((max - 1))} 󰎋"
 else
   echo "$text"
 fi

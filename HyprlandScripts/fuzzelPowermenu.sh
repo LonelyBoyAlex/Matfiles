@@ -7,32 +7,61 @@ options="  Lock
   Logout
   Cancel"
 
-choice=$(printf "%s\n" "$options" |
-  fuzzel --dmenu --auto-select --prompt "Power Menu: " \
-    --config ~/.config/fuzzel/fuzzelniri.ini -w 20)
+# Build fuzzel command as an array
+fuzzel_cmd=(
+  fuzzel
+  --dmenu
+  --auto-select
+  --prompt "Power Menu:"
+  --config "$HOME/.config/fuzzel/fuzzelniri.ini"
+  -w 20
+)
+
+# Compositor-specific tweak
+[[ "$DESKTOP_SESSION" == "niri" ]] && fuzzel_cmd+=(--anchor top)
+
+# Run menu
+choice=$(printf "%s\n" "$options" | "${fuzzel_cmd[@]}")
 
 case "$choice" in
 *Lock)
-  if [[ $XDG_CURRENT_DESKTOP == "Niri" ]]; then
-    #~/.config/swaylock/swaylock-wal.sh
+  case "$XDG_CURRENT_DESKTOP" in
+  Niri | mango)
     pidof hyprlock >/dev/null || hyprlock
-  elif [[ $XDG_CURRENT_DESKTOP == "mango" ]]; then
-    pidof hyprlock >/dev/null || hyprlock
-  fi
+    ;;
+  esac
   ;;
-*Poweroff) systemctl poweroff ;;
-*Reboot) systemctl reboot ;;
-*Suspend) systemctl suspend ;;
+
+*Poweroff)
+  systemctl poweroff
+  ;;
+
+*Reboot)
+  systemctl reboot
+  ;;
+
+*Suspend)
+  systemctl suspend
+  ;;
+
 *Logout)
-  if [[ $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
+  case "$XDG_CURRENT_DESKTOP" in
+  Hyprland)
     hyprctl dispatch exit
-  elif [[ $XDG_CURRENT_DESKTOP == "Niri" ]]; then
+    ;;
+  Niri)
     niri msg action quit
-  elif [[ $XDG_CURRENT_DESKTOP == "mango" ]]; then
+    ;;
+  mango)
     mmsg -q
-  else
+    ;;
+  *)
     loginctl terminate-session "$XDG_SESSION_ID"
-  fi
+    ;;
+  esac
   ;;
-*) exit 0 ;;
+
+*)
+  exit 0
+  ;;
 esac

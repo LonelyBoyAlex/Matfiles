@@ -1,0 +1,184 @@
+@import url("/home/papa/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#waybar {
+    background: alpha(@color12, 0.75);
+    border: none;
+    border-radius: 50px 50px;
+}
+
+#leftside,
+#centerside,
+#rightsie {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+
+window#waybar.empty #window {
+    background: none;
+}
+
+#window,
+#custom-window {
+    color: @color6;
+    background: inherit;
+    margin: 0px;
+    margin-left: .5rem;
+    padding: 0px .5rem;
+    font-weight: 800;
+    font-size: larger;
+}
+
+#workspaces {
+    background: alpha(@color6, 0.25);
+    color: @background;
+    /* box-shadow: none;
+    text-shadow: none; */
+    border-radius: 60px;
+    transition: 0.2s ease;
+    padding: 2px 4px;
+    margin: 4px 14 4 4;
+}
+
+#workspaces button:not(.empty) {
+    background-color: alpha(@background, 0.5);
+}
+
+#workspaces button {
+    background-color: alpha(@color6, 0.25);
+    color: @background;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.2s ease;
+    padding: 0 8 0 10;
+    margin: 2px;
+    border-radius: 2rem;
+}
+
+#workspaces button.active {
+    background: alpha(@color3, 0.5);
+    color: alpha(@background, 1);
+    transition: all 0.3s ease;
+    margin: 2px;
+    padding: 0 8 0 10;
+    border: 2px double alpha(@color0, .25);
+    border-radius: 2rem;
+}
+
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    color: inherit;
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+/*
+#workspaces button.focused {
+    background-color: @color2; 
+}
+ */
+#clockk {
+    color: @background;
+    background: alpha(@color6, 0.25);
+    padding: 0 0;
+    margin: 4 0;
+    border-radius: 0 60 60 0;
+}
+
+#clock {
+    background: inherit;
+    padding: 0 12;
+}
+
+#custom-date {
+    padding: 0 12;
+}
+
+#idle_inhibitor,
+#battery {
+    color: @background;
+    font-size: 20px;
+    background: alpha(@color6, 0.25);
+    padding: 0 12;
+    margin: 4 0;
+    border-radius: 60 0 0 60;
+}
+
+#idle_inhibitor.activated {
+    color: @color3;
+    background: alpha(@color8, 0.8);
+}
+
+#expand-Bat {
+    margin-left: 6;
+}
+
+#upower,
+#upower-headset {
+    color: @background;
+    background: alpha(@color6, 0.25);
+    padding: 0 12;
+    margin: 4 0;
+    border-radius: 0 60 60 0;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @background;
+}
+
+#battery.critical:not(.charging) {
+    color: @color9;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-logout,
+#custom-notification {
+    font-size: 20px;
+    background: inherit;
+    color: @background;
+    margin: 4px 0px;
+    padding: 0px 8px;
+    border-radius: 0px;
+}
+
+#leftside {
+    padding-left: 12;
+    padding-right: 12;
+    margin-left: 0.5rem;
+}
+
+#rightside {
+    padding-left: 12;
+    padding-right: 12;
+    margin-right: 0.5rem;
+}
+
+#custom-window {
+    text-shadow: 2px 2px 4px @color0;
+}
+
+#mpris,
+#custom-music {
+    background: alpha(@background, 0.25);
+    color: @color7;
+    border-radius: 60px;
+    margin: 4;
+    padding: 2 12 2 12;
+}
+
+#mpris.playing {
+    color: inherit;
+}
+
+#bluetooth{
+    font-size: 21px;
+    padding-right: 14px;
+}

@@ -1,9 +1,9 @@
 font-family = "JetBrains Mono Nerd Font Propo"
-font-size = 16
+font-size = 12.5
 theme = "Matugen"
 cursor-style-blink = true
 mouse-hide-while-typing = true
 window-padding-balance = true
 window-padding-x = 16
 window-padding-y = 16
-background-opacity = 0
+background-opacity = 0.01

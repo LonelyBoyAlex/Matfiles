@@ -158,14 +158,18 @@ window#waybar {
 #battery.charging {
   color:@primary_container;
   background: inherit;
+  border-radius:12px;
 }
 #battery.warning {
-  color:@secondary;
-  background:@on_secondary_container;
+  color:@background;
+  background:@secondary_container;
+  border-radius:12px;
+  margin-top:0px;
 }
 #battery.critical{
   color:@on_error;
   background:@error;
+  border-radius:12px;
 }
 
 #upower{
@@ -173,6 +177,7 @@ window#waybar {
   margin-top:4px;
   padding-bottom : 4px;
   font-weight : 600;
+  border-radius:12px;
 }
 
 #workspaces {

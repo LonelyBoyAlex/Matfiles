@@ -12,6 +12,7 @@ window#waybar {
     min-height:40px;
     border:2px solid @primary;
     border-top: none;
+    border: none;
 }
 
 window#waybar.empty #window {
@@ -193,16 +194,17 @@ window#waybar.empty #window {
 }
 #custom-notification {
   padding-right:20px;
+  border-radius:0px 0px 32px 0px;
 }
 
 .modules-left {
     background: alpha(@on_primary, 1);
-    border-radius:0px 4px 0px 24px ;
+    border-radius:0px 60px 60px 60px ;
     padding-right:24px;
-    margin:0px 4px 4px 2px;
+    margin:0px 4px 4px 4px;
 }
 .modules-right {
     background: alpha(@on_primary, 1);
-    border-radius:4px 0px 24px 0px ;
+    border-radius:60px 0px 60px 60px ;
     margin:0px 4px 4px 0px;
 }

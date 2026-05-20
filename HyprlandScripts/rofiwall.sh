@@ -82,9 +82,9 @@ echo "+++ $CHOICE +++"
 
 WALLPAPER="$WALLPAPER_DIR/$CHOICE"
 
-# Set wallpaper via swww (random transition position is default)
+# Set wallpaper via awww (random transition position is default)
 if pgrep -x eww >/dev/null; then
-  swww img "$WALLPAPER" --resize crop \
+  awww img "$WALLPAPER" --resize crop \
     --transition-type grow \
     --transition-pos 0.03,0.5 \
     --transition-duration 4.5 \
@@ -93,7 +93,7 @@ if pgrep -x eww >/dev/null; then
   # Symlink current wallpaper for other tools
   ln -sf "$WALLPAPER" ~/.cache/currwall
   ln -sf "$WALLPAPER" ~/.cache/currwall.png
-  ~/HyprlandScripts/ewwTheme.sh restore
+  ### ### this is working but test #### ~/HyprlandScripts/ewwTheme.sh restore
   #~/HyprlandScripts/ewwStarter.sh reload
 else
   if [[ $WINDOWMAN == "i3" ]]; then
@@ -107,7 +107,7 @@ else
 
   else
     {
-      swww img "$WALLPAPER" --resize crop \
+      awww img "$WALLPAPER" --resize crop \
         --transition-type any \
         --transition-duration 3.7 \
         --transition-step 255 \
@@ -123,7 +123,7 @@ fi
 echo "###########################"
 echo "!!    matugen colorgen   !!"
 echo "###########################"
-matugen image "$WALLPAPER"
+matugen image "$WALLPAPER" --source-color-index 0
 
 # Reload UI components
 if pgrep -x swaync >/dev/null; then

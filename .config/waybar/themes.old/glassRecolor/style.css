@@ -1,0 +1,259 @@
+@import url("colors-waybar.css");
+
+* {
+    font-family: "Hurmit Nerd Font Propo";
+    font-weight: bold; 
+    font-size: 14px;
+    transition: all 0.3s ease-out;
+}
+
+
+window#waybar {
+    background: alpha(@background,0);
+    border:none;
+    border-radius:12px;
+}
+
+/*--------------------- icons -----------------------*/
+#network, #pulseaudio, #backlight, #upower,
+#custom-logout, #custom-notification, #idle_inhibitor,
+#tray, #battery, #custom-empty_workspace, #custom-appmenu{
+      font-size:18px;
+      color:@foreground;
+      padding:0rem 0.5rem;
+      border-radius:1rem;
+      /* margin:6px .1em;   */
+}
+
+#network{
+    border-radius:60px;
+    color: alpha(@background,0.5);
+    background: alpha(@color3,1);
+    padding:0px 1em;
+    margin:6px 0px;
+}
+
+#custom-menu,#tray{
+      font-size: 18px;
+      background:alpha(@background,.15);
+      color:@foreground;
+      border-radius: 60px;
+      margin:6px 2px;
+}
+
+#tray{
+      padding:0rem 1rem;
+}
+
+#custom-logout{
+      background-color:alpha(@color1,0.5);
+      margin:6px 0.5rem;
+      padding:0rem 1.5rem;
+      border-radius:60px;
+}
+
+#clock { 
+    background:alpha(@background,0.5);
+    color: @foreground; 
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "JetBrainsMono Nerd Font";
+    margin: 6px .1em;
+    padding: 0px 15px;
+    border-radius:60px;
+}
+
+#idle_inhibitor {
+      background-color:alpha(@color1,0.5);
+      margin:6px 0.5rem;
+      padding:0rem 1.5rem;
+      border-radius:60px;
+}
+
+#idle_inhibitor.activated {
+      background-color:alpha(@color7,0.25);
+      color:@color1;
+}
+
+#cpu,#memory,#custom-cpu,#custom-mem{
+    font-size: 14px;
+    color:@color7;
+    padding:0px 0.25rem;
+}
+
+#cpu,#memory{
+    font-size: 20px;
+}
+
+#custom-notification,#custom-appmenu { 
+    margin:0px 0.2rem;
+    padding:0rem 1rem;
+
+}
+
+ #window{ 
+    color: @color6;
+    /* background: alpha(@background,0.35); */
+    /* border:1px solid alpha(@background,0.5);
+    border-radius:12px; */
+    margin: 0px;
+    padding: 0px 1rem;
+} 
+
+.modules-center{
+    background: alpha(@background,0.35);
+    /* border:1px solid alpha(@background,0.5); */
+    border-radius:60px;
+    margin: 6px 0px;
+    padding: 0px .1rem;
+}
+
+#mpris { 
+    background: alpha(@background,0.5);
+    border-radius: 60px;
+    margin: 6px .5em;
+    padding: 0px 1rem;
+    color: @foreground; 
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#mpris.paused{
+    background: alpha(@background,0.25);
+    color:alpha(@foreground,0.5);
+}
+#mpris.playing{
+    background: linear-gradient(to right, alpha(@color5,.35),
+        alpha(@color12,.35), alpha(@color6,.35));
+    color:alpha(@foreground,1);
+}
+
+/*  sliders  */
+
+#backlight-slider,
+#pulseaudio-slider {
+    background:alpha(@background,0);
+    margin:0px;
+    border-radius:60px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    min-height:1px;
+    min-width:1px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 90px;
+    min-height: 14px;
+    margin:-4px 4px;
+    border-radius: 60px;
+    background: @color0;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 60px;
+    background-color: @color6; 
+}
+
+#custom-nettext { 
+    background:alpha(@background,0.25);
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px 1rem;
+    border-radius:1rem;
+}
+
+#workspa { 
+    background:alpha(@background,0.15);
+    color: @foreground; 
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "JetBrainsMono Nerd Font";
+    margin: 0px .1em;
+    padding: 0px 15px;
+    border-radius:60px;   
+}
+
+#workspaces button {
+    /* background-color: transparent; */
+    box-shadow: none;
+    text-shadow: none;
+    padding:0px 4px;
+    margin:6px 4px;
+    border-radius:60px;
+    color: alpha(@foreground,0.35);
+    background: alpha(@color3,0.1);
+}
+#workspaces button.empty { 
+    color:transparent;
+}
+
+#workspaces button:not(.empty){
+    color: alpha(@foreground,0.75); 
+}
+
+#workspaces button.active {
+    background: alpha(@color3,1);
+    color: @color0; 
+    margin: 6px 0px;
+    padding:0px 10px;
+/*    border:1px solid;*/
+    border-color:alpha(@color7,0.25);
+    border-radius:60px;
+}
+
+#workspaces button:hover {
+    background: none;
+    box-shadow: inherit;
+    color: @color6; 
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.focused {
+    background-color: @color2; 
+}
+
+window#waybar.empty #window{
+    background: transparent;
+    color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+#leftinfo,#leftcontrols {
+    background:alpha(@background,0.5);
+    color: @foreground; 
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "JetBrainsMono Nerd Font";
+    margin: 6px .1em;
+    padding: 0px 15px;
+    border-radius:60px;  
+}
+
+
+/* no top-bot mar pad section */
+#cpu,#custom-cpu,#memory,#custom-mem,#window,#custom-appmenu,
+#custom-notification,#workspaces {
+    margin-top:0px;
+    margin-bottom:0px;
+    padding-top:0px;
+    padding-bottom: 0px;
+}
+#workspaces {
+    background:alpha(@background,0.5);
+    color: @foreground; 
+    font-size: 15px;
+    padding:0px 8px;
+    margin: 4px .1em;
+    font-weight: 900;
+    border-radius:60px;  
+}

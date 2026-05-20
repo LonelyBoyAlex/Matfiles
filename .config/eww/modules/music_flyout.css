@@ -1,0 +1,29 @@
+
+.flyoutContainer {
+  background: lighten($surf, 10%);
+  padding:2rem 4rem;
+  border-radius:16px;
+  border:2px solid $surf;
+}
+
+.albumart{
+  color:$on_primary_container;
+  background: green;
+  border:none;
+  border-radius:16px;
+  padding:40px;
+}
+.metadata{
+  color:$on_primary_container;
+  background:darken($surf,20%);
+  border:1px solid white;
+  border-radius:16px;
+  padding:40px 200px;
+}
+
+.progressbarmc{
+  min-height:4px;
+  border-radius:60px;
+  padding: 0px 4px;
+  background: #fff;
+}
